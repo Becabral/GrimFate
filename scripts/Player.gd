@@ -9,7 +9,7 @@ var STATE = "topView"
 var spritedir = "down"
 var movedir = Vector2(0,0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	controls_loop()
 	movement_loop()
 	spritedir_loop()
