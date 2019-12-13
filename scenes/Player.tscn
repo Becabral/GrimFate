@@ -162,3 +162,6 @@ anims/walkdown = SubResource( 6 )
 anims/walkleft = SubResource( 7 )
 anims/walkright = SubResource( 8 )
 anims/walkup = SubResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

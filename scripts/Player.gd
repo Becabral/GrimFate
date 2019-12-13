@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 70
+const SPEED = 200
 
 # state of the movement of the character "sideView" or "topView"
 var STATE = "topView"
