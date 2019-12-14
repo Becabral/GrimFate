@@ -29,7 +29,7 @@ position = Vector2( 412.734, 537.955 )
 
 [node name="BeginningMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
 script = ExtResource( 5 )
 [connection signal="finished" from="BeginningMusic" to="BeginningMusic" method="_on_BeginningMusic_finished"]
