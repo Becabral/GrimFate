@@ -14,7 +14,3 @@ func _process(_delta):
 		
 	pass
 
-
-func _on_BeginningMusic_finished():
-	play(130.83)
-	pass # Replace with function body.
