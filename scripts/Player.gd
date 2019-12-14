@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
 const SPEED = 200
+var cameraY = -300
 
-# state of the movement of the character "sideView" or "topView"
+#items
+var lamp = false
+
+# estado do movimento do personagem "topView" ou "sideView"
 var STATE = "topView"
 
-# set the initial sprite direction
+# set a direção para onde o personagem está olhando
 var spritedir = "down"
 var movedir = Vector2(0,0)
 
@@ -13,8 +17,8 @@ func _physics_process(_delta):
 	controls_loop()
 	movement_loop()
 	spritedir_loop()
-	
-	#if the character is not standing still, than use the type of mov "walk". Else, use the type "idle"
+
+	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0):
 		anim_switch("walk")
 	else:
@@ -28,7 +32,7 @@ func controls_loop():
 	
 	movedir.x = -int(LEFT) + int(RIGHT)
 	
-	#if the state is equal to "topView", it allows the character to move on both axis
+	# se o estado for igual a "topView", permite que o personagem mova em ambos os eixos
 	if (STATE == "topView"):
 		movedir.y = -int(UP) + int(DOWN)
 	
@@ -47,10 +51,10 @@ func spritedir_loop():
 		Vector2(0,1):
 			spritedir = "down"
 			
-#gets the type of animation, like: walk, idle, push)
+# pega o tipo de animação, como: walk, idle, push
 func anim_switch(animation):
-	#create a string that uses the type of the animation and concatenates with the direction, like: walk + left = walkleft
-	#walkleft is the name of the animation of the character walking on the left direction
+	# cria uma string que usa o "tipo" da animação e concatena com a direção, exemplo: walk + left = walkleft
+	# walkleft é o nome da animação do personagem andando para a direção "left"
 	var newanim = str(animation,spritedir)
 	if $Anim.current_animation != newanim:
 		$Anim.play(newanim)
