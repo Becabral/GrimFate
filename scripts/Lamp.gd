@@ -18,7 +18,10 @@ func _process(delta):
 		$useLbl.hide()
 
 func _on_Lamp_body_entered(body):
-	touch = true
+	if coletado == false:
+		touch = true
 
 func _on_Lamp_body_exited(body):
-	touch = false
+	if coletado == false:
+		touch = false
+
