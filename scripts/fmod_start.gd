@@ -9,15 +9,15 @@ func _ready():
 
 	# load banks
 	# place your banks inside the project directory
-	Fmod.bank_load("./assets/sound/Desktop/Master.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
-	Fmod.bank_load("./assets/sound/Desktop/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
-	Fmod.bank_load("./assets/sound/Desktop/Music.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	Fmod.bank_load("./assets/sound/banks/Master.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	Fmod.bank_load("./assets/sound/banks/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	Fmod.bank_load("./assets/sound/banks/Music.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 
 	# register a listener
-	Fmod.system_add_listener($Listener)
+	Fmod.system_add_listener(self)
 
 	# play some events
-	Fmod.play_one_shot("event:/Music", $SoundSource1)
+	Fmod.play_one_shot("event:/Music", self)
 
 func _process(delta):
 	# update FMOD every tick
