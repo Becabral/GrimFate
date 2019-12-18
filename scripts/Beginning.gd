@@ -7,14 +7,7 @@ func _ready():
 	$Player.spritedir = "right"
 	
 func _process(delta):
-	if $Lamp.coletado == false:
-		if $Lamp.touch == true:
-			coleta()
+	pass
 
-func coleta():
-	# !!!! tentar melhorar esse script (ver Lamp script) !!!! 
-	if Input.is_action_just_pressed("use"):
-		$Lamp.touch = false
-		$Lamp.coletado = true
-		$Player.lamp = true
+
 
