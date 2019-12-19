@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sound/music/Beginning Alpha.wav" type="AudioStream" id=4]
 [ext_resource path="res://scripts/BeginningMusic.gd" type="Script" id=5]
-[ext_resource path="res://scenes/Lamp.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 523, 15 )
@@ -32,10 +31,6 @@ position = Vector2( 412.734, 537.955 )
 stream = ExtResource( 4 )
 volume_db = -20.0
 script = ExtResource( 5 )
-
-[node name="Lamp" parent="." instance=ExtResource( 6 )]
-position = Vector2( 112.21, 545.314 )
-scale = Vector2( 0.2, 0.2 )
 
 [node name="FmodSource" type="Node2D" parent="."]
 [connection signal="finished" from="BeginningMusic" to="BeginningMusic" method="_on_BeginningMusic_finished"]
