@@ -8,6 +8,7 @@ func _ready():
 	# inicializa o personagem com o estado e a direção pra onde olha
 	$Player.STATE = "sideView"
 	$Player.spritedir = "right"
+	$Player/Camera2D.offset_v=-4
 	create_lamp()
 	
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/img/environment/Group 46.png" type="Texture" id=1]
-[ext_resource path="res://assets/img/Tileset.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]

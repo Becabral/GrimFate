@@ -147,7 +147,7 @@ scale = Vector2( 3.53828, 3.53828 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 8
-frame = 5
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -165,3 +165,4 @@ anims/walkup = SubResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+drag_margin_v_enabled = false
