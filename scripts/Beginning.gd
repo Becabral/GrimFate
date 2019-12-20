@@ -11,7 +11,7 @@ func _ready():
 	create_lamp()
 	
 	
-func _process(delta):
+func _process(_delta):
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):
 			$Player.lamp = true # <- usado para mudar o sprite com a lanterna na mao

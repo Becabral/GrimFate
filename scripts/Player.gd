@@ -39,7 +39,7 @@ func controls_loop():
 	
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
-	move_and_slide(motion, Vector2(0,0))
+	motion=move_and_slide(motion, Vector2(0,0))
 	
 func spritedir_loop():
 	match movedir:
