@@ -23,7 +23,7 @@ func _physics_process(_delta):
 		anim_switch("walk")
 	else:
 		anim_switch("idle")
-		s
+		
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
