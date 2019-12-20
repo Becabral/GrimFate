@@ -1,6 +1,6 @@
 extends CanvasLayer
-onready var Level1 = preload("res://scenes/Level 1.tscn")
-onready var Level2 = preload("res://scenes/Level 2.tscn")
+onready var Trial1 = preload("res://scenes/Trial1.tscn")
+onready var Trial2 = preload("res://scenes/Trial2.tscn")
 
 signal scene_changed()
 
