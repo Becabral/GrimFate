@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 514.771, 306.137 )
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 3.44087, 0, 0, Vector2( 1, 0 ), -4.43466, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 250, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = -200.0
+initial_velocity_random = 0.8
+angular_velocity = 646.52
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 20.0
+radial_accel_random = 1.0
+tangential_accel = 24.14
+tangential_accel_random = 1.0
+damping = 76.01
+scale = 56.78
+scale_random = 1.0
+scale_curve = SubResource( 3 )
+color = Color( 0.0666667, 0.0313726, 0.0313726, 0.231373 )
+
+[node name="Fog" type="Node2D"]
+position = Vector2( 512, 300 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+light_mask = 2
+amount = 2000
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -450, -375, 900, 750 )
+local_coords = false
+draw_order = 1
+process_material = SubResource( 1 )
