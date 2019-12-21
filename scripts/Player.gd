@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const SPEED = 200
-var cameraY = -300
+#var cameraY = -300
 
 #items
 var lamp = false

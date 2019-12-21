@@ -1,24 +1,28 @@
 extends Node2D
-var beg= preload("res://scenes/Beginning.tscn").instance()
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var beg= preload("res://scenes/Beginning.tscn")
 
-# Called when the node enters the scene tree for the first time.
+var play=true #Tells me if the Opening can play
+
+#Sets Opening defaults
 func _ready():
 	$Beginning/Player/Anim.play("idleright")
 	$Beginning/Player.set_physics_process(false)
 	$Orb/AnimationPlayer.play("Float")
 	$Orb/Camera2D.make_current()
+
+#Checks to see if Opening can be played
+func _process(_delta):
+	if (play):
+		play=false
+		playOpening()
+
+#Brings the level up and changes scene to Beginning
+func playOpening():
 	#$Beginning/Player/Camera2D.current=false
 	$AnimationPlayer.play("BringLevelIn")
 	yield($AnimationPlayer, "animation_finished")
 	#$Beginning/Player/Camera2D.make_current()
-	get_tree().get_root().add_child(beg)
+	#get_tree().get_root().add_child(beg)
+	#assert(get_tree().change_scene_to(beg)==OK)
 	assert(get_tree().change_scene_to(beg)==OK)
-	#
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
