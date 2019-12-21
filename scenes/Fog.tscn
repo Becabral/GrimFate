@@ -46,6 +46,5 @@ amount = 2000
 speed_scale = 0.2
 randomness = 1.0
 visibility_rect = Rect2( -450, -375, 900, 750 )
-local_coords = false
 draw_order = 1
 process_material = SubResource( 1 )
