@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Opening.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/path4164.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Beginning.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Beginning.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/img/path4164.png" type="Texture" id=3]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -51,12 +51,15 @@ tracks/0/keys = {
 [node name="OpeningScene" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Beginning" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 941.827 )
+
 [node name="Orb" type="Node2D" parent="."]
 position = Vector2( 512, 300 )
 
 [node name="Sprite" type="Sprite" parent="Orb"]
 scale = Vector2( 0.169679, 0.169679 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="Orb/Sprite"]
 scale = Vector2( 5.89349, 5.89349 )
@@ -74,6 +77,3 @@ current = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BringLevelIn = SubResource( 3 )
 anims/FadePlayer = SubResource( 4 )
-
-[node name="Beginning" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 941.827 )

@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/fonts/Placeholder.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Press Start.png" type="Texture" id=4]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
 length = 2.0
@@ -23,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Blink Faster"
 length = 6.0
 tracks/0/type = "value"
@@ -39,8 +38,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Fade"
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Placeholder:modulate")
@@ -74,7 +72,7 @@ texture = ExtResource( 4 )
 
 [node name="AnimPressStart" type="AnimationPlayer" parent="PressStart"]
 anims/Blink = SubResource( 1 )
-"anims/Blink Faster" = SubResource( 3 )
+"anims/Blink Faster" = SubResource( 2 )
 
 [node name="AnimTitle" type="AnimationPlayer" parent="."]
-anims/Fade = SubResource( 2 )
+anims/Fade = SubResource( 3 )
