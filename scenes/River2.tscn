@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/River2.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/img/environment/RiverBG.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.9204, 241.674 )
+
+[node name="River2" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 146.815, 434.154 )
+
+[node name="RiverBG" type="Sprite" parent="."]
+position = Vector2( 2377.7, 222.699 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 3 )
+
+[node name="NextArea" type="Area2D" parent="."]
+position = Vector2( 4649.63, 295.082 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

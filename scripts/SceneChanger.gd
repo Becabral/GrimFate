@@ -5,6 +5,11 @@ extends CanvasLayer
 
 onready var Trial1 = preload("res://scenes/Trial1.tscn")
 onready var Trial2 = preload("res://scenes/Trial2.tscn")
+onready var Trial1E = preload("res://scenes/Trial1Entrance.tscn")
+onready var Trial2E = preload("res://scenes/Trial2Entrance.tscn")
+onready var River1 = preload("res://scenes/River1.tscn")
+onready var River2 = preload("res://scenes/River2.tscn")
+onready var GrimEnd = preload("res://scenes/GrimEnd.tscn")
 
 signal scene_changed()
 

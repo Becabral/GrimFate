@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=5]
-[ext_resource path="res://scenes/NextArea.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -97,7 +96,8 @@ stream = ExtResource( 5 )
 volume_db = -20.0
 autoplay = true
 
-[node name="NextArea" parent="." instance=ExtResource( 6 )]
+[node name="NextArea" type="Area2D" parent="."]
+position = Vector2( 1051.16, 482.991 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( -2776.8, -3177.84 )
