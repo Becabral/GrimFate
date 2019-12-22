@@ -3,7 +3,10 @@ extends Area2D
 var playerbody
 
 func _ready():
+	$CollisionShape2D.disabled=true
 	$LabelPos/useLbl.hide()
+	yield(get_tree().create_timer(1.0), "timeout")
+	$CollisionShape2D.disabled=false
 	pass 
 
 func _on_BlockTreeArea_body_entered(body):

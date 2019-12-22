@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Placeholder.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/BlockTree.gd" type="Script" id=3]
-[ext_resource path="res://scripts/BlockTreeArea.gd" type="Script" id=4]
-[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://scenes/BlockTree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/BlockBed.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 637.911, 74.7748 )
@@ -14,10 +14,7 @@ extents = Vector2( 637.911, 74.7748 )
 extents = Vector2( 31.7097, 572.596 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 40.8279, 38.5556 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 25.3973, 24.776 )
+extents = Vector2( 39.5077, 19.9092 )
 
 [node name="Placeholder" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,42 +49,38 @@ text = "Trial 3 Placeholder.
 
 Direct transition to Grim End"
 
-[node name="BlockTree" type="KinematicBody2D" parent="."]
-position = Vector2( 236.776, 205.684 )
-script = ExtResource( 3 )
+[node name="BlockTree" parent="." instance=ExtResource( 3 )]
 
-[node name="BlockTreeArea" type="Area2D" parent="BlockTree"]
+[node name="BlockBed" type="Area2D" parent="."]
+position = Vector2( 533.146, 278.445 )
 script = ExtResource( 4 )
 
-[node name="LabelPos" type="Node2D" parent="BlockTree/BlockTreeArea"]
-position = Vector2( 31.0446, -30.9411 )
-scale = Vector2( 0.2, 0.2 )
+[node name="icon" type="Sprite" parent="BlockBed"]
+modulate = Color( 0.992157, 0.392157, 0.180392, 1 )
+scale = Vector2( 1, 0.325698 )
+z_index = -1
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="useLbl" parent="BlockTree/BlockTreeArea/LabelPos" instance=ExtResource( 5 )]
-margin_left = 12.6331
-margin_top = -157.789
-margin_right = 70.6331
-margin_bottom = -38.7889
-size_flags_horizontal = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockTree/BlockTreeArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockBed"]
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="sprite" type="Sprite" parent="BlockTree"]
-modulate = Color( 0.505882, 0.188235, 0.188235, 1 )
-texture = ExtResource( 6 )
+[node name="LabelPos" type="Node2D" parent="BlockBed"]
+scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockTree"]
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="useLbl" parent="BlockBed/LabelPos" instance=ExtResource( 6 )]
+margin_left = 191.634
+margin_top = -248.068
+margin_right = 346.634
+margin_bottom = -110.068
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="BlockTree/BlockTreeArea" to="BlockTree/BlockTreeArea" method="_on_BlockTreeArea_body_entered"]
-[connection signal="body_exited" from="BlockTree/BlockTreeArea" to="BlockTree/BlockTreeArea" method="_on_BlockTreeArea_body_exited"]
+[connection signal="body_entered" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_entered"]
+[connection signal="body_exited" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_exited"]

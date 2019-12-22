@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/BlockTree.gd" type="Script" id=1]
+[ext_resource path="res://scripts/BlockTreeArea.gd" type="Script" id=2]
+[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/Righteous-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.596078, 0.580392, 0.580392, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 13
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40.8279, 38.5556 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25.3973, 24.776 )
+
+[node name="BlockTree" type="KinematicBody2D"]
+position = Vector2( 236.776, 205.684 )
+script = ExtResource( 1 )
+
+[node name="BlockTreeArea" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="LabelPos" type="Node2D" parent="BlockTreeArea"]
+position = Vector2( 31.0446, -30.9411 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="useLbl" parent="BlockTreeArea/LabelPos" instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = -61.727
+size_flags_horizontal = 4
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockTreeArea"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sprite" type="Sprite" parent="."]
+modulate = Color( 0.505882, 0.188235, 0.188235, 1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="BlockTreeArea" to="BlockTreeArea" method="_on_BlockTreeArea_body_entered"]
+[connection signal="body_exited" from="BlockTreeArea" to="BlockTreeArea" method="_on_BlockTreeArea_body_exited"]
