@@ -6,6 +6,7 @@ export var pushSPEED = 120
 
 #items
 var lamp = false
+var seeds = 0
 
 # estado do movimento do personagem "topView" ou "sideView"
 var STATE = "topView"
@@ -42,6 +43,7 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	motion=move_and_slide(motion, Vector2(0,0))
 
+	#box push
 	if get_slide_count()>0:
 		check_box_collision()
 	
@@ -64,10 +66,12 @@ func anim_switch(animation):
 	if $Anim.current_animation != newanim:
 		$Anim.play(newanim)
 		
+		
+#Box push
 func check_box_collision():
 	if abs(movedir.x) + abs(movedir.y) > 1:
 		return
-	var box := get_slide_collision(0).collider
+	var box = get_slide_collision(0).collider
 	box.push(pushSPEED*movedir)
 	
 	
