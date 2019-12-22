@@ -1,15 +1,18 @@
 extends Node2D
-onready var beg= preload("res://scenes/Beginning.tscn")
+onready var beg
+
 
 var play=true #Tells me if the Opening can play
 
 #Sets Opening defaults
 func _ready():
+	beg = preload("res://scenes/Beginning.tscn")
 	$Beginning/Player/Anim.play("idleright")
 	$Beginning/Player.set_physics_process(false)
+	$Beginning/Fog/Particles2D.emitting=false
 	$Orb/AnimationPlayer.play("Float")
 	$Orb/Camera2D.make_current()
-
+		
 #Checks to see if Opening can be played
 func _process(_delta):
 	if (play):

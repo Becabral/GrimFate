@@ -52,12 +52,13 @@ range_item_cull_mask = 2
 [node name="Fog" parent="." instance=ExtResource( 6 )]
 position = Vector2( 961.21, 297.928 )
 
+[node name="FmodSource" type="Node2D" parent="."]
+position = Vector2( 2163.22, 560.258 )
+
 [node name="BeginningMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -20.0
 script = ExtResource( 8 )
-
-[node name="FmodSource" type="Node2D" parent="."]
 
 [node name="NextArea" type="Area2D" parent="."]
 position = Vector2( 2163.03, 422.275 )
