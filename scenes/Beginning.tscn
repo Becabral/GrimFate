@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/BeginBG.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/img/Ellipse 3.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Fog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 523, 15 )
@@ -61,4 +62,8 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="Interface" instance=ExtResource( 7 )]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
