@@ -9,13 +9,12 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _on_Lamp_body_entered(body):
+func _on_Seed_body_entered(body):
 	if body.get_name()=="Player":
 		$useLbl.show()
 		touch=true
 
-func _on_Lamp_body_exited(body):
+func _on_Seed_body_exited(body):
 	if body.get_name()=="Player":
-		touch=false
 		$useLbl.hide()
-
+		touch = false

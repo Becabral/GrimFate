@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Placeholder.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/BlockBed.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 637.911, 74.7748 )
@@ -81,6 +82,10 @@ margin_left = 191.634
 margin_top = -248.068
 margin_right = 346.634
 margin_bottom = -110.068
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="Interface" instance=ExtResource( 7 )]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_entered"]
 [connection signal="body_exited" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_exited"]

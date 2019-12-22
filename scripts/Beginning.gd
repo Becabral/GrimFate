@@ -16,7 +16,7 @@ func _process(_delta):
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):
 			$Player.lamp = true # <- usado para mudar o sprite com a lanterna na mao
-			#gui.lamp = true <- implementar a passagem da variavel para a interface
+			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.queue_free()
 	else: #If player has lamp, turn the light on
 		$Player/Light2D.enabled=true
