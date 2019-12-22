@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-const SPEED = 200
+export var SPEED = 200
+export var pushSPEED = 120
 #var cameraY = -300
 
 #items
@@ -40,6 +41,9 @@ func controls_loop():
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	motion=move_and_slide(motion, Vector2(0,0))
+
+	if get_slide_count()>0:
+		check_box_collision()
 	
 func spritedir_loop():
 	match movedir:
@@ -59,3 +63,11 @@ func anim_switch(animation):
 	var newanim = str(animation,spritedir)
 	if $Anim.current_animation != newanim:
 		$Anim.play(newanim)
+		
+func check_box_collision():
+	if abs(movedir.x) + abs(movedir.y) > 1:
+		return
+	var box := get_slide_collision(0).collider
+	box.push(pushSPEED*movedir)
+	
+	

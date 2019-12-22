@@ -1,33 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Placeholder.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/BlockTree.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 195.921, 74.7748 )
+extents = Vector2( 637.911, 74.7748 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.7097, 130.185 )
+extents = Vector2( 31.7097, 572.596 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28.2414, 27.6201 )
 
 [node name="Placeholder" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 235.03, -74.0253 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 235.03, 320.159 )
+position = Vector2( 257.16, 864.566 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 7.67209, 119.701 )
+position = Vector2( -244.525, 385.623 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 457.376, 121.552 )
+position = Vector2( 793.53, 389.865 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -41,4 +47,21 @@ margin_bottom = 211.317
 text = "Trial 3 Placeholder.
 
 Direct transition to Grim End"
+
+[node name="BlockTree" type="KinematicBody2D" parent="."]
+position = Vector2( 236.776, 205.684 )
+script = ExtResource( 3 )
+
+[node name="sprite" type="Sprite" parent="BlockTree"]
+modulate = Color( 0.505882, 0.188235, 0.188235, 1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockTree"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
