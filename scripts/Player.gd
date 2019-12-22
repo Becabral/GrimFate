@@ -4,9 +4,11 @@ export var SPEED = 200
 export var pushSPEED = 120
 #var cameraY = -300
 
+
 #items
 var lamp = false
 var seeds = 0
+
 
 # estado do movimento do personagem "topView" ou "sideView"
 var STATE = "topView"

@@ -19,10 +19,6 @@ config/name="GrimFate"
 run/main_scene="res://scenes/Beginning.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-SceneChanger="*res://scenes/SceneChanger.tscn"
-
 [importer_defaults]
 
 texture={

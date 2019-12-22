@@ -1,31 +1,29 @@
 extends Control
 var slot = 0
 var countSeed = 0
+var seedDisplay=-1
 
 func _ready():
 	$MarginContainer/Items/ItemLbl.visible = false
 	$MarginContainer/Items/Slot0.visible = false
 	$MarginContainer/Items/Slot1.visible = false
-#
-#
-#
+
 func _process(delta):
 	$MarginContainer/Items/ItemLbl.rect_position.y = 0
 	$MarginContainer/Items/Slot0.margin_left = 58
 	$MarginContainer/Items/Slot1.margin_left = 152
-
+	print(countSeed)
 
 func verifica_incrementa(item):
 	print("entrou"+item)
 	if item == "Lamp":
 		adiciona_interface("Lamp")
 	elif item == "Seed":
-		if countSeed == 0:
+		countSeed += 1
+		if seedDisplay==-1:
 			adiciona_interface("Seed")
-			countSeed += 1
-		else:
-			countSeed += 1
-	
+		refreshSeeds()
+		
 func adiciona_interface(item):
 	print("entrou2")
 	if slot == 0:
@@ -36,7 +34,7 @@ func adiciona_interface(item):
 		if item == "Lamp":
 			$MarginContainer/Items/Slot0/Item0/count.visible = false
 		elif item == "Seed":
-			$MarginContainer/Items/Slot0/Item0/count.text = str(countSeed)
+			seedDisplay=0
 		slot += 1
 	else:
 		$MarginContainer/Items/Slot1/Item1/Icon.texture = load("res://assets/img/gui/"+item+".png")
@@ -45,4 +43,21 @@ func adiciona_interface(item):
 		if item == "Lamp":
 			$MarginContainer/Items/Slot1/Item1/count.visible = false
 		elif item == "Seed":
-			$MarginContainer/Items/Slot1/Item1/count.text = str(countSeed)
+			seedDisplay=1
+			pass
+
+	
+func addSeed():
+	verifica_incrementa("Seed")
+	pass
+
+func _on_BlockBed_used_seed():
+	countSeed -= 1
+	refreshSeeds()
+	pass # Replace with function body.
+
+func refreshSeeds():
+	if(seedDisplay==0):
+		$MarginContainer/Items/Slot0/Item0/count.set_text(str(countSeed))
+	elif (seedDisplay==1):
+		$MarginContainer/Items/Slot1/Item1/count.set_text(str(countSeed))

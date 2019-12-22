@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/GUI.gd" type="Script" id=1]
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Quicksand-Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GUI/Lamp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/Quicksand-Regular.otf" type="DynamicFontData" id=4]
@@ -36,6 +36,7 @@ margin_right = 212.0
 margin_bottom = 56.0
 
 [node name="ItemLbl" type="Label" parent="MarginContainer/Items"]
+margin_top = 17.0
 margin_right = 44.0
 margin_bottom = 39.0
 custom_fonts/font = SubResource( 1 )
@@ -47,6 +48,7 @@ margin_right = 128.0
 margin_bottom = 56.0
 
 [node name="Item0" parent="MarginContainer/Items/Slot0" instance=ExtResource( 3 )]
+margin_right = 80.0
 
 [node name="Lbl0" type="Label" parent="MarginContainer/Items/Slot0"]
 margin_top = 38.0
@@ -62,6 +64,7 @@ margin_right = 212.0
 margin_bottom = 56.0
 
 [node name="Item1" parent="MarginContainer/Items/Slot1" instance=ExtResource( 5 )]
+margin_right = 80.0
 
 [node name="Lbl1" type="Label" parent="MarginContainer/Items/Slot1"]
 margin_top = 38.0

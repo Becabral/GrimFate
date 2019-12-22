@@ -2,6 +2,7 @@ extends Area2D
 
 var playerbody
 
+
 func _ready():
 	$CollisionShape2D.disabled=true
 	$LabelPos/useLbl.hide()
@@ -22,4 +23,5 @@ func _on_BlockTreeArea_body_exited(body):
 func _process(_delta):
 	if $LabelPos/useLbl.visible && Input.is_action_pressed("use") :
 		playerbody.seeds +=1
+		get_parent().add()
 		get_parent().queue_free()
