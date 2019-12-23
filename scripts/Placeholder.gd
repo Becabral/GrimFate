@@ -3,7 +3,8 @@ onready var lamp = preload("res://scenes/Lamp.tscn")
 onready var seeds = preload("res://scenes/Seed.tscn")
 
 var lampada
-var semente
+var semente = []
+
 var seedCount = 4 #contador de sementes para evitar erro de testar instancias inexistentes
 
 func _ready():
@@ -17,11 +18,19 @@ func _process(_delta):
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.queue_free()
 		
-	if seedCount>0:
-		if semente.touch == true and Input.is_action_just_pressed("use"): # !!! solucionar esse erro !!!
-			$Interface/GUI.verifica_incrementa("Seed")
-			seedCount -= 1
-			semente.queue_free()
+#	if seedCount>0:
+#		for i in range(seedCount):
+#			print(i)
+#			if semente[i]:
+#				if semente[i].touch == true and Input.is_action_just_pressed("use"): # !!! solucionar esse erro !!!
+#
+#					$Interface/GUI.verifica_incrementa("Seed")
+#					seedCount -= 1
+#					var erase = semente[i]
+#					semente.erase(i)
+#					erase.queue_free()
+#					break
+
 
 func _on_Area2D_body_entered(body):
 	if body.get_name()=="Player":
@@ -39,9 +48,9 @@ func create_lamp():
 	
 func create_seed():
 	for i in range (4): 
-		semente = seeds.instance()
-		semente.position.x = 450 + i*60
-		semente.position.y = 60 + i*60
-		semente.scale.x = 0.2
-		semente.scale.y = 0.2
-		add_child(semente)
+		semente.append(seeds.instance())
+		semente[i].position.x = 450 + i*60
+		semente[i].position.y = 60 + i*60
+		semente[i].scale.x = 0.2
+		semente[i].scale.y = 0.2
+		add_child(semente[i])

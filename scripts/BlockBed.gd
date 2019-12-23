@@ -15,7 +15,6 @@ func _process(_delta):
 		get_parent().add_child(bloco)
 		bloco.position=self.position
 		emit_signal("used_seed")
-		player.seeds-=1
 
 func _on_BlockBed_body_entered(body):
 	if body.get_name()=="Player":

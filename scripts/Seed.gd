@@ -7,7 +7,9 @@ func _ready():
 	pass 
 
 func _process(_delta):
-	pass
+	if touch and Input.is_action_just_pressed("use"):
+		get_parent().get_node("Interface/GUI").addSeed()
+		queue_free()
 
 func _on_Seed_body_entered(body):
 	if body.get_name()=="Player":
