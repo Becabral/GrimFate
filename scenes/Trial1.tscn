@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/img/snowskull/skull.png" type="Texture" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -106,4 +107,22 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( -1644.26, -2115.09 )
 shape = SubResource( 4 )
+
+[node name="skull" type="Sprite" parent="."]
+position = Vector2( 411.505, -51.4624 )
+scale = Vector2( 0.131508, 0.131508 )
+texture = ExtResource( 6 )
+offset = Vector2( -77.4214, -207.479 )
+
+[node name="skull3" type="Sprite" parent="."]
+position = Vector2( -1636.26, -2852 )
+scale = Vector2( 1.14848, 1.14848 )
+texture = ExtResource( 6 )
+offset = Vector2( -77.4214, -207.479 )
+
+[node name="skull2" type="Sprite" parent="."]
+position = Vector2( 571.339, -50.649 )
+scale = Vector2( 0.131508, 0.131508 )
+texture = ExtResource( 6 )
+offset = Vector2( -77.4214, -207.479 )
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
