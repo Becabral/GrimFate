@@ -74,6 +74,7 @@ func check_box_collision():
 	if abs(movedir.x) + abs(movedir.y) > 1:
 		return
 	var box = get_slide_collision(0).collider
-	box.push(pushSPEED*movedir)
+	if (box.has_method("push")):
+		box.push(pushSPEED*movedir)
 	
 	
