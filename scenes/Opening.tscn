@@ -52,7 +52,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Beginning" parent="." instance=ExtResource( 2 )]
-position = Vector2( -0.865112, 601.975 )
+position = Vector2( -2.88361, 599.956 )
 
 [node name="Orb" type="Node2D" parent="."]
 position = Vector2( 512, 300 )
