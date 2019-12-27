@@ -32,7 +32,6 @@ __meta__ = {
 }
 
 [node name="Floor" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 511.1, 584.65 )
@@ -67,14 +66,13 @@ position = Vector2( 2163.22, 560.258 )
 position = Vector2( 2163.03, 422.275 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+position = Vector2( 0, 24.1108 )
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Interface" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="GUI" parent="Interface" instance=ExtResource( 8 )]
-margin_left = 0.79541
-margin_right = 0.79541
+margin_left = -0.72522
+margin_right = -0.72522
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
