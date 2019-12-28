@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/player/player.png" type="Texture" id=2]
+[ext_resource path="res://scenes/LuzLamp.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.3941, 30.5599 )
+extents = Vector2( 24.1316, 31.2093 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idledown"
@@ -151,21 +152,25 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -0.00228882, -0.425583 )
+light_mask = 0
+position = Vector2( 8.37775, -5.31393 )
+z_as_relative = false
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 0
 scale = Vector2( 3.53828, 3.53828 )
+z_index = 1
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 8
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.857361, -0.857376 )
 shape = SubResource( 1 )
+
+[node name="LuzLamp" parent="." instance=ExtResource( 3 )]
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0

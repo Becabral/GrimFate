@@ -11,7 +11,6 @@ func _ready():
 	$Player/Camera2D.offset_v=-4
 	create_lamp()
 	
-	
 func _process(_delta):
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):
@@ -20,7 +19,6 @@ func _process(_delta):
 			lampada.queue_free()
 	else: #If player has lamp, turn the light on
 		$Player/Light2D.enabled=true
-	
 
 func create_lamp():
 	lampada = lamp.instance()
@@ -30,10 +28,9 @@ func create_lamp():
 	lampada.scale.y = 0.2
 	add_child(lampada)
  
-
-
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
 		if has_node("/root/SceneChanger"):
 			get_node("/root/SceneChanger").change_scene("res://scenes/River1.tscn")
+			$Player.lamp = false
 	pass # Replace with function body.

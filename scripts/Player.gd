@@ -10,6 +10,7 @@ var lamp = false
 var seeds = 0
 
 
+
 # estado do movimento do personagem "topView" ou "sideView"
 var STATE = "topView"
 
@@ -21,6 +22,11 @@ func _physics_process(_delta):
 	controls_loop()
 	movement_loop()
 	spritedir_loop()
+	
+	if lamp == false:
+		$LuzLamp.visible = false
+	else:
+		$LuzLamp.visible = true
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0):
