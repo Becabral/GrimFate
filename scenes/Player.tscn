@@ -1,14 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/player/player.png" type="Texture" id=2]
 [ext_resource path="res://scenes/LuzLamp.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 62.6975
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.1316, 31.2093 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "idledown"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -23,8 +25,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "idleleft"
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -39,8 +40,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "idleright"
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -55,8 +55,7 @@ tracks/0/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "idleup"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -71,8 +70,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "walkdown"
+[sub_resource type="Animation" id=7]
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -88,8 +86,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "walkleft"
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -104,8 +101,7 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "walkright"
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -120,8 +116,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "walkup"
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -136,8 +131,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "CameraPan"
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:offset")
 tracks/0/interp = 1
@@ -166,22 +160,27 @@ vframes = 2
 hframes = 8
 frame = 1
 
+[node name="ColisorLuz" type="CollisionShape2D" parent="."]
+position = Vector2( -1.75687, -33.8076 )
+shape = SubResource( 1 )
+disabled = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.857361, -0.857376 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="LuzLamp" parent="." instance=ExtResource( 3 )]
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/idledown = SubResource( 2 )
-anims/idleleft = SubResource( 3 )
-anims/idleright = SubResource( 4 )
-anims/idleup = SubResource( 5 )
-anims/walkdown = SubResource( 6 )
-anims/walkleft = SubResource( 7 )
-anims/walkright = SubResource( 8 )
-anims/walkup = SubResource( 9 )
+anims/idledown = SubResource( 3 )
+anims/idleleft = SubResource( 4 )
+anims/idleright = SubResource( 5 )
+anims/idleup = SubResource( 6 )
+anims/walkdown = SubResource( 7 )
+anims/walkleft = SubResource( 8 )
+anims/walkright = SubResource( 9 )
+anims/walkup = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -189,4 +188,4 @@ drag_margin_v_enabled = false
 offset_v = -1.0
 
 [node name="AnimPlayerCamera" type="AnimationPlayer" parent="Camera2D"]
-anims/CameraPan = SubResource( 10 )
+anims/CameraPan = SubResource( 11 )

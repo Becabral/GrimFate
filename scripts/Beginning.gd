@@ -2,7 +2,6 @@ extends Node2D
 onready var lamp = preload("res://scenes/Lamp.tscn")
 #onready var Level1 = preload("res://scenes/Level 1.tscn")
 var lampada
-
 	
 func _ready():
 	# inicializa o personagem com o estado e a direção pra onde olha
@@ -15,6 +14,7 @@ func _process(_delta):
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):
 			$Player.lamp = true # <- usado para mudar o sprite com a lanterna na mao
+			$Fog2.lamp = true
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.queue_free()
 	else: #If player has lamp, turn the light on
