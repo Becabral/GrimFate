@@ -1,11 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Lamp.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/items/lampiao.png" type="Texture" id=2]
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/img/player/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 135.512, 108.677 )
+extents = Vector2( 135.512, 142.521 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Pulse"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Luz:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.015334, 1, 2 ),
+"transitions": PoolRealArray( 1, 1.8025, 0.554785 ),
+"update": 0,
+"values": [ 2.0, 0.01, 2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Luz:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.39168, 0.36065 ), Vector2( 0.192, 0.161 ), Vector2( 0.39168, 0.36065 ) ]
+}
 
 [node name="Lamp" type="Area2D"]
 script = ExtResource( 1 )
@@ -19,5 +49,15 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="useLbl" parent="." instance=ExtResource( 3 )]
+
+[node name="Luz" type="Light2D" parent="."]
+position = Vector2( 0.679974, 0.12817 )
+scale = Vector2( 0.351744, 0.32072 )
+texture = ExtResource( 4 )
+color = Color( 0.74902, 0.72549, 0.0980392, 1 )
+energy = 1.65237
+
+[node name="LuzAnimation" type="AnimationPlayer" parent="."]
+anims/Pulse = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Lamp_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Lamp_body_exited"]
