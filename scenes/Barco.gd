@@ -4,7 +4,7 @@ var SPEED = 1.5
 var move = 0
 
 func _ready():
-	pass # Replace with function body.
+	$Anim.play("position")
 
 func _physics_process(_delta):
 	if state == true:

@@ -18,6 +18,7 @@ func _process(_delta):
 		$Player.barco = true
 		$Player.SPEED = 0 
 		$Player.position.x = $Barco.position.x - 67
+		$Player.position.y = $Barco.position.y - 30
 	
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):

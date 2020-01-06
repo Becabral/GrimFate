@@ -9,8 +9,8 @@
 [ext_resource path="res://assets/img/snowskull/grims fate intro.png" type="Texture" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Fog.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -23,7 +23,7 @@ extents = Vector2( 46.4074, 254.352 )
 [node name="Beginning" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 330.402, 566.959, -606.75, 595.599 ],
+"_edit_horizontal_guides_": [ 330.402, 566.959, -606.75, 595.599, 567.013 ],
 "_edit_vertical_guides_": [ 532.872, 896.093, -165.596, -782.26, -784.954, 2511.36 ]
 }
 
@@ -89,11 +89,12 @@ position = Vector2( 2163.03, 422.275 )
 position = Vector2( 0, 24.1108 )
 shape = SubResource( 3 )
 
+[node name="Barco" parent="." instance=ExtResource( 10 )]
+z_index = 2
+
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="Interface" instance=ExtResource( 10 )]
+[node name="GUI" parent="Interface" instance=ExtResource( 11 )]
 margin_left = -0.72522
 margin_right = -0.72522
-
-[node name="Barco" parent="." instance=ExtResource( 11 )]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Barco.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/barco.png" type="Texture" id=2]
@@ -6,10 +6,38 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 345.009, 140.648 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "position"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 567, -0.25, 0, 0.25, 0, 590, -0.25, 0, 0.25, 0, 567, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+
 [node name="Barco" type="Area2D"]
-position = Vector2( 1164.55, 568.757 )
+position = Vector2( 1164.55, 586.067 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 532.85 ]
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 122.376, -11.7971 )
@@ -17,4 +45,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/position = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Barco_body_entered"]
