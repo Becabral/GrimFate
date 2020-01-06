@@ -20,8 +20,6 @@ func _on_BlockBed_body_entered(body):
 	if body.get_name()=="Player":
 		$LabelPos/useLbl.show()
 
-
-
 func _on_BlockBed_body_exited(body):
 	if body.get_name()=="Player":
 		$LabelPos/useLbl.hide()

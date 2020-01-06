@@ -54,6 +54,7 @@ Direct transition to Grim End"
 [node name="BlockTree" parent="." instance=ExtResource( 3 )]
 
 [node name="BlockBed" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 533.146, 278.445 )
 script = ExtResource( 4 )
 
