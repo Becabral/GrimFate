@@ -37,7 +37,7 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 412.734, 537.955 )
+position = Vector2( 412.734, 450 )
 
 [node name="Light2D" type="Light2D" parent="Player"]
 enabled = false

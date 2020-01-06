@@ -31,7 +31,7 @@ func _physics_process(_delta):
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
-		anim_switch("walk")
+		anim_switch("move")
 	else:
 		anim_switch("idle")
 		
