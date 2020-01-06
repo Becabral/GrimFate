@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lantern.png-bbcfd5bfbab3414d49a1d8706d8a79db.stex"
+path="res://.import/lampiao.png-9d5a4d92e076c62f0cd07beb4742add3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/items/lantern.png"
-dest_files=[ "res://.import/lantern.png-bbcfd5bfbab3414d49a1d8706d8a79db.stex" ]
+source_file="res://assets/img/items/lampiao.png"
+dest_files=[ "res://.import/lampiao.png-9d5a4d92e076c62f0cd07beb4742add3.stex" ]
 
 [params]
 

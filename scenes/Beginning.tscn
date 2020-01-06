@@ -23,8 +23,8 @@ extents = Vector2( 46.4074, 254.352 )
 [node name="Beginning" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 330.402, 566.959 ],
-"_edit_vertical_guides_": [ 532.872, 896.093, -165.596 ]
+"_edit_horizontal_guides_": [ 330.402, 566.959, -606.75, 595.599 ],
+"_edit_vertical_guides_": [ 532.872, 896.093, -165.596, -782.26, -784.954, 2511.36 ]
 }
 
 [node name="Background" type="Sprite" parent="."]
