@@ -3,7 +3,8 @@ extends KinematicBody2D
 export var SPEED = 200
 export var pushSPEED = 120
 #var cameraY = -300
-var is_moving = false
+var is_moving_left = false
+var is_moving_right=false
 
 #items
 var lamp = false
@@ -31,21 +32,26 @@ func _physics_process(_delta):
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
-		if !is_moving:
-			is_moving = true
-			if spritedir == "left":
-				$AnimatedSprite.flip_h = true;
-				$Anim.play("move_left")
-			else:
-				$AnimatedSprite.flip_h = false;
-				$Anim.play("move")
+		
+		if spritedir == "left" && !is_moving_left:
+			#$AnimatedSprite.flip_h = true;
+			$Anim.play("moveleft")
+			is_moving_left = true
+			is_moving_right = false
+			
+		elif spritedir == "right" && !is_moving_right:
+			#$AnimatedSprite.flip_h = false;
+			$Anim.play("moveright")
+			is_moving_left = false
+			is_moving_right = true
 	else:
-		if is_moving:
-			is_moving = false
+		if is_moving_left or is_moving_right:
+			is_moving_left = false
+			is_moving_right = false
 			if spritedir == "left":
-				$Anim.play_backwards("move_left")
+				$Anim.play_backwards("moveleft")
 			else:
-				$Anim.play_backwards("move")
+				$Anim.play_backwards("moveright")
 		
 
 func controls_loop():
