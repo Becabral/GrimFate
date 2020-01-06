@@ -17,7 +17,7 @@ func _process(_delta):
 	if $Barco.state == true:
 		$Player.barco = true
 		$Player.SPEED = 0 
-		$Player.position.x = $Barco.position.x - 67
+		$Player.position.x = $Barco.position.x - 17
 		$Player.position.y = $Barco.position.y - 30
 	
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída

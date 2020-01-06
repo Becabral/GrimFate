@@ -32,7 +32,7 @@ tracks/1/keys = {
 }
 
 [node name="Barco" type="Area2D"]
-position = Vector2( 1164.55, 586.067 )
+position = Vector2( 1100.88, 562.282 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -40,10 +40,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 122.376, -11.7971 )
+position = Vector2( 121.528, -49.9477 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 149.797, -167.076 )
+scale = Vector2( 1.7343, 1.7343 )
 texture = ExtResource( 2 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]

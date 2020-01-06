@@ -91,6 +91,7 @@ position = Vector2( 0, 24.1108 )
 shape = SubResource( 3 )
 
 [node name="Barco" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1162.62, 553.221 )
 z_index = 2
 
 [node name="Interface" type="CanvasLayer" parent="."]
