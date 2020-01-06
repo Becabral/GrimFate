@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/BeginBG.png" type="Texture" id=2]
@@ -10,20 +10,21 @@
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Fog.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=10]
-
-[sub_resource type="RectangleShape2D" id=3]
+[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 523, 13.0677 )
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 523, 13.0677 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 46.4074, 254.352 )
 
 [node name="Beginning" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 330.402, 566.959 ],
-"_edit_vertical_guides_": [ 532.872, 896.093 ]
+"_edit_vertical_guides_": [ 532.872, 896.093, -165.596 ]
 }
 
 [node name="Background" type="Sprite" parent="."]
@@ -51,7 +52,7 @@ modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
 z_index = 1
 amount = 60
 particle_scene = ExtResource( 6 )
-emission_shape = SubResource( 3 )
+emission_shape = SubResource( 1 )
 impulse = 0.0
 initial_rotation_degrees = 22.5
 
@@ -64,7 +65,7 @@ editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 511.1, 584.65 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Floor/CollisionShape2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -86,11 +87,13 @@ position = Vector2( 2163.03, 422.275 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( 0, 24.1108 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="Interface" instance=ExtResource( 10 )]
 margin_left = -0.72522
 margin_right = -0.72522
+
+[node name="Barco" parent="." instance=ExtResource( 11 )]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

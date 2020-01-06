@@ -2,12 +2,11 @@ extends RigidBody2D
 
 var lamp = false
 var visivel = true
-var teste = null
 
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if lamp == true:
 		$Colisor.disabled = true
 		teste_tocando()

@@ -74,8 +74,7 @@ func _ready():
 		var total_area  = circle_area + rect_area
 		_capsule_circle_frac = circle_area / total_area
 
-func _physics_process(delta):
-
+func _physics_process(_delta):
 	if ! emitting:
 		return
 

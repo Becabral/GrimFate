@@ -7,9 +7,9 @@ export var pushSPEED = 120
 
 #items
 var lamp = false
-var seeds = 0
+#var seeds = 0
 
-
+var barco = false
 
 # estado do movimento do personagem "topView" ou "sideView"
 var STATE = "topView"
@@ -19,9 +19,10 @@ var spritedir = "down"
 var movedir = Vector2(0,0)
 
 func _physics_process(_delta):
-	controls_loop()
-	movement_loop()
-	spritedir_loop()
+	if barco != true:
+		controls_loop()
+		movement_loop()
+		spritedir_loop()
 	
 	if lamp == false:
 		$LuzLamp.visible = false
@@ -29,7 +30,7 @@ func _physics_process(_delta):
 		$LuzLamp.visible = true
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
-	if movedir != Vector2(0,0):
+	if movedir != Vector2(0,0) and barco == false:
 		anim_switch("walk")
 	else:
 		anim_switch("idle")
@@ -51,9 +52,9 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	motion=move_and_slide(motion, Vector2(0,0))
 
-	#box push
-	if get_slide_count()>0:
-		check_box_collision()
+#	#box push
+#	if get_slide_count()>0:
+#		check_box_collision()
 	
 func spritedir_loop():
 	match movedir:

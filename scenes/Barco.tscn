@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Barco.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/environment/barco.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 345.009, 140.648 )
+
+[node name="Barco" type="Area2D"]
+position = Vector2( 1164.55, 568.757 )
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 122.376, -11.7971 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Barco_body_entered"]

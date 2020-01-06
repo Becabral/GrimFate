@@ -10,7 +10,7 @@ func _ready():
 	$MarginContainer/Items/Slot1.visible = false
 	player=get_parent().get_parent().get_node("Player")
 
-func _process(delta):
+func _process(_delta):
 	$MarginContainer/Items/ItemLbl.rect_position.y = 0
 	$MarginContainer/Items/Slot0.margin_left = 58
 	$MarginContainer/Items/Slot1.margin_left = 152

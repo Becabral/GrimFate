@@ -183,6 +183,7 @@ anims/walkright = SubResource( 9 )
 anims/walkup = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 300, 0 )
 current = true
 drag_margin_v_enabled = false
 offset_v = -1.0

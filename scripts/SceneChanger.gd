@@ -3,18 +3,18 @@ extends CanvasLayer
 #levels with fades between them.
 #Also preloads them so they don't take as much time.
 
-onready var Trial1 = preload("res://scenes/Trial1.tscn")
-onready var Trial2 = preload("res://scenes/Trial2.tscn")
-onready var Trial1E = preload("res://scenes/Trial1Entrance.tscn")
-onready var Trial2E = preload("res://scenes/Trial2Entrance.tscn")
-onready var River1 = preload("res://scenes/River1.tscn")
-onready var River2 = preload("res://scenes/River2.tscn")
-onready var GrimEnd = preload("res://scenes/GrimEnd.tscn")
+#onready var Trial1 = preload("res://scenes/Trial1.tscn")
+#onready var Trial2 = preload("res://scenes/Trial2.tscn")
+#onready var Trial1E = preload("res://scenes/Trial1Entrance.tscn")
+#onready var Trial2E = preload("res://scenes/Trial2Entrance.tscn")
+#onready var River1 = preload("res://scenes/River1.tscn")
+#onready var River2 = preload("res://scenes/River2.tscn")
+#onready var GrimEnd = preload("res://scenes/GrimEnd.tscn")
 
 signal scene_changed()
 
 onready var animation_player = $AnimationPlayer
-onready var black = $Control/Black
+#onready var black = $Control/Black
 
 func change_scene(path):
 	animation_player.play("Fade")
