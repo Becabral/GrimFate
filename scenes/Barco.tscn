@@ -44,8 +44,8 @@ position = Vector2( 121.528, -49.9477 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 149.797, -167.076 )
-scale = Vector2( 1.7343, 1.7343 )
+position = Vector2( 182.975, -274.771 )
+scale = Vector2( 0.855826, 0.855826 )
 texture = ExtResource( 2 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
