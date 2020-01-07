@@ -31,8 +31,8 @@ func _process(_delta):
 
 func create_lamp():
 	lampada = lamp.instance()
-	lampada.position.x = -165.21
-	lampada.position.y = 545.314
+	lampada.position.x = -25
+	lampada.position.y = 480
 	lampada.scale.x = 0.2
 	lampada.scale.y = 0.2
 	add_child(lampada)

@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/img/player/light.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 135.512, 142.521 )
+extents = Vector2( 241.692, 230.945 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Pulse"
@@ -51,11 +51,15 @@ shape = SubResource( 1 )
 [node name="useLbl" parent="." instance=ExtResource( 3 )]
 
 [node name="Luz" type="Light2D" parent="."]
-position = Vector2( 0.679974, 0.12817 )
+show_behind_parent = true
+light_mask = 3
+position = Vector2( 2.04036, -2.59258 )
 scale = Vector2( 0.351744, 0.32072 )
 texture = ExtResource( 4 )
 color = Color( 0.74902, 0.72549, 0.0980392, 1 )
 energy = 1.65237
+shadow_enabled = true
+shadow_color = Color( 0.772549, 0.694118, 0.0470588, 0.878431 )
 
 [node name="LuzAnimation" type="AnimationPlayer" parent="."]
 anims/Pulse = SubResource( 2 )
