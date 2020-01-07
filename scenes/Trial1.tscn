@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Hood.gd" type="Script" id=4]
-[ext_resource path="res://assets/img/image 12.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/trial 1/image 12.png" type="Texture" id=5]
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/img/trial 1/Group 36.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -79,10 +80,13 @@ extents = Vector2( 112.828, 56.8174 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 81.2255, 33.674 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 48.8906, 45.3635 )
+
 [node name="Level 1" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Group 99" type="Sprite" parent="."]
+[node name="ReferenceBG" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( -713.122, -1459.99 )
 scale = Vector2( 0.6, 0.6 )
@@ -96,7 +100,7 @@ tile_data = PoolIntArray( -5636165, 7, 0, -5636164, 7, 0, -5636163, 7, 0, -56361
 
 [node name="Hood" type="Area2D" parent="."]
 editor/display_folded = true
-position = Vector2( 476.594, -614.615 )
+position = Vector2( 497.594, -613.615 )
 scale = Vector2( 0.663149, 0.663149 )
 script = ExtResource( 4 )
 
@@ -104,17 +108,19 @@ script = ExtResource( 4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hood"]
+visible = false
 shape = SubResource( 3 )
 
 [node name="useLbl" parent="Hood" instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 480, 500 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -20.0
-autoplay = true
 
 [node name="NextArea" type="Area2D" parent="."]
 position = Vector2( 1051.16, 482.991 )
@@ -126,6 +132,27 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( -1644.26, -2115.09 )
 shape = SubResource( 5 )
+
+[node name="FireEvent" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="FireSprite" type="Sprite" parent="FireEvent"]
+position = Vector2( 496.764, -390.534 )
+scale = Vector2( 1.06746, 1.06746 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent"]
+position = Vector2( 496.784, -396.991 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent/StaticBody2D"]
+position = Vector2( 496.784, -396.991 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

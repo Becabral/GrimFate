@@ -7,12 +7,16 @@ var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$useLbl.hide()
+	get_parent().get_node("FireEvent").hide()
+	get_parent().get_node("FireEvent/StaticBody2D/CollisionShape2D").disabled=true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_pressed("use") && touch):
 			player.has_hood=true
+			get_parent().get_node("FireEvent").show()
+			get_parent().get_node("FireEvent/StaticBody2D/CollisionShape2D").disabled=false
 			queue_free()
 #	pass
 
