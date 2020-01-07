@@ -64,10 +64,10 @@
 [ext_resource path="res://assets/img/PNG-lanterna/lateral-lanterna0060.png" type="Texture" id=62]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 62.6975
+radius = 106.815
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24.1316, 31.2093 )
+extents = Vector2( 27.0147, 71.5862 )
 
 [sub_resource type="Animation" id=3]
 loop = true
@@ -204,13 +204,13 @@ script = ExtResource( 1 )
 
 [node name="ColisorLuz" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( -1.75687, -33.8076 )
+position = Vector2( 7.17849, -77.7035 )
 shape = SubResource( 1 )
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 0.857361, -0.857376 )
+position = Vector2( 4.34905, -41.8693 )
 shape = SubResource( 2 )
 
 [node name="LuzLamp" parent="." instance=ExtResource( 2 )]
@@ -236,7 +236,7 @@ anims/walkup = SubResource( 13 )
 position = Vector2( 30.2505, -76.9459 )
 frames = SubResource( 14 )
 animation = "idle"
-frame = 30
+frame = 58
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 
