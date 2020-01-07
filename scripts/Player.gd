@@ -5,6 +5,7 @@ export var pushSPEED = 120
 #var cameraY = -300
 var is_moving_left = false
 var is_moving_right=false
+var can_dash = true
 
 #items
 var lamp = false
@@ -70,6 +71,9 @@ func controls_loop():
 	# se o estado for igual a "topView", permite que o personagem mova em ambos os eixos
 	if (STATE == "topView"):
 		movedir.y = -int(UP) + int(DOWN)
+		
+	if (Input.is_action_pressed("ui_focus_next") && can_dash):
+		dash()
 	
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
@@ -106,5 +110,13 @@ func check_box_collision():
 	var box = get_slide_collision(0).collider
 	if (box.has_method("push")):
 		box.push(pushSPEED*movedir)
+
+func dash():
+	can_dash=false
+	SPEED=2000
+	yield(get_tree().create_timer(0.1), "timeout")
+	SPEED=200
+	yield(get_tree().create_timer(0.3), "timeout")
+	can_dash=true
 	
 	
