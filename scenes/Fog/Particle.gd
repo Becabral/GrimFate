@@ -11,6 +11,7 @@ func _process(_delta):
 		$Colisor.disabled = true
 		teste_tocando()
 	
+#
 func _on_Area2D_body_entered(body):
 	if body.get_name()=="Player" and lamp == true:
 		visivel = false

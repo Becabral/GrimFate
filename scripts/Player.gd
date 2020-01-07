@@ -19,7 +19,6 @@ var STATE = "topView"
 var spritedir = "down"
 var movedir = Vector2(0,0)
 
-
 func _physics_process(_delta):
 	if barco != true:
 		controls_loop()
@@ -27,13 +26,9 @@ func _physics_process(_delta):
 		spritedir_loop()
 	
 	if lamp == false:
-		#$LuzLamp.visible = false
-		$CollisionShape2D.disabled = false
-		$ColisorLuz.disabled = true
+		$LuzLamp.visible = false
 	else:
-		$ColisorLuz.disabled = false
-		$CollisionShape2D.disabled = true
-		#$LuzLamp.visible = true
+		$LuzLamp.visible = true
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:

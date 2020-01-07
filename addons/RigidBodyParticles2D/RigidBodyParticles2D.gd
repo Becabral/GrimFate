@@ -109,8 +109,8 @@ func _physics_process(_delta):
 
 			elif emission_shape.get_class() == 'RectangleShape2D':
 				particle.lamp = lamp
-				particle_pos.x = rand_range(532,1036)
-				particle_pos.y = rand_range(120,566)
+				particle_pos.x = rand_range(532,896)
+				particle_pos.y = rand_range(330,566)
 
 			elif emission_shape.get_class() == 'SegmentShape2D':
 				var rand     = randf()
