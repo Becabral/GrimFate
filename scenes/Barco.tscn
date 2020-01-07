@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/img/environment/barco.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 345.009, 140.648 )
+extents = Vector2( 279.439, 140.648 )
 
 [sub_resource type="Animation" id=2]
 length = 2.0
@@ -39,7 +39,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 121.528, -49.9477 )
+position = Vector2( 280.414, -56.9163 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
