@@ -7,9 +7,11 @@ var is_moving_left = false
 var is_moving_right=false
 var can_dash = true
 
+
 #items
 var lamp = false
 var seeds = 0
+var has_hood=false
 
 var barco = false
 
@@ -72,7 +74,7 @@ func controls_loop():
 	if (STATE == "topView"):
 		movedir.y = -int(UP) + int(DOWN)
 		
-	if (Input.is_action_pressed("ui_focus_next") && can_dash):
+	if (Input.is_action_pressed("ui_focus_next") && can_dash && has_hood):
 		dash()
 	
 func movement_loop():
