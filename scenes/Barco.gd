@@ -12,7 +12,5 @@ func _physics_process(_delta):
 	position = position + Vector2(move, 0) * SPEED
 
 func _on_Barco_body_entered(body):
-	print("entrou")
 	if body.get_name()=="Player":
-		print("no barco")
 		state = true

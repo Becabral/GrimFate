@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/River1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/img/environment/RiverBG.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Stoke-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/RiverBeginning.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.9204, 241.674 )
@@ -17,12 +18,15 @@ font_data = ExtResource( 4 )
 [node name="River1" type="Node2D"]
 position = Vector2( 1.73633, 0 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 578.916, 120.717, 1174.05 ]
+}
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 146.815, 434.154 )
+position = Vector2( 60.538, 560.261 )
 
 [node name="RiverBG" type="Sprite" parent="."]
-position = Vector2( 2075.56, 221.725 )
+position = Vector2( 2075.56, 311.826 )
 scale = Vector2( 0.433119, 1 )
 texture = ExtResource( 3 )
 
@@ -30,31 +34,26 @@ texture = ExtResource( 3 )
 position = Vector2( 4012.37, 263.827 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 115.876 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 330.0
-margin_top = 159.0
-margin_right = 1050.0
-margin_bottom = 335.0
+margin_top = 219.085
+margin_right = 2824.0
+margin_bottom = 430.085
 custom_fonts/font = SubResource( 2 )
 text = "Interesting species… they take their life for granted… 
 they think they own the world"
 
-[node name="River1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 373.941, 480.51 )
-offset = Vector2( 395.816, -0.951508 )
+[node name="River4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2722.29, 614.518 )
+scale = Vector2( 3.01718, 1.12431 )
+z_index = 1
+frame = 0
+offset = Vector2( -212.821, -2.5654 )
 
-[node name="River2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1678.22, 480.563 )
-frame = 1
-offset = Vector2( 395.816, -0.951508 )
-flip_h = true
-
-[node name="River3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2982.29, 480.562 )
-offset = Vector2( 395.816, -0.951508 )
+[node name="Barco" parent="." instance=ExtResource( 6 )]
+position = Vector2( 38.074, 587.388 )
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
