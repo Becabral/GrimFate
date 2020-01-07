@@ -23,6 +23,11 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://scenes/SceneChanger.tscn"
 
+[display]
+
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+
 [importer_defaults]
 
 texture={
@@ -31,7 +36,7 @@ texture={
 "compress/lossy_quality": 0.7,
 "compress/mode": 0,
 "compress/normal_map": 0,
-"detect_3d": false,
+"detect_3d": true,
 "flags/anisotropic": false,
 "flags/filter": true,
 "flags/mipmaps": false,

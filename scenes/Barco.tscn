@@ -7,7 +7,6 @@
 extents = Vector2( 345.009, 140.648 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "position"
 length = 2.0
 loop = true
 tracks/0/type = "bezier"
@@ -44,7 +43,7 @@ position = Vector2( 121.528, -49.9477 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 182.975, -274.771 )
+position = Vector2( 183.859, -274.771 )
 scale = Vector2( 0.855826, 0.855826 )
 texture = ExtResource( 2 )
 

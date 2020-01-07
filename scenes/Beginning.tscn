@@ -24,7 +24,7 @@ extents = Vector2( 46.4074, 254.352 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 330.402, 566.959, -606.75, 595.599, 567.013 ],
-"_edit_vertical_guides_": [ 532.872, 896.093, -165.596, -782.26, -784.954, 2511.36 ]
+"_edit_vertical_guides_": [ 532.872, -165.596, -782.26, -784.954, 2511.36 ]
 }
 
 [node name="Background" type="Sprite" parent="."]
@@ -91,12 +91,12 @@ position = Vector2( 0, 24.1108 )
 shape = SubResource( 3 )
 
 [node name="Barco" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1162.62, 553.221 )
+position = Vector2( 1163.1, 553.221 )
 z_index = 2
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="Interface" instance=ExtResource( 11 )]
-margin_left = -0.72522
-margin_right = -0.72522
+margin_left = -0.515991
+margin_right = -0.515991
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

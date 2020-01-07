@@ -8,8 +8,8 @@ func _ready():
 	$Player.STATE = "sideView"
 	$Player.spritedir = "right"
 	#inicializa a posição da camera em relação ao personagem
-	$Player/Camera2D.offset_v = -4
-	$Player/Camera2D.set_offset(Vector2(300,0))
+	#$Player/Camera2D.offset_v = 0
+	$Player/Camera2D.set_offset(Vector2(300,-180))
 	create_lamp()
 	
 func _process(_delta):

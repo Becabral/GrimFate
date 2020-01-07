@@ -236,14 +236,15 @@ anims/walkup = SubResource( 13 )
 position = Vector2( 30.2505, -76.9459 )
 frames = SubResource( 14 )
 animation = "idle"
-frame = 30
+frame = 4
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 300, 0 )
 current = true
+limit_smoothed = true
 drag_margin_v_enabled = false
+smoothing_enabled = true
 offset_v = -1.0
 
 [node name="AnimPlayerCamera" type="AnimationPlayer" parent="Camera2D"]
