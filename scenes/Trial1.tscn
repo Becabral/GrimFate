@@ -89,6 +89,7 @@ extents = Vector2( 48.8906, 45.3635 )
 script = ExtResource( 1 )
 
 [node name="ReferenceBG" type="Sprite" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( -713.122, -1459.99 )
 scale = Vector2( 0.6, 0.6 )
@@ -106,8 +107,7 @@ scale = Vector2( 0.663149, 0.663149 )
 script = ExtResource( 4 )
 
 [node name="cloack" type="Sprite" parent="Hood"]
-position = Vector2( -21.3179, -1.69305 )
-scale = Vector2( 1, 1 )
+position = Vector2( -8.63937, -0.201351 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hood"]
