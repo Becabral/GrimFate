@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/img/trial 1/Group 36.png" type="Texture" id=9]
 [ext_resource path="res://scenes/fire.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Tortch.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -191,6 +192,14 @@ animation = "default"
 position = Vector2( -1735.41, -1359.55 )
 scale = Vector2( 3.031, 2.924 )
 animation = "fire_blue"
+
+[node name="torch" parent="." instance=ExtResource( 11 )]
+position = Vector2( 285.068, -640 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="torch2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 700, -640 )
+scale = Vector2( 0.7, 0.7 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
