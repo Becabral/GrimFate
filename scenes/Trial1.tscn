@@ -159,23 +159,38 @@ shape = SubResource( 6 )
 
 [node name="Fire" parent="." instance=ExtResource( 10 )]
 position = Vector2( 221.686, 251.398 )
+animation = "default"
 
 [node name="Fire2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 220.737, 175.15 )
+animation = "fire2"
 
 [node name="Fire3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 222.719, 40.5591 )
+animation = "fire1"
+
+[node name="Fire_blue" parent="." instance=ExtResource( 10 )]
+position = Vector2( 221.015, 110.587 )
+animation = "fire_blue"
 
 [node name="Fire4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 222.94, -25.7448 )
+animation = "default"
 
 [node name="Fire5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 491.432, -425.175 )
 scale = Vector2( 3.031, 2.924 )
+animation = "default"
 
 [node name="Fire6" parent="." instance=ExtResource( 10 )]
 position = Vector2( -586.451, -770.735 )
 scale = Vector2( 3.031, 2.924 )
+animation = "default"
+
+[node name="Fire_blue2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -1735.41, -1359.55 )
+scale = Vector2( 3.031, 2.924 )
+animation = "fire_blue"
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

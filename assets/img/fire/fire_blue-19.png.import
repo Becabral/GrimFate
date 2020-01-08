@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grims fate illustrations-04.png-52e989c83a3b7de33e1b3dd3ceb55393.stex"
+path="res://.import/fire_blue-19.png-633940a973cfe4c86100e9afd83d5b60.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/fire/grims fate illustrations-04.png"
-dest_files=[ "res://.import/grims fate illustrations-04.png-52e989c83a3b7de33e1b3dd3ceb55393.stex" ]
+source_file="res://assets/img/fire/fire_blue-19.png"
+dest_files=[ "res://.import/fire_blue-19.png-633940a973cfe4c86100e9afd83d5b60.stex" ]
 
 [params]
 
