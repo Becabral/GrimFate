@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/img/trial 1/Group 36.png" type="Texture" id=9]
-[ext_resource path="res://scenes/fire.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Tortch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Tortch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/fire.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -89,9 +90,8 @@ extents = Vector2( 48.8906, 45.3635 )
 script = ExtResource( 1 )
 
 [node name="ReferenceBG" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.113725 )
-position = Vector2( -713.122, -1459.99 )
+position = Vector2( -713.755, -1459.99 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
@@ -159,48 +159,111 @@ collision_mask = 2
 position = Vector2( 496.784, -396.991 )
 shape = SubResource( 6 )
 
-[node name="Fire" parent="." instance=ExtResource( 10 )]
-position = Vector2( 221.686, 251.398 )
-animation = "default"
-
-[node name="Fire2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 220.737, 175.15 )
-animation = "fire2"
-
-[node name="Fire3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 222.719, 40.5591 )
-animation = "fire1"
-
-[node name="Fire_blue" parent="." instance=ExtResource( 10 )]
-position = Vector2( 221.015, 110.587 )
-animation = "fire_blue"
-
-[node name="Fire4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 222.94, -25.7448 )
-animation = "default"
-
-[node name="Fire5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 491.432, -425.175 )
-scale = Vector2( 3.031, 2.924 )
-animation = "default"
-
-[node name="Fire6" parent="." instance=ExtResource( 10 )]
-position = Vector2( -586.451, -770.735 )
-scale = Vector2( 3.031, 2.924 )
-animation = "default"
-
-[node name="Fire_blue2" parent="." instance=ExtResource( 10 )]
-position = Vector2( -1735.41, -1359.55 )
-scale = Vector2( 3.031, 2.924 )
-animation = "fire_blue"
-
-[node name="torch" parent="." instance=ExtResource( 11 )]
+[node name="torch" parent="." instance=ExtResource( 10 )]
 position = Vector2( 285.068, -640 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="torch2" parent="." instance=ExtResource( 11 )]
+[node name="torch2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 700, -640 )
 scale = Vector2( 0.7, 0.7 )
+
+[node name="Fire" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( -1201.76, -1486.83 )
+scale = Vector2( 0.359935, 0.359935 )
+
+[node name="Fire" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 3954.74, 4829.3 )
+scale = Vector2( 2.77828, 2.77828 )
+animation = "default"
+
+[node name="Fire2" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 3952.1, 4617.46 )
+scale = Vector2( 2.77828, 2.77828 )
+animation = "fire2"
+
+[node name="Fire3" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 3957.61, 4243.53 )
+scale = Vector2( 2.77828, 2.77828 )
+animation = "fire1"
+
+[node name="Fire_blue" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 3952.88, 4438.09 )
+scale = Vector2( 2.77828, 2.77828 )
+animation = "fire_blue"
+
+[node name="Fire4" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 3958.23, 4059.32 )
+scale = Vector2( 2.77828, 2.77828 )
+animation = "default"
+
+[node name="Fire5" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 4704.17, 2949.59 )
+scale = Vector2( 8.42097, 8.1237 )
+animation = "default"
+
+[node name="Fire6" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( 1709.51, 1989.53 )
+scale = Vector2( 8.42097, 8.1237 )
+animation = "default"
+
+[node name="Fire_blue2" parent="Fire" instance=ExtResource( 11 )]
+position = Vector2( -1482.62, 353.631 )
+scale = Vector2( 8.42097, 8.1237 )
+animation = "fire_blue"
+
+[node name="Tree" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Tree" type="Sprite" parent="Tree"]
+position = Vector2( -1512.84, -1550.51 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree2" type="Sprite" parent="Tree"]
+position = Vector2( -1201.76, -1486.83 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree3" type="Sprite" parent="Tree"]
+position = Vector2( -1130.03, -1262.12 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree8" type="Sprite" parent="Tree"]
+position = Vector2( -962.357, -1053.95 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree9" type="Sprite" parent="Tree"]
+position = Vector2( -177.767, -36.5179 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree10" type="Sprite" parent="Tree"]
+position = Vector2( -3.13194, -33.3542 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree4" type="Sprite" parent="Tree"]
+position = Vector2( -1938.11, -1237.24 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree5" type="Sprite" parent="Tree"]
+position = Vector2( -2387.53, -1237.97 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree6" type="Sprite" parent="Tree"]
+position = Vector2( -2394.85, -1787.67 )
+scale = Vector2( 0.359935, 0.359935 )
+texture = ExtResource( 12 )
+
+[node name="Tree7" type="Sprite" parent="Tree"]
+position = Vector2( -1719.99, -1985.3 )
+scale = Vector2( 0.594415, 0.575103 )
+texture = ExtResource( 12 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
