@@ -1,0 +1,27 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/img/fire/fire-04.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/fire/fire-05.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/fire/fire-06.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/fire/fire-07.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/fire/fire-08.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/fire/fire-09.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/fire/fire-10.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/fire/fire-11.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0.689148, 1.37836 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 36.8722, 40.1305 )
+scale = Vector2( 0.211452, 0.211452 )
+frames = SubResource( 1 )
+playing = true
