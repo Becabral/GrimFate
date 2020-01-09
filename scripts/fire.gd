@@ -10,3 +10,11 @@ func _ready():
 		$AnimatedSprite.play("")
 	pass # Replace with function body.
 
+
+
+func _on_Fire_body_entered(body):
+	if body.get_name()=="Player":
+		if body.can_dash==false && !is_blue:
+			body.on_fire=true
+			queue_free()
+

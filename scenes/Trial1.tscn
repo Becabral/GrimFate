@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=8]
 [ext_resource path="res://scenes/FireSprite.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Fire.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -140,6 +141,7 @@ position = Vector2( -1644.26, -2115.09 )
 shape = SubResource( 5 )
 
 [node name="FireEvent" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 495.968, -410.27 )
 collision_layer = 3
 collision_mask = 3
@@ -166,164 +168,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FireEvent2" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 223.702, -28.1518 )
-collision_layer = 3
-collision_mask = 3
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Fire2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 223, -28 )
 
-[node name="FireSprite" parent="FireEvent2" instance=ExtResource( 9 )]
+[node name="Fire3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 223, 40 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent2"]
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent2"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent2/StaticBody2D"]
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireEvent3" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 223.772, 39.5772 )
-collision_layer = 3
-collision_mask = 3
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireSprite" parent="FireEvent3" instance=ExtResource( 9 )]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent3"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent3"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent3/StaticBody2D"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireEvent4" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 223.772, 111.176 )
-collision_layer = 3
-collision_mask = 3
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireSprite" parent="FireEvent4" instance=ExtResource( 9 )]
+[node name="Fire4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 223, 111 )
 is_blue = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent4"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Fire5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 223, 183 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent4"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent4/StaticBody2D"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireEvent5" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 223.747, 183.644 )
-collision_layer = 3
-collision_mask = 3
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireSprite" parent="FireEvent5" instance=ExtResource( 9 )]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent5"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent5"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent5/StaticBody2D"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireEvent6" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 223.715, 256.019 )
-collision_layer = 3
-collision_mask = 3
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FireSprite" parent="FireEvent6" instance=ExtResource( 9 )]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent6"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent6"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent6/StaticBody2D"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Fire6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 223, 254 )
 
 [node name="FireEvent7" type="Area2D" parent="."]
 editor/display_folded = true
@@ -388,11 +247,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="torch" parent="." instance=ExtResource( 10 )]
+[node name="torch" parent="." instance=ExtResource( 11 )]
 position = Vector2( 285.068, -640 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="torch2" parent="." instance=ExtResource( 10 )]
+[node name="torch2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 700, -640 )
 scale = Vector2( 0.7, 0.7 )
 
@@ -441,32 +300,32 @@ editor/display_folded = true
 [node name="Tree" type="Sprite" parent="Tree"]
 position = Vector2( -1512.84, -1550.51 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree2" type="Sprite" parent="Tree"]
 position = Vector2( -1201.76, -1486.83 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree3" type="Sprite" parent="Tree"]
 position = Vector2( -1130.03, -1262.12 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree8" type="Sprite" parent="Tree"]
 position = Vector2( -962.357, -1053.95 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree9" type="Sprite" parent="Tree"]
 position = Vector2( -177.767, -36.5179 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree10" type="Sprite" parent="Tree"]
 position = Vector2( -3.13194, -33.3542 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -474,22 +333,22 @@ __meta__ = {
 [node name="Tree4" type="Sprite" parent="Tree"]
 position = Vector2( -1938.11, -1237.24 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree5" type="Sprite" parent="Tree"]
 position = Vector2( -2387.53, -1237.97 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree6" type="Sprite" parent="Tree"]
 position = Vector2( -2394.85, -1787.67 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Tree7" type="Sprite" parent="Tree"]
 position = Vector2( -1719.99, -1985.3 )
 scale = Vector2( 0.594415, 0.575103 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
