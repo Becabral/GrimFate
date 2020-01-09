@@ -6,6 +6,7 @@ export var pushSPEED = 120
 var is_moving_left = false
 var is_moving_right=false
 var can_dash = true
+var on_fire = false
 
 
 #items
@@ -37,16 +38,19 @@ func _physics_process(_delta):
 		$ColisorLuz.disabled = false
 		$CollisionShape2D.disabled = true
 		#$LuzLamp.visible = true
+		$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
+		if lamp == false:
+			if spritedir == "up":
+				$RotPos/AnimatedSprite.play("Player_costas")
+			elif spritedir == "down":
+				$RotPos/AnimatedSprite.play("Player_frente")
+			elif spritedir == "left" or spritedir == "right":
+				$RotPos/AnimatedSprite.play("Player_lateral")
 		
-		if spritedir == "up":
-			$RotPos/AnimatedSprite.play("Player_costas")
-		elif spritedir == "down":
-			$RotPos/AnimatedSprite.play("Player_frente")
-		elif spritedir == "left" or spritedir == "right":
-			$RotPos/AnimatedSprite.play("Player_lateral")
+		
 		
 		if spritedir == "left" && !is_moving_left:
 			$Anim.play("moveleft")
@@ -66,6 +70,11 @@ func _physics_process(_delta):
 			else:
 				$Anim.play_backwards("moveright")
 		
+	
+	if on_fire:
+		$RotPos/AnimatedSprite.modulate=Color(1,0,0)
+	else:
+		$RotPos/AnimatedSprite.modulate=Color(1,1,1)
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -120,14 +129,17 @@ func check_box_collision():
 
 func dash():
 	can_dash=false
-	SPEED=1700
+	SPEED=800
 	set_collision_mask_bit( 1, false)
 	set_collision_layer_bit( 1, false)
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
+	if on_fire:
+		yield(get_tree().create_timer(0.2), "timeout")
 	SPEED=200
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
 	set_collision_layer_bit( 1, true )
 	can_dash=true
+	on_fire=false
 	
 	
