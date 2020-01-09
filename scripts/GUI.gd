@@ -1,10 +1,11 @@
 extends Control
 var slot = 0
+var slotSkill = 0
 var countSeed = 0
 var seedDisplay=-1
 var player
 
-#cor dah - bf3760
+#cor dash - bf3760
 #cor scythe - 4ff057
 
 func _ready():
@@ -25,7 +26,6 @@ func _process(_delta):
 	$MarginContainer/MainContainer/Skills.margin_top = 80
 
 func verifica_incrementa(item):
-	print("entrou"+item)
 	if item == "Lamp":
 		adiciona_interface("Lamp")
 	elif item == "Seed":
@@ -35,7 +35,6 @@ func verifica_incrementa(item):
 		refreshSeeds()
 		
 func adiciona_interface(item):
-	print("entrou2")
 	if slot == 0:
 		$MarginContainer/MainContainer/Items/ItemLbl.visible = true
 		$MarginContainer/MainContainer/Items/Slot0/Item0/Icon.texture = load("res://assets/img/gui/"+item+".png")
@@ -55,6 +54,29 @@ func adiciona_interface(item):
 		elif item == "Seed":
 			seedDisplay=1
 			pass
+			
+func adiciona_skill(nome):
+	if slotSkill == 0:
+		$MarginContainer/MainContainer/Skills/SkillLbl.visible = true
+		if nome == "Dash":
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0.texture = load("res://assets/img/gui/GUI_Dash.png")
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set("custom_colors/font_color",Color(0.75,0.22,0.37,1))
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set_text("Tab")
+		else:
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0.texture = load("res://assets/img/gui/GUI_Scythe.png")
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set("custom_colors/font_color",Color(0.31,0.94,0.34,1))
+			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set_text("Space")
+			
+		$MarginContainer/MainContainer/Skills/Slot0/Skill0/Icon.texture = load("res://assets/img/gui/"+nome+".png")
+		$MarginContainer/MainContainer/Skills/Slot0/Lbl0.text = nome
+		$MarginContainer/MainContainer/Skills/Slot0.visible = true
+		slotSkill +=1
+	else:
+		$MarginContainer/MainContainer/Skills/Slot1/Skill1.texture = load("res://assets/img/gui/GUI_Scythe.png")
+		$MarginContainer/MainContainer/Skills/Slot1/Skill1/Icon.texture = load("res://assets/img/gui/"+nome+".png")
+		$MarginContainer/MainContainer/Skills/Slot1/Lbl1.text = nome
+		$MarginContainer/MainContainer/Skills/Slot1.visible = true
+		
 
 	
 func addSeed():

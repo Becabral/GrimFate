@@ -49,11 +49,11 @@ custom_constants/margin_top = 0
 custom_constants/margin_left = 0
 
 [node name="MainContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 222.0
+margin_right = 221.0
 margin_bottom = 137.0
 
 [node name="Items" type="HBoxContainer" parent="MarginContainer/MainContainer"]
-margin_right = 222.0
+margin_right = 221.0
 margin_bottom = 56.0
 
 [node name="ItemLbl" type="Label" parent="MarginContainer/MainContainer/Items"]
@@ -64,8 +64,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Item: "
 
 [node name="Slot0" type="VBoxContainer" parent="MarginContainer/MainContainer/Items"]
-editor/display_folded = true
-margin_left = 57.0
+margin_left = 53.0
 margin_right = 133.0
 margin_bottom = 56.0
 __meta__ = {
@@ -85,7 +84,7 @@ align = 1
 
 [node name="Slot1" type="VBoxContainer" parent="MarginContainer/MainContainer/Items"]
 editor/display_folded = true
-margin_left = 141.0
+margin_left = 137.0
 margin_right = 217.0
 margin_bottom = 56.0
 
@@ -101,9 +100,8 @@ text = "Seed"
 align = 1
 
 [node name="Skills" type="HBoxContainer" parent="MarginContainer/MainContainer"]
-editor/display_folded = true
-margin_top = 80.0
-margin_right = 222.0
+margin_top = 60.0
+margin_right = 221.0
 margin_bottom = 137.0
 
 [node name="SkillLbl" type="Label" parent="MarginContainer/MainContainer/Skills"]
@@ -119,7 +117,7 @@ margin_left = 57.0
 margin_right = 137.0
 margin_bottom = 77.0
 
-[node name="Dash" parent="MarginContainer/MainContainer/Skills/Slot0" instance=ExtResource( 6 )]
+[node name="Skill0" parent="MarginContainer/MainContainer/Skills/Slot0" instance=ExtResource( 6 )]
 margin_right = 80.0
 
 [node name="Lbl0" type="Label" parent="MarginContainer/MainContainer/Skills/Slot0"]
@@ -136,7 +134,7 @@ margin_left = 141.0
 margin_right = 221.0
 margin_bottom = 77.0
 
-[node name="Scythe" parent="MarginContainer/MainContainer/Skills/Slot1" instance=ExtResource( 7 )]
+[node name="Skill1" parent="MarginContainer/MainContainer/Skills/Slot1" instance=ExtResource( 7 )]
 margin_right = 80.0
 
 [node name="Lbl1" type="Label" parent="MarginContainer/MainContainer/Skills/Slot1"]

@@ -42,17 +42,8 @@ texture = ExtResource( 2 )
 visible = false
 shape = SubResource( 1 )
 
-[node name="useLbl" type="Label" parent="." instance=ExtResource( 3 )]
-margin_left = -199.124
-margin_top = -241.765
-margin_right = -44.124
-margin_bottom = -103.765
-grow_horizontal = 0
-grow_vertical = 0
+[node name="useLbl" parent="." instance=ExtResource( 3 )]
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
-text = "E"
-align = 1
-valign = 1
 [connection signal="body_entered" from="." to="." method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Hood_body_exited"]

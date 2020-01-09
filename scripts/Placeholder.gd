@@ -17,6 +17,9 @@ func _process(_delta):
 			$Player.lamp = true # <- usado para mudar o sprite com a lanterna na mao
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.queue_free()
+	
+	if $Player.has_hood == false and Input.is_action_just_pressed("use"):
+		$Interface/GUI.adiciona_skill("Dash")
 		
 #	if seedCount>0:
 #		for i in range(seedCount):
