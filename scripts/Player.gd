@@ -38,6 +38,7 @@ func _physics_process(_delta):
 		$ColisorLuz.disabled = false
 		$CollisionShape2D.disabled = true
 		#$LuzLamp.visible = true
+		$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
@@ -48,9 +49,6 @@ func _physics_process(_delta):
 				$RotPos/AnimatedSprite.play("Player_frente")
 			elif spritedir == "left" or spritedir == "right":
 				$RotPos/AnimatedSprite.play("Player_lateral")
-		else:
-			if spritedir == "left" or spritedir == "right":
-				$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 		
 		
 		
