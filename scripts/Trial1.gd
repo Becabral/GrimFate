@@ -4,6 +4,10 @@ extends Node2D
 func _ready():
 	pass 
 
+#func _process(_delta):
+#	if $Player.has_hood == false and Input.is_action_just_pressed("use"):
+#		$Interface/GUI.adiciona_skill("Dash")
+
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
 		if has_node("/root/SceneChanger"):

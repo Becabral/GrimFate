@@ -5,10 +5,10 @@
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/Righteous-Regular.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 73.2514, 74.3185 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 3
 border_width_top = 3
@@ -40,10 +40,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="useLbl" parent="." instance=ExtResource( 3 )]
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Hood_body_exited"]

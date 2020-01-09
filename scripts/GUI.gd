@@ -62,7 +62,7 @@ func adiciona_skill(nome):
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0.texture = load("res://assets/img/gui/GUI_Dash.png")
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set("custom_colors/font_color",Color(0.75,0.22,0.37,1))
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set_text("Tab")
-		else:
+		elif nome == "Scythe":
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0.texture = load("res://assets/img/gui/GUI_Scythe.png")
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set("custom_colors/font_color",Color(0.31,0.94,0.34,1))
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set_text("Space")
@@ -72,10 +72,11 @@ func adiciona_skill(nome):
 		$MarginContainer/MainContainer/Skills/Slot0.visible = true
 		slotSkill +=1
 	else:
-		$MarginContainer/MainContainer/Skills/Slot1/Skill1.texture = load("res://assets/img/gui/GUI_Scythe.png")
-		$MarginContainer/MainContainer/Skills/Slot1/Skill1/Icon.texture = load("res://assets/img/gui/"+nome+".png")
-		$MarginContainer/MainContainer/Skills/Slot1/Lbl1.text = nome
-		$MarginContainer/MainContainer/Skills/Slot1.visible = true
+		if nome == "Scythe":
+			$MarginContainer/MainContainer/Skills/Slot1/Skill1.texture = load("res://assets/img/gui/GUI_Scythe.png")
+			$MarginContainer/MainContainer/Skills/Slot1/Skill1/Icon.texture = load("res://assets/img/gui/"+nome+".png")
+			$MarginContainer/MainContainer/Skills/Slot1/Lbl1.text = nome
+			$MarginContainer/MainContainer/Skills/Slot1.visible = true
 		
 
 	

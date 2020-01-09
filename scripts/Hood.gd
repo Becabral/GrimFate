@@ -14,7 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_pressed("use") && touch):
-			player.has_hood=true
+			player.has_hood = true
+			get_parent().get_node("Interface/GUI").adiciona_skill("Dash")
 			get_parent().get_node("FireEvent").show()
 			get_parent().get_node("FireEvent/StaticBody2D/CollisionShape2D").disabled=false
 			queue_free()
