@@ -11,7 +11,7 @@
 extents = Vector2( 33.9204, 241.674 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 82
+size = 68
 use_filter = true
 font_data = ExtResource( 4 )
 
@@ -26,29 +26,28 @@ __meta__ = {
 position = Vector2( 60.538, 560.261 )
 
 [node name="RiverBG" type="Sprite" parent="."]
-position = Vector2( 2075.56, 311.826 )
-scale = Vector2( 0.433119, 1 )
+position = Vector2( 2012.96, 311.826 )
+scale = Vector2( 0.419263, 1 )
 texture = ExtResource( 3 )
 
 [node name="NextArea" type="Area2D" parent="."]
 position = Vector2( 4012.37, 263.827 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 0, 115.876 )
+modulate = Color( 0.486275, 0.219608, 0.219608, 0.486275 )
+position = Vector2( -171.359, 133.597 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 330.0
-margin_top = 219.085
-margin_right = 2824.0
-margin_bottom = 430.085
+margin_top = 219.0
+margin_right = 3764.0
+margin_bottom = 430.0
 custom_fonts/font = SubResource( 2 )
-text = "Interesting species… they take their life for granted… 
-they think they own the world"
+text = "Interesting species… they take their life for granted… they think they own the world"
 
 [node name="River4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2722.29, 614.518 )
+position = Vector2( 2722.29, 606.518 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
 frame = 0

@@ -6,7 +6,7 @@ export var pushSPEED = 120
 var is_moving_left = false
 var is_moving_right=false
 var can_dash = true
-
+var on_fire = false
 
 #items
 var lamp = false
@@ -115,10 +115,13 @@ func check_box_collision():
 
 func dash():
 	can_dash=false
-	SPEED=1700
+	SPEED=800
 	set_collision_mask_bit( 1, false)
 	set_collision_layer_bit( 1, false)
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
+	if on_fire:
+		yield(get_tree().create_timer(0.2), "timeout")
+		on_fire=false
 	SPEED=200
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
