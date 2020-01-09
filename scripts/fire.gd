@@ -14,7 +14,8 @@ func _ready():
 
 func _on_Fire_body_entered(body):
 	if body.get_name()=="Player":
-		if body.can_dash==false && !is_blue:
+		if body.can_dash==false:
 			body.on_fire=true
-			queue_free()
+			if !is_blue:
+				queue_free()
 
