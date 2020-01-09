@@ -4,8 +4,11 @@ func _ready():
 	$Player.STATE = "sideView"
 	$Player.spritedir = "right"
 	$Player/Camera2D.set_offset(Vector2(600,-170))
+	$Barco.SPEED = 2.5
 
 func _process(_delta):
+	if $Barco.position.x >= 2937:
+		$Player/Camera2D.current = false
 	if $Barco.state == true:
 		$Player.barco = true
 		$Player.SPEED = 0 
