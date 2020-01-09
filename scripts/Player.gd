@@ -6,7 +6,7 @@ export var pushSPEED = 120
 var is_moving_left = false
 var is_moving_right=false
 var can_dash = true
-var on_fire = false
+
 
 #items
 var lamp = false
@@ -41,14 +41,19 @@ func _physics_process(_delta):
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
 		
+		if spritedir == "up":
+			$RotPos/AnimatedSprite.play("Player_costas")
+		elif spritedir == "down":
+			$RotPos/AnimatedSprite.play("Player_frente")
+		elif spritedir == "left" or spritedir == "right":
+			$RotPos/AnimatedSprite.play("Player_lateral")
+		
 		if spritedir == "left" && !is_moving_left:
-			#$AnimatedSprite.flip_h = true;
 			$Anim.play("moveleft")
 			is_moving_left = true
 			is_moving_right = false
 			
 		elif spritedir == "right" && !is_moving_right:
-			#$AnimatedSprite.flip_h = false;
 			$Anim.play("moveright")
 			is_moving_left = false
 			is_moving_right = true
@@ -115,13 +120,10 @@ func check_box_collision():
 
 func dash():
 	can_dash=false
-	SPEED=800
+	SPEED=1700
 	set_collision_mask_bit( 1, false)
 	set_collision_layer_bit( 1, false)
-	yield(get_tree().create_timer(0.2), "timeout")
-	if on_fire:
-		yield(get_tree().create_timer(0.2), "timeout")
-		on_fire=false
+	yield(get_tree().create_timer(0.1), "timeout")
 	SPEED=200
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
