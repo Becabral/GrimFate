@@ -41,19 +41,14 @@ func _physics_process(_delta):
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
 		
-		if spritedir == "up":
-			$RotPos/AnimatedSprite.play("Player_costas")
-		elif spritedir == "down":
-			$RotPos/AnimatedSprite.play("Player_frente")
-		elif spritedir == "left" or spritedir == "right":
-			$RotPos/AnimatedSprite.play("Player_lateral")
-		
 		if spritedir == "left" && !is_moving_left:
+			#$AnimatedSprite.flip_h = true;
 			$Anim.play("moveleft")
 			is_moving_left = true
 			is_moving_right = false
 			
 		elif spritedir == "right" && !is_moving_right:
+			#$AnimatedSprite.flip_h = false;
 			$Anim.play("moveright")
 			is_moving_left = false
 			is_moving_right = true
