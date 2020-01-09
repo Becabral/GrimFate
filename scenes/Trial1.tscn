@@ -302,7 +302,6 @@ position = Vector2( -1482.62, 353.631 )
 scale = Vector2( 8.42097, 8.1237 )
 
 [node name="Tree" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Tree" type="Sprite" parent="Tree"]
 position = Vector2( -1512.84, -1550.51 )
@@ -333,9 +332,6 @@ texture = ExtResource( 13 )
 position = Vector2( -3.13194, -33.3542 )
 scale = Vector2( 0.359935, 0.359935 )
 texture = ExtResource( 13 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Tree4" type="Sprite" parent="Tree"]
 position = Vector2( -1938.11, -1237.24 )

@@ -70,6 +70,11 @@ func _physics_process(_delta):
 			else:
 				$Anim.play_backwards("moveright")
 		
+	
+	if on_fire:
+		$RotPos/AnimatedSprite.modulate=Color(1,0,0)
+	else:
+		$RotPos/AnimatedSprite.modulate=Color(1,1,1)
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -130,11 +135,11 @@ func dash():
 	yield(get_tree().create_timer(0.2), "timeout")
 	if on_fire:
 		yield(get_tree().create_timer(0.2), "timeout")
-		on_fire=false
 	SPEED=200
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
 	set_collision_layer_bit( 1, true )
 	can_dash=true
+	on_fire=false
 	
 	
