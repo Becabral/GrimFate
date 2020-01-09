@@ -1,17 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=3]
-[ext_resource path="res://scenes/Hood.gd" type="Script" id=4]
+[ext_resource path="res://scripts/Hood.gd" type="Script" id=4]
 [ext_resource path="res://assets/img/player/cloack.png" type="Texture" id=5]
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/img/trial 1/Group 36.png" type="Texture" id=9]
-[ext_resource path="res://Tortch.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/fire.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=12]
+[ext_resource path="res://scenes/FireSprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -84,7 +83,7 @@ extents = Vector2( 112.828, 56.8174 )
 extents = Vector2( 81.2255, 33.674 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 48.8906, 45.3635 )
+extents = Vector2( 81.6152, 80.9209 )
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource( 1 )
@@ -94,6 +93,9 @@ modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( -713.755, -1459.99 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -106,7 +108,7 @@ position = Vector2( 497.594, -613.615 )
 scale = Vector2( 0.663149, 0.663149 )
 script = ExtResource( 4 )
 
-[node name="cloack" type="Sprite" parent="Hood"]
+[node name="cloak" type="Sprite" parent="Hood"]
 position = Vector2( -8.63937, -0.201351 )
 texture = ExtResource( 5 )
 
@@ -138,26 +140,253 @@ position = Vector2( -1644.26, -2115.09 )
 shape = SubResource( 5 )
 
 [node name="FireEvent" type="Area2D" parent="."]
-editor/display_folded = true
+position = Vector2( 495.968, -410.27 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="FireSprite" type="Sprite" parent="FireEvent"]
-position = Vector2( 496.764, -390.534 )
-scale = Vector2( 1.06746, 1.06746 )
-texture = ExtResource( 9 )
+[node name="FireSprite" parent="FireEvent" instance=ExtResource( 9 )]
+scale = Vector2( 2, 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent"]
-position = Vector2( 496.784, -396.991 )
 shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FireEvent"]
 collision_layer = 2
 collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent/StaticBody2D"]
-position = Vector2( 496.784, -396.991 )
 shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent2" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 223.702, -28.1518 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent2" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent2"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent2/StaticBody2D"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent3" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 223.772, 39.5772 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent3" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent3"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent3"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent3/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent4" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 223.772, 111.176 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent4" instance=ExtResource( 9 )]
+is_blue = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent4"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent4"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent4/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent5" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 223.747, 183.644 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent5" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent5"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent5"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent5/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent6" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 223.715, 256.019 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent6" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent6"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent6"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent6/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent7" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -592.61, -748.533 )
+collision_layer = 3
+collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireSprite" parent="FireEvent7" instance=ExtResource( 9 )]
+scale = Vector2( 3, 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent7"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent7"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent7/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FireEvent8" type="Area2D" parent="."]
+position = Vector2( -1735.8, -1364.41 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="FireSprite" parent="FireEvent8" instance=ExtResource( 9 )]
+scale = Vector2( 3, 3 )
+is_blue = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FireEvent8"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FireEvent8"]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireEvent8/StaticBody2D"]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="torch" parent="." instance=ExtResource( 10 )]
 position = Vector2( 285.068, -640 )
@@ -168,49 +397,43 @@ position = Vector2( 700, -640 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Fire" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -1201.76, -1486.83 )
 scale = Vector2( 0.359935, 0.359935 )
 
-[node name="Fire" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 3954.74, 4829.3 )
 scale = Vector2( 2.77828, 2.77828 )
-animation = "default"
 
-[node name="Fire2" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire2" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 3952.1, 4617.46 )
 scale = Vector2( 2.77828, 2.77828 )
-animation = "fire2"
 
-[node name="Fire3" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire3" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 3957.61, 4243.53 )
 scale = Vector2( 2.77828, 2.77828 )
-animation = "fire1"
 
-[node name="Fire_blue" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire_blue" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 3952.88, 4438.09 )
 scale = Vector2( 2.77828, 2.77828 )
-animation = "fire_blue"
 
-[node name="Fire4" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire4" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 3958.23, 4059.32 )
 scale = Vector2( 2.77828, 2.77828 )
-animation = "default"
 
-[node name="Fire5" parent="Fire" instance=ExtResource( 11 )]
-position = Vector2( 4704.17, 2949.59 )
-scale = Vector2( 8.42097, 8.1237 )
-animation = "default"
-
-[node name="Fire6" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire6" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 1709.51, 1989.53 )
 scale = Vector2( 8.42097, 8.1237 )
-animation = "default"
 
-[node name="Fire_blue2" parent="Fire" instance=ExtResource( 11 )]
+[node name="Fire_blue2" parent="Fire" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( -1482.62, 353.631 )
 scale = Vector2( 8.42097, 8.1237 )
-animation = "fire_blue"
 
 [node name="Tree" type="Node" parent="."]
 editor/display_folded = true
@@ -218,52 +441,55 @@ editor/display_folded = true
 [node name="Tree" type="Sprite" parent="Tree"]
 position = Vector2( -1512.84, -1550.51 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree2" type="Sprite" parent="Tree"]
 position = Vector2( -1201.76, -1486.83 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree3" type="Sprite" parent="Tree"]
 position = Vector2( -1130.03, -1262.12 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree8" type="Sprite" parent="Tree"]
 position = Vector2( -962.357, -1053.95 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree9" type="Sprite" parent="Tree"]
 position = Vector2( -177.767, -36.5179 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree10" type="Sprite" parent="Tree"]
 position = Vector2( -3.13194, -33.3542 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tree4" type="Sprite" parent="Tree"]
 position = Vector2( -1938.11, -1237.24 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree5" type="Sprite" parent="Tree"]
 position = Vector2( -2387.53, -1237.97 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree6" type="Sprite" parent="Tree"]
 position = Vector2( -2394.85, -1787.67 )
 scale = Vector2( 0.359935, 0.359935 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Tree7" type="Sprite" parent="Tree"]
 position = Vector2( -1719.99, -1985.3 )
 scale = Vector2( 0.594415, 0.575103 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
