@@ -107,7 +107,7 @@ z_index = 2
 position = Vector2( 1763.19, 606.764 )
 scale = Vector2( 1.14336, 1.14336 )
 z_index = 2
-frame = 3
+frame = 0
 
 [node name="grims fate intro" type="Sprite" parent="."]
 position = Vector2( 866.353, 1.38243 )
