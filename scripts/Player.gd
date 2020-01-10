@@ -6,7 +6,9 @@ export var pushSPEED = 120
 var is_moving_left = false
 var is_moving_right=false
 var can_dash = true
+var is_flammable = true
 var on_fire = false
+var blue = false
 
 
 #items
@@ -72,7 +74,10 @@ func _physics_process(_delta):
 		
 	
 	if on_fire:
-		$RotPos/AnimatedSprite.modulate=Color(1,0,0)
+		if blue:
+			$RotPos/AnimatedSprite.modulate=Color(0,0,1)
+		else:
+			$RotPos/AnimatedSprite.modulate=Color(1,0,0)
 	else:
 		$RotPos/AnimatedSprite.modulate=Color(1,1,1)
 
@@ -136,10 +141,14 @@ func dash():
 	if on_fire:
 		yield(get_tree().create_timer(0.2), "timeout")
 	SPEED=200
+	is_flammable=false
+	on_fire=false
+	blue=false
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
 	set_collision_layer_bit( 1, true )
 	can_dash=true
-	on_fire=false
+	is_flammable=true
+	
 	
 	
