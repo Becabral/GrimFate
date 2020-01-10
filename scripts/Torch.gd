@@ -39,7 +39,7 @@ func _process(delta):
 func _on_Torch_body_entered(body):
 	if body.get_name()=="Player":
 		print("player entered torch")
-		if !body.can_dash && body.is_flammable && lit && !blue: #if flame is red, dashing through will fade it
+		if !body.can_dash && body.is_flammable && !body.blue && lit && !blue: #if flame is red, dashing through will fade it
 			lit=false
 			print("unlit")
 		elif body.on_fire:

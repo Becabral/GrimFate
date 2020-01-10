@@ -155,6 +155,8 @@ func dash():
 	yield(get_tree().create_timer(0.2), "timeout")
 	if on_fire:
 		yield(get_tree().create_timer(0.2), "timeout")
+		if blue:
+			yield(get_tree().create_timer(0.2), "timeout")
 	SPEED=200
 	is_flammable=false
 	on_fire=false
