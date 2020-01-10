@@ -8,6 +8,7 @@ export var lit=false
 export var blue=false
 export var big=false
 
+#signal lit_signal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +29,7 @@ func _process(delta):
 				add_child(fire.instance())
 		if blue:
 			$Fire.turn_blue()
+		 
 	else:
 		if has_node("Fire"):
 			$Fire.queue_free()

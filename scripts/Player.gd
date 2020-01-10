@@ -154,6 +154,8 @@ func dash():
 	set_collision_layer_bit( 1, false)
 	yield(get_tree().create_timer(0.2), "timeout")
 	if on_fire:
+		set_collision_mask_bit( 2, false)
+		set_collision_layer_bit( 2, false)
 		yield(get_tree().create_timer(0.2), "timeout")
 		if blue:
 			yield(get_tree().create_timer(0.2), "timeout")
@@ -164,6 +166,8 @@ func dash():
 	yield(get_tree().create_timer(0.3), "timeout")
 	set_collision_mask_bit( 1, true )
 	set_collision_layer_bit( 1, true )
+	set_collision_mask_bit( 2, true)
+	set_collision_layer_bit( 2, true)
 	can_dash=true
 	is_flammable=true
 	

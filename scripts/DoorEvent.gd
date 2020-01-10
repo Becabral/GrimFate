@@ -10,7 +10,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if has_node("TorchC") and has_node("TorchD"):
+		if $TorchC.lit and $TorchD.lit and has_node("Door"):
+			$Door.queue_free()
 	
-	if $Torch.lit and $Torch2.lit and has_node("Door"):
-		$Door.queue_free()
+	if has_node("BigTorch"):
+		if $BigTorch.blue and $BigTorch.lit and has_node("Door"):
+			$Door.queue_free()
 #	pass

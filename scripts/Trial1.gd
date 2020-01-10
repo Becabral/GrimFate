@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	$Player/Camera2D.drag_margin_h_enabled=false
+	$Player/RotPos/AnimatedSprite.play("Player_costas")
 	pass 
 
 #func _process(_delta):
