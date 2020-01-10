@@ -5,6 +5,7 @@ export var pushSPEED = 120
 #var cameraY = -300
 var is_moving_left = false
 var is_moving_right=false
+var is_moving_vertically=false
 var can_dash = true
 var is_flammable = true
 var on_fire = false
@@ -58,11 +59,25 @@ func _physics_process(_delta):
 			$Anim.play("moveleft")
 			is_moving_left = true
 			is_moving_right = false
+			is_moving_vertically=false
 			
 		elif spritedir == "right" && !is_moving_right:
 			$Anim.play("moveright")
 			is_moving_left = false
 			is_moving_right = true
+			is_moving_vertically=false
+			
+		if (spritedir == "up" or spritedir == "down") and !is_moving_vertically:
+			is_moving_vertically=true
+			if is_moving_left:
+				$Anim.play_backwards("moveleft")
+				is_moving_left = false
+			if is_moving_right:
+				$Anim.play_backwards("moveright")
+				is_moving_right = false
+			
+			
+			
 	else:
 		if is_moving_left or is_moving_right:
 			is_moving_left = false
