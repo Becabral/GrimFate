@@ -31,17 +31,14 @@ func _process(delta):
 	else:
 		if has_node("Fire"):
 			$Fire.queue_free()
-			print("deleted fire")
 			yield(get_tree().create_timer(0.2), "timeout")
 #	pass
 
 
 func _on_Torch_body_entered(body):
 	if body.get_name()=="Player":
-		print("player entered torch")
 		if !body.can_dash && body.is_flammable && !body.blue && lit && !blue: #if flame is red, dashing through will fade it
 			lit=false
-			print("unlit")
 		elif body.on_fire:
 			if body.blue:
 				blue=true
