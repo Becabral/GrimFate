@@ -116,10 +116,10 @@ extents = Vector2( 48.5681, 47.5991 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 28.8051, 575.784 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64.155, 60.887 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 123.117, 28.803 )
 
 [node name="Level 1" type="Node2D"]
@@ -237,7 +237,7 @@ position = Vector2( -1960.01, -2418.01 )
 lit = false
 
 [node name="Torch15" parent="Torches" instance=ExtResource( 8 )]
-position = Vector2( -2753.11, -2414.94 )
+position = Vector2( -2753.11, -2384.18 )
 lit = false
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
@@ -387,7 +387,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall"]
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -403,7 +403,7 @@ __meta__ = {
 position = Vector2( -92.3154, -165.746 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff"]
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -412,7 +412,7 @@ __meta__ = {
 position = Vector2( -100.315, 123.742 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
