@@ -23,7 +23,9 @@ func _process(_delta):
 	
 	$MarginContainer/MainContainer/Items/Slot0.margin_left = 57
 	$MarginContainer/MainContainer/Items/Slot1.margin_left = 141
-	$MarginContainer/MainContainer/Skills.margin_top = 80
+
+#------ caso tenha itens e skill junto na msm tela, rever essa regra abaixo
+#	$MarginContainer/MainContainer/Skills.margin_top = 80
 
 func verifica_incrementa(item):
 	if item == "Lamp":
