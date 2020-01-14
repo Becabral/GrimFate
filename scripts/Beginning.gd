@@ -12,6 +12,9 @@ func _ready():
 	$Player/Camera2D.set_offset(Vector2(300,-100))
 	create_lamp()
 	
+	if has_node("/root/FMOD/FMOD_Start"):
+		get_node("/root/FMOD/FMOD_Start").play_one("event:/Music", $FmodSource)
+	
 func _process(_delta):
 	if $Player.position.x <= -1780:
 		$Player/Camera2D.current = false
