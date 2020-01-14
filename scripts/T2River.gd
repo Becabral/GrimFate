@@ -7,6 +7,7 @@ signal used_seed()
 
 var direction= "up"
 var can_spawn = true
+var carry_lilypad=true
 var lily
 var player
 
@@ -23,6 +24,10 @@ func _process(_delta):
 		get_parent().add_child(lily)
 		emit_signal("used_seed")
 		$LabelPos/useLbl.hide()
+		can_spawn=false
+	if !can_spawn && carry_lilypad:
+		if direction=="up":
+			lily.position += Vector2(0, -1)
 	pass
 
 
@@ -55,4 +60,8 @@ func _on_LeftMargin_body_exited(body):
 func _on_RightMargin_body_exited(body):
 	if body.get_name()=="Player":
 		$LabelPos/useLbl.hide()
+	pass # Replace with function body.
+
+func _on_TopLimit_area_entered(area):
+	carry_lilypad=false
 	pass # Replace with function body.
