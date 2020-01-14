@@ -13,6 +13,10 @@ func _ready():
 	create_lamp()
 	
 func _process(_delta):
+	if $Player.position.x <= -1780:
+		$Player/Camera2D.current = false
+	else:
+		$Player/Camera2D.current = true
 	#verifica se o personagem está em cima do barco. Se estiver, ele deve parar e o barco andar sozinho
 	if $Barco.state == true:
 		$Player.barco = true
