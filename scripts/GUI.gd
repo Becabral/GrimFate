@@ -98,3 +98,9 @@ func refreshSeeds():
 		$MarginContainer/MainContainer/Items/Slot0/Item0/count.set_text(str(countSeed))
 	elif (seedDisplay==1):
 		$MarginContainer/MainContainer/Items/Slot1/Item1/count.set_text(str(countSeed))
+
+func _on_T2River_used_seed():
+	countSeed -= 1
+	player.seeds-=1
+	refreshSeeds()
+	pass # Replace with function body.

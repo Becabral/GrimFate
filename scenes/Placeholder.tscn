@@ -1,20 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Placeholder.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Fire.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/BlockTree.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/BlockBed.gd" type="Script" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
-[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Hood.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Lilypad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/T2River.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/BlockTree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/BlockBed.gd" type="Script" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Hood.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 637.911, 74.7748 )
+extents = Vector2( 909.236, 74.7748 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.7097, 572.596 )
+extents = Vector2( 31.7097, 774.381 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 39.5077, 19.9092 )
@@ -27,25 +29,29 @@ position = Vector2( 600.561, 248.063 )
 scale = Vector2( 0.663149, 0.663149 )
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 235.03, -73.0253 )
+position = Vector2( 245.355, -387.929 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 257.16, 864.566 )
+position = Vector2( 241.673, 1143.33 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -244.525, 385.623 )
+position = Vector2( -565.997, 404.259 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 793.53, 389.865 )
+position = Vector2( 1068.41, 403.842 )
 shape = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Lilypad" parent="." instance=ExtResource( 3 )]
+
+[node name="T2River" parent="." instance=ExtResource( 4 )]
+position = Vector2( -71.367, 177.865 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 229.233, 88.0808 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -57,18 +63,18 @@ text = "Trial 3 Placeholder.
 
 Direct transition to Grim End"
 
-[node name="BlockTree" parent="." instance=ExtResource( 4 )]
+[node name="BlockTree" parent="." instance=ExtResource( 6 )]
 
 [node name="BlockBed" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 533.146, 278.445 )
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="BlockBed"]
 modulate = Color( 0.992157, 0.392157, 0.180392, 1 )
 scale = Vector2( 1, 0.325698 )
 z_index = -1
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -80,12 +86,13 @@ __meta__ = {
 }
 
 [node name="LabelPos" type="Node2D" parent="BlockBed"]
+editor/display_folded = true
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="useLbl" parent="BlockBed/LabelPos" instance=ExtResource( 7 )]
+[node name="useLbl" parent="BlockBed/LabelPos" instance=ExtResource( 9 )]
 margin_left = 191.634
 margin_top = -248.068
 margin_right = 346.634
@@ -93,11 +100,14 @@ margin_bottom = -110.068
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="Interface" instance=ExtResource( 8 )]
+[node name="GUI" parent="Interface" instance=ExtResource( 10 )]
+margin_left = -1.16632
+margin_right = -1.16632
 
-[node name="Hood" parent="." instance=ExtResource( 9 )]
+[node name="Hood" parent="." instance=ExtResource( 11 )]
 position = Vector2( 452.213, 266.732 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="used_seed" from="T2River" to="Interface/GUI" method="_on_T2River_used_seed"]
 [connection signal="body_entered" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_entered"]
 [connection signal="body_exited" from="BlockBed" to="BlockBed" method="_on_BlockBed_body_exited"]
 [connection signal="used_seed" from="BlockBed" to="Interface/GUI" method="_on_BlockBed_used_seed"]

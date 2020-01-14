@@ -167,6 +167,7 @@ custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 
 [node name="Torches" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="torchA" parent="Torches" instance=ExtResource( 8 )]
 position = Vector2( 285.068, -640 )
@@ -233,7 +234,7 @@ position = Vector2( -2370.21, -2333.66 )
 lit = false
 
 [node name="Torch16" parent="Torches" instance=ExtResource( 8 )]
-position = Vector2( -1960.01, -2418.01 )
+position = Vector2( -1957.96, -2381.1 )
 lit = false
 
 [node name="Torch15" parent="Torches" instance=ExtResource( 8 )]

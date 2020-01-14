@@ -1,9 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Hood.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/player/cloack.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/player/cloak.png" type="Texture" id=2]
 [ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/Righteous-Regular.ttf" type="DynamicFontData" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 73.2514, 74.3185 )
