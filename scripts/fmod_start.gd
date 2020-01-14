@@ -1,5 +1,6 @@
 extends Node
 
+#var has_listener=false
 
 func _ready():
 	# initialize FMOD
@@ -15,9 +16,10 @@ func _ready():
 	Fmod.bank_load("./assets/sound/banks/Desktop/Master.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Music.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	Fmod.bank_load("./assets/sound/banks/Desktop/Beginning.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	
-	Fmod.system_add_listener($Player)
-	Fmod.play_one_shot("event:/Music", $FmodSource)
+	#Fmod.system_add_listener(get_node("/Beginning/Player"))
+	#Fmod.play_one_shot("event:/Music", $FmodSource)
 	
 		# register a listener
 	# play some events
@@ -26,6 +28,7 @@ func _process(_delta):
 	# update FMOD every tick
 	# calling system_update also updates the listener 3D position
 	# and 3D positions of any attached event instances
+	#if has_listener:
 	Fmod.system_update()
 	
 func play_one(event,source):
@@ -33,3 +36,4 @@ func play_one(event,source):
 	
 func set_listener(listener):
 	Fmod.system_add_listener(listener)
+	#has_listener=true

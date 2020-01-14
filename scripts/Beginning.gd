@@ -12,8 +12,9 @@ func _ready():
 	$Player/Camera2D.set_offset(Vector2(300,-100))
 	create_lamp()
 	
-	if has_node("/root/FMOD/FMOD_Start"):
-		get_node("/root/FMOD/FMOD_Start").play_one("event:/Music", $FmodSource)
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").play_one("event:/Music", $FmodSource)
+		get_node("/root/FMOD/FMOD_start").play_one("event:/BeginningAmbiance", $FmodSource)
 	
 func _process(_delta):
 	if $PauseButton.isPaused == false:

@@ -27,8 +27,8 @@ var spritedir = "down"
 var movedir = Vector2(0,0)
 
 func _ready():
-	if has_node("/root/FMOD/FMOD_Start"):
-			get_node("/root/FMOD/FMOD_Start").listener(self)
+	if has_node("/root/FMOD/FMOD_start"):
+			get_node("/root/FMOD/FMOD_start").set_listener(self)
 
 func _physics_process(_delta):
 	if barco != true:

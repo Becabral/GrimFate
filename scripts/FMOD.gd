@@ -7,10 +7,15 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if type_exists("Fmod"):
-		print("Fmod exists")
 		var FMOD = load("res://scenes/FMOD_Start.tscn")
 		add_child(FMOD.instance())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func reset_fmod():
+	$FMOD_start.queue_free()
+	if type_exists("Fmod"):
+		var FMOD = load("res://scenes/FMOD_Start.tscn")
+		add_child(FMOD.instance())
