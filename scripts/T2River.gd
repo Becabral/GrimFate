@@ -22,6 +22,7 @@ func _process(_delta):
 		lily.position=Vector2(self.position.x,player.position.y)
 		get_parent().add_child(lily)
 		emit_signal("used_seed")
+		$LabelPos/useLbl.hide()
 	pass
 
 

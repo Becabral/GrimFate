@@ -47,12 +47,15 @@ position = Vector2( 1068.41, 403.842 )
 shape = SubResource( 2 )
 
 [node name="Lilypad" parent="." instance=ExtResource( 3 )]
+position = Vector2( -96.3206, 667.449 )
 
 [node name="T2River" parent="." instance=ExtResource( 4 )]
 position = Vector2( -71.367, 177.865 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 229.233, 88.0808 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 55.0393

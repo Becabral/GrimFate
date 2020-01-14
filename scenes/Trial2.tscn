@@ -137,6 +137,7 @@ script = ExtResource( 1 )
 modulate = Color( 1, 1, 1, 0.247059 )
 position = Vector2( 479.561, 514.615 )
 scale = Vector2( 0.6, 0.6 )
+z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 247.367, -2892.69 )
 
@@ -235,6 +236,7 @@ shape = SubResource( 18 )
 disabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = SubResource( 20 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -251,6 +253,8 @@ texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 476.493, 497.108 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="NextArea" type="Area2D" parent="."]
 editor/display_folded = true
@@ -276,3 +280,4 @@ __meta__ = {
 [node name="T2River" parent="." instance=ExtResource( 8 )]
 position = Vector2( 788.706, 79.0644 )
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
+[connection signal="used_seed" from="T2River" to="Interface/GUI" method="_on_T2River_used_seed"]
