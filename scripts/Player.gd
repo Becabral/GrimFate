@@ -47,11 +47,20 @@ func _physics_process(_delta):
 	if movedir != Vector2(0,0) and barco == false:
 		if lamp == false:
 			if spritedir == "up":
-				$RotPos/AnimatedSprite.play("Player_costas")
+				if has_hood == true:
+					$RotPos/AnimatedSprite.play("Player_cloak_costas")
+				else:
+					$RotPos/AnimatedSprite.play("Player_costas")
 			elif spritedir == "down":
-				$RotPos/AnimatedSprite.play("Player_frente")
+				if has_hood == true:
+					$RotPos/AnimatedSprite.play("Player_cloak_frente")
+				else:
+					$RotPos/AnimatedSprite.play("Player_frente")
 			elif spritedir == "left" or spritedir == "right":
-				$RotPos/AnimatedSprite.play("Player_lateral")
+				if has_hood == true:
+					$RotPos/AnimatedSprite.play("Player_cloak_lateral")
+				else:
+					$RotPos/AnimatedSprite.play("Player_lateral")
 		
 		
 		
