@@ -9,7 +9,7 @@ func _ready():
 	$Player.spritedir = "right"
 	#inicializa a posição da camera em relação ao personagem
 	#$Player/Camera2D.offset_v = 0
-	$Player/Camera2D.set_offset(Vector2(300,-180))
+	$Player/Camera2D.set_offset(Vector2(300,-100))
 	create_lamp()
 	
 func _process(_delta):
@@ -31,8 +31,8 @@ func _process(_delta):
 
 func create_lamp():
 	lampada = lamp.instance()
-	lampada.position.x = -25
-	lampada.position.y = 480
+	lampada.position.x = -1345
+	lampada.position.y = 529
 	lampada.scale.x = 0.2
 	lampada.scale.y = 0.2
 	add_child(lampada)
