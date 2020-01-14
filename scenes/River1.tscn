@@ -47,10 +47,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Interesting species… they take their life for granted… they think they own the world"
 
 [node name="River4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2722.29, 606.518 )
+position = Vector2( 2724.68, 634.001 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 0
+frame = 1
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 6 )]

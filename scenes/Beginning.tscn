@@ -100,13 +100,14 @@ position = Vector2( 0, 24.1108 )
 shape = SubResource( 3 )
 
 [node name="Barco" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1139.41, 583.398 )
+position = Vector2( 1133.38, 575.861 )
 z_index = 2
 
 [node name="River" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1763.19, 606.764 )
+position = Vector2( 1755.65, 626.359 )
 scale = Vector2( 1.14336, 1.14336 )
 z_index = 2
+frame = 0
 
 [node name="grims fate intro" type="Sprite" parent="."]
 position = Vector2( 866.353, 1.38243 )
