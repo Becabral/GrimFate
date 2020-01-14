@@ -16,6 +16,13 @@ func _ready():
 		get_node("/root/FMOD/FMOD_Start").play_one("event:/Music", $FmodSource)
 	
 func _process(_delta):
+	if $PauseButton.isPaused == false:
+		$PausedGUI/Container.hide()
+	else:
+		$PausedGUI/Container.show()
+		get_tree().paused = true
+		$PauseButton.isPaused = false
+		
 	if $Player.position.x <= -1780:
 		$Player/Camera2D.current = false
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=2]
@@ -17,7 +17,9 @@
 [ext_resource path="res://assets/img/environment/Beginning/Layer3.png" type="Texture" id=15]
 [ext_resource path="res://assets/img/environment/Beginning/Layer2.1.png" type="Texture" id=16]
 [ext_resource path="res://scenes/RiverBeginning.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/PausedGUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/PauseButton.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -177,7 +179,7 @@ texture = ExtResource( 16 )
 [node name="River" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1917.88, 685.619 )
 scale = Vector2( 1.13842, 1.13842 )
-frame = 0
+frame = 1
 
 [node name="Parede" type="StaticBody2D" parent="."]
 
@@ -185,9 +187,14 @@ frame = 0
 position = Vector2( -1872.69, 426.731 )
 shape = SubResource( 4 )
 
+[node name="PausedGUI" parent="." instance=ExtResource( 18 )]
+
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="Interface" instance=ExtResource( 18 )]
+[node name="GUI" parent="Interface" instance=ExtResource( 19 )]
 margin_left = -0.72522
 margin_right = -0.72522
+
+[node name="PauseButton" parent="." instance=ExtResource( 20 )]
+pause_mode = 2
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
