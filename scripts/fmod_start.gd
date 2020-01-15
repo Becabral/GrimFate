@@ -17,7 +17,8 @@ func _ready():
 	Fmod.bank_load("./assets/sound/banks/Desktop/Master.strings.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Music.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Beginning.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
-	
+	Fmod.bank_load("./assets/sound/banks/Desktop/Trial1.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+		
 	#Fmod.system_add_listener(get_node("/Beginning/Player"))
 	#Fmod.play_one_shot("event:/Music", $FmodSource)
 	
@@ -32,8 +33,18 @@ func _process(_delta):
 	Fmod.system_update()
 	
 func play_one(event,source):
-	Fmod.play_one_shot(event,source)
+	Fmod.play_one_shot_attached(event,source)
 	
+func create_event(event, node):
+	var my_music_event = Fmod.create_event_instance(event)
+	Fmod.attach_instance_to_node( my_music_event, node )
+	Fmod.event_start(my_music_event)
+	return my_music_event
+	
+func stop_event(event):
+	Fmod.event_stop(event, Fmod.FMOD_STUDIO_STOP_ALLOWFADEOUT)
+	Fmod.event_release(event)
+		
 func set_listener(listener):
 	Fmod.system_add_listener(listener)
 	#has_listener=true
