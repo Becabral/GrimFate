@@ -4,10 +4,15 @@ extends Control
 var start=false #Tells me if the player pressed start
 				#so that the title can fade and
 				#opening animation can play
-
+var cameraposition = 0
 #Fades in Title
 func _ready(): 
 	$OpeningScene.play=false
+	cameraposition=$OpeningScene/Orb.position
+	$PressStart.position.x=cameraposition.x
+	$PressStart.position.y=cameraposition.y+100
+	$Placeholder.position.x=cameraposition.x
+	$Placeholder.position.y=cameraposition.y-150
 	$AnimTitle.play("Fade")
 	yield($AnimTitle,"animation_finished")
 	if(!start):
