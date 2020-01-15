@@ -94,7 +94,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.7 ),
+"times": PoolRealArray( 0, 1.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.054902, 0.988235, 0.941176, 1 ), Color( 0.054902, 0.988235, 0.941176, 0 ) ]
@@ -106,7 +106,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.9, 7.8 ),
+"times": PoolRealArray( 0, 1.9, 4.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -204,7 +204,6 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Orb"]
 modulate = Color( 0.054902, 0.988235, 0.941176, 1 )
-position = Vector2( 0, -10 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
@@ -229,7 +228,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 18
+frame = 41
 speed_scale = 3.0
 playing = true
 
@@ -240,7 +239,6 @@ anims/FadePlayer = SubResource( 7 )
 anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -266,7 +264,6 @@ scale = Vector2( 1.10654, 1.10654 )
 texture = ExtResource( 65 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
 
@@ -320,17 +317,17 @@ text = "humans…"
 
 [node name="Intro_Narrative2" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -399.359, -12.1457 )
-rotation = 0.349066
+rotation = 0.436332
 text = "they spend the whole life "
 
 [node name="Intro_Narrative3" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -415.163, 21.6097 )
-rotation = 0.349066
+rotation = 0.436332
 text = "chasing futil things in a desperate way to forget"
 
 [node name="Intro_Narrative4" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -432.547, 53.7449 )
-rotation = 0.349066
+rotation = 0.436332
 text = "that someday will face me. "
 
 [node name="Intro_Narrative5" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
