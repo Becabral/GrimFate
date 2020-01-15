@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Title.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Opening.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/Press Start.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/Placeholder.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/Inicio/title.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -77,9 +77,7 @@ anims/Fade = SubResource( 3 )
 
 [node name="Placeholder" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 512, 100 )
+position = Vector2( 516.633, 59.8666 )
+scale = Vector2( 0.571984, 0.571984 )
 z_index = 1
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
