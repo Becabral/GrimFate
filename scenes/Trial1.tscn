@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -19,8 +19,7 @@
 [ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=17]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scripts/WrapAround.gd" type="Script" id=19]
-[ext_resource path="res://fundo_trial 1.png" type="Texture" id=20]
-[ext_resource path="res://assets/img/path4164.png" type="Texture" id=21]
+[ext_resource path="res://assets/img/trial 1/fundo_trial 1 (1).png" type="Texture" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -437,12 +436,6 @@ __meta__ = {
 position = Vector2( -1705.44, -1537.17 )
 z_index = -4
 texture = ExtResource( 20 )
-
-[node name="path4164" type="Sprite" parent="fundo_trial1"]
-modulate = Color( 0.501961, 0.596078, 0.960784, 1 )
-position = Vector2( -1536.79, -787.119 )
-scale = Vector2( 0.0643301, 0.0643301 )
-texture = ExtResource( 21 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
