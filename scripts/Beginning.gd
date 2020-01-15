@@ -19,8 +19,10 @@ func _ready():
 func _process(_delta):
 	if $PauseButton.isPaused == false:
 		$PausedGUI/Container.hide()
+		$PausedGUI/Fundo.hide()
 	else:
 		$PausedGUI/Container.show()
+		$PausedGUI/Fundo.show()
 		get_tree().paused = true
 		$PauseButton.isPaused = false
 		
