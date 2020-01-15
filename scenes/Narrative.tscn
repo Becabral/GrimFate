@@ -11,9 +11,8 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_top = -0.463135
-margin_right = 128.0
-margin_bottom = 36.5369
+margin_right = 561.0
+margin_bottom = 178.0
 custom_fonts/font = SubResource( 1 )
 text = "Text Object
 "

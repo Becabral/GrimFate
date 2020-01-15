@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://scripts/Opening.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/path4164.png" type="Texture" id=2]
@@ -70,7 +70,8 @@
 [ext_resource path="res://assets/img/environment/Beginning/Layer4.png" type="Texture" id=68]
 [ext_resource path="res://assets/img/environment/Beginning/Layer3.png" type="Texture" id=69]
 [ext_resource path="res://assets/img/environment/Beginning/Layer2.1.png" type="Texture" id=70]
-[ext_resource path="res://scenes/Parallax/ParallaxForeground.tscn" type="PackedScene" id=71]
+[ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=71]
+[ext_resource path="res://scenes/Parallax/ParallaxForeground.tscn" type="PackedScene" id=72]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -83,7 +84,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=2]
 resource_name = "Fade_Player"
 length = 5.0
 tracks/0/type = "value"
@@ -93,7 +94,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.9 ),
+"times": PoolRealArray( 0, 4.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.054902, 0.988235, 0.941176, 1 ), Color( 0.054902, 0.988235, 0.941176, 0 ) ]
@@ -105,7 +106,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.9, 4.5 ),
+"times": PoolRealArray( 0, 1.9, 7.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -123,8 +124,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 75 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Float"
+[sub_resource type="Animation" id=3]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -140,7 +140,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 10 ), Vector2( 0, -10 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
 "loop": true,
@@ -148,12 +148,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "BringLevelIn"
+[sub_resource type="Animation" id=5]
 length = 5.0
 
-[sub_resource type="Animation" id=4]
-resource_name = "CameraMoveRight"
+[sub_resource type="Animation" id=6]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Orb/Camera2D:offset")
@@ -168,9 +166,9 @@ tracks/0/keys = {
 "values": [ Vector2( -30, 0 ), Vector2( 250, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 length = 5.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Orb:position:x")
@@ -218,8 +216,8 @@ local_coords = false
 process_material = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Orb"]
-anims/Fade_Player = SubResource( 7 )
-anims/Float = SubResource( 2 )
+anims/Fade_Player = SubResource( 2 )
+anims/Float = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="Orb"]
 offset = Vector2( -30, 0 )
@@ -230,18 +228,19 @@ drag_margin_h_enabled = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 8 )
-frame = 34
+frames = SubResource( 4 )
+frame = 18
 speed_scale = 3.0
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BringLevelIn = SubResource( 3 )
-anims/CameraMoveRight = SubResource( 4 )
-anims/FadePlayer = SubResource( 5 )
-anims/OrbMoveDown = SubResource( 6 )
+anims/BringLevelIn = SubResource( 5 )
+anims/CameraMoveRight = SubResource( 6 )
+anims/FadePlayer = SubResource( 7 )
+anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -290,7 +289,6 @@ __meta__ = {
 }
 
 [node name="Layer 4" type="ParallaxLayer" parent="ParallaxBackground2"]
-editor/display_folded = true
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/Layer 4"]
@@ -309,11 +307,49 @@ __meta__ = {
 }
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxBackground2"]
-editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/Layer 2"]
 position = Vector2( -322.099, 547.63 )
 texture = ExtResource( 70 )
 
-[node name="ParallaxForeground2" parent="." instance=ExtResource( 71 )]
+[node name="Intro_Narrative" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -421.174, -116.325 )
+rotation = -0.436332
+text = "humans…"
+
+[node name="Intro_Narrative2" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -399.359, -12.1457 )
+rotation = 0.349066
+text = "they spend the whole life "
+
+[node name="Intro_Narrative3" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -415.163, 21.6097 )
+rotation = 0.349066
+text = "chasing futil things in a desperate way to forget"
+
+[node name="Intro_Narrative4" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -432.547, 53.7449 )
+rotation = 0.349066
+text = "that someday will face me. "
+
+[node name="Intro_Narrative5" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -466.153, 332.086 )
+rotation = -0.0349066
+text = "Some try control their existence"
+
+[node name="Intro_Narrative6" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -466.153, 374.655 )
+rotation = -0.0349066
+text = "but fail to understand how life gets in their way."
+
+[node name="Intro_Narrative7" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -196.499, 502.386 )
+text = "In the end all they have is the calm whisper that"
+
+[node name="Intro_Narrative8" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
+position = Vector2( -196.499, 545.976 )
+text = "that gently speaks to them."
+
+[node name="ParallaxForeground2" parent="." instance=ExtResource( 72 )]
+editor/display_folded = false
