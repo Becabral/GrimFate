@@ -2,6 +2,7 @@ extends CanvasLayer
 
 
 func _ready():
+	$Container.hide()
 	pass # Replace with function body.
 
 

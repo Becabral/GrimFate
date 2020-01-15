@@ -24,3 +24,11 @@ func change_scene(path):
 	animation_player.play_backwards("Fade")
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
+	
+func change_scene_slow(path):
+	animation_player.play("Fade",-1,0.5)
+	yield(animation_player, "animation_finished")
+	assert(get_tree().change_scene(path)==OK)
+	animation_player.play_backwards("Fade")
+	yield(animation_player, "animation_finished")
+	emit_signal("scene_changed")

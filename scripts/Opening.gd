@@ -24,9 +24,10 @@ func playOpening():
 	$AnimationPlayer.play("OrbMoveDown")
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("CameraMoveRight")
+	$Orb/AnimationPlayer.play("Fade_Player")
 	yield($AnimationPlayer, "animation_finished")
 	#$Beginning/Player/Camera2D.make_current()
 	#get_tree().get_root().add_child(beg)
 	#assert(get_tree().change_scene_to(beg)==OK)
-	get_node("/root/SceneChanger").change_scene("res://scenes/Beginning.tscn")
+	get_node("/root/SceneChanger").change_scene_slow("res://scenes/Beginning.tscn")
 	
