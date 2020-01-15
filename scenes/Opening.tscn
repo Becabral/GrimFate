@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://scripts/Opening.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/path4164.png" type="Texture" id=2]
@@ -72,6 +72,7 @@
 [ext_resource path="res://assets/img/environment/Beginning/Layer2.1.png" type="Texture" id=70]
 [ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=71]
 [ext_resource path="res://scenes/Parallax/ParallaxForeground.tscn" type="PackedScene" id=72]
+[ext_resource path="res://assets/fonts/Bariol_Light.otf" type="DynamicFontData" id=73]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -191,6 +192,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 5 )
 }
 
+[sub_resource type="DynamicFont" id=9]
+size = 42
+font_data = ExtResource( 73 )
+
 [node name="OpeningScene" type="Node2D"]
 script = ExtResource( 1 )
 play = true
@@ -228,7 +233,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 12
+frame = 28
 speed_scale = 3.0
 playing = true
 
@@ -264,6 +269,7 @@ scale = Vector2( 1.10654, 1.10654 )
 texture = ExtResource( 65 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
 
@@ -273,6 +279,7 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -358,3 +365,11 @@ wait = 13.0
 
 [node name="ParallaxForeground2" parent="." instance=ExtResource( 72 )]
 editor/display_folded = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = -444.567
+margin_top = -918.186
+margin_right = -218.567
+margin_bottom = -875.186
+custom_fonts/font = SubResource( 9 )
+text = "A Grim's Fate"
