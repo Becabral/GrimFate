@@ -228,7 +228,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 41
+frame = 1
 speed_scale = 3.0
 playing = true
 
