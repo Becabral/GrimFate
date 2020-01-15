@@ -59,7 +59,7 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 416.599, 592.579 )
+position = Vector2( -400, 592.579 )
 z_index = 2
 
 [node name="Light2D" type="Light2D" parent="Player"]
@@ -179,7 +179,6 @@ texture = ExtResource( 16 )
 [node name="River" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1917.88, 685.619 )
 scale = Vector2( 1.13842, 1.13842 )
-frame = 1
 
 [node name="Parede" type="StaticBody2D" parent="."]
 
