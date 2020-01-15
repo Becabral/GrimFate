@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://scripts/Opening.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/path4164.png" type="Texture" id=2]
@@ -71,8 +71,9 @@
 [ext_resource path="res://assets/img/environment/Beginning/Layer3.png" type="Texture" id=69]
 [ext_resource path="res://assets/img/environment/Beginning/Layer2.1.png" type="Texture" id=70]
 [ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=71]
-[ext_resource path="res://scenes/Parallax/ParallaxForeground.tscn" type="PackedScene" id=72]
-[ext_resource path="res://assets/fonts/Bariol_Light.otf" type="DynamicFontData" id=73]
+[ext_resource path="res://assets/img/environment/Beginning/Layer2.png" type="Texture" id=72]
+[ext_resource path="res://assets/img/environment/Beginning/Foreground.png" type="Texture" id=73]
+[ext_resource path="res://assets/fonts/Bariol_Light.otf" type="DynamicFontData" id=74]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -164,7 +165,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 0.170755 ),
 "update": 0,
-"values": [ Vector2( -30, 0 ), Vector2( 250, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 250, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -178,8 +179,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( -330, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("Orb:position:y")
@@ -194,14 +195,14 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=9]
 size = 42
-font_data = ExtResource( 73 )
+font_data = ExtResource( 74 )
 
 [node name="OpeningScene" type="Node2D"]
 script = ExtResource( 1 )
 play = true
 
 [node name="Orb" type="Node2D" parent="."]
-position = Vector2( -330, -750 )
+position = Vector2( -360, -750 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -224,7 +225,6 @@ anims/Fade_Player = SubResource( 2 )
 anims/Float = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="Orb"]
-offset = Vector2( -30, 0 )
 current = true
 drag_margin_h_enabled = false
 
@@ -233,7 +233,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 10
+frame = 55
 speed_scale = 3.0
 playing = true
 
@@ -244,6 +244,7 @@ anims/FadePlayer = SubResource( 7 )
 anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -268,9 +269,9 @@ scale = Vector2( 1.10654, 1.10654 )
 texture = ExtResource( 65 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
+position = Vector2( -30, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxForeground/Foreground"]
 position = Vector2( 298.725, -91.2325 )
@@ -278,6 +279,7 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -291,6 +293,7 @@ __meta__ = {
 }
 
 [node name="Layer 4" type="ParallaxLayer" parent="ParallaxBackground2"]
+editor/display_folded = true
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/Layer 4"]
@@ -361,8 +364,24 @@ position = Vector2( -196.499, 545.976 )
 text = "that gently speaks to them."
 wait = 13.0
 
-[node name="ParallaxForeground2" parent="." instance=ExtResource( 72 )]
-editor/display_folded = false
+[node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground2"]
+scale = Vector2( 1.1, 1 )
+z_as_relative = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxForeground2/Layer 2"]
+position = Vector2( 298.415, 96.2372 )
+scale = Vector2( 1.00655, 1.00655 )
+texture = ExtResource( 72 )
+
+[node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground2"]
+motion_scale = Vector2( 1.8, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxForeground2/Foreground"]
+position = Vector2( -82.8243, 644.438 )
+texture = ExtResource( 73 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -372,11 +391,11 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative3" method="_on_OpeningScene_play_narrative"]
