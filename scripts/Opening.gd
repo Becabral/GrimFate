@@ -4,6 +4,8 @@ onready var beg
 
 export var play=false #Tells me if the Opening can play
 
+signal play_narrative
+
 #Sets Opening defaults
 func _ready():
 #	$Beginning/Player/Anim.play("idleright")
@@ -20,6 +22,7 @@ func _process(_delta):
 
 #Brings the level up and changes scene to Beginning
 func playOpening():
+	emit_signal("play_narrative")
 	#$Beginning/Player/Camera2D.current=false
 	$AnimationPlayer.play("OrbMoveDown", -1, 0.3)
 	yield($AnimationPlayer, "animation_finished")

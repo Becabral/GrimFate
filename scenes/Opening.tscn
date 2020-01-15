@@ -233,7 +233,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 28
+frame = 10
 speed_scale = 3.0
 playing = true
 
@@ -253,7 +253,6 @@ scale = Vector2( 1.01594, 1.01594 )
 texture = ExtResource( 63 )
 
 [node name="Background2" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 z_index = 1
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Background2"]
@@ -279,7 +278,6 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -367,9 +365,18 @@ wait = 13.0
 editor/display_folded = false
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = -444.567
 margin_top = -918.186
 margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative3" method="_on_OpeningScene_play_narrative"]
