@@ -21,7 +21,7 @@ func _process(_delta):
 #Brings the level up and changes scene to Beginning
 func playOpening():
 	#$Beginning/Player/Camera2D.current=false
-	$AnimationPlayer.play("OrbMoveDown")
+	$AnimationPlayer.play("OrbMoveDown", -1, 0.3)
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("CameraMoveRight")
 	$Orb/AnimationPlayer.play("Fade_Player")
