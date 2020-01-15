@@ -1,33 +1,13 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/environment/Trial1BG.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=4]
-[ext_resource path="res://scripts/Hood.gd" type="Script" id=5]
-[ext_resource path="res://assets/img/player/cloak.png" type="Texture" id=6]
-[ext_resource path="res://scenes/useLbl.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/fonts/Righteous-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/sound/music/Trial 1 Alpha.wav" type="AudioStream" id=11]
-[ext_resource path="res://scenes/BigFire.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Fire.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scripts/DoorEvent.gd" type="Script" id=14]
-[ext_resource path="res://icon.png" type="Texture" id=15]
-[ext_resource path="res://scenes/BigTorch.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=17]
-[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scripts/WrapAround.gd" type="Script" id=19]
-[ext_resource path="res://fundo_trial 1.png" type="Texture" id=20]
-[ext_resource path="res://assets/img/path4164.png" type="Texture" id=21]
+[ext_resource path="res://assets/img/environment/Tileset.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=2]
 3/name = "Tileset.png 3"
-3/texture = ExtResource( 4 )
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 96, 0, 32, 32 )
@@ -37,7 +17,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Tileset.png 4"
-4/texture = ExtResource( 4 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 32, 32 )
@@ -47,7 +27,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Tileset.png 5"
-5/texture = ExtResource( 4 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 32, 0, 32, 32 )
@@ -57,7 +37,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Tileset.png 6"
-6/texture = ExtResource( 4 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 64, 0, 32, 32 )
@@ -67,7 +47,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Tileset.png 7"
-7/texture = ExtResource( 4 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 128, 0, 32, 32 )
@@ -83,73 +63,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 7/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 73.2514, 74.3185 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.596078, 0.580392, 0.580392, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 13
-expand_margin_left = 1.0
-expand_margin_right = 1.0
-expand_margin_top = 1.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="DynamicFont" id=5]
-size = 90
-font_data = ExtResource( 8 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 112.828, 56.8174 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 81.2255, 33.674 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 48.5681, 47.5991 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 28.8051, 575.784 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 64.155, 60.887 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 123.117, 28.803 )
-
-[node name="Level 1" type="Node2D"]
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="background" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.6 )
-position = Vector2( -901.217, -1266.83 )
-scale = Vector2( 0.351368, 0.351368 )
-texture = ExtResource( 2 )
-
-[node name="ReferenceBG" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.113725 )
-position = Vector2( -713.755, -1459.99 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="TileMap1" type="TileMap" parent="."]
-modulate = Color( 1, 1, 1, 0.0745098 )
+[node name="TileMap1" type="TileMap"]
 z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -158,295 +72,3 @@ tile_data = PoolIntArray( -7209092, 7, 0, -7209091, 7, 0, -7209090, 7, 0, -72090
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Hood" type="Area2D" parent="."]
-editor/display_folded = true
-visible = false
-position = Vector2( 497.594, -613.615 )
-scale = Vector2( 0.663149, 0.663149 )
-script = ExtResource( 5 )
-
-[node name="cloak" type="Sprite" parent="Hood"]
-position = Vector2( -8.63937, -0.201351 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hood"]
-visible = false
-shape = SubResource( 3 )
-
-[node name="useLbl" parent="Hood" instance=ExtResource( 7 )]
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-
-[node name="Torches" type="Node2D" parent="."]
-
-[node name="torchA" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( 309.555, -604.63 )
-scale = Vector2( 0.7, 0.7 )
-
-[node name="torchB" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( 700, -640 )
-scale = Vector2( 0.7, 0.7 )
-
-[node name="Torch" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1083.15, -1065.95 )
-lit = false
-
-[node name="Torch2" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1430.21, -1063.92 )
-lit = false
-
-[node name="Torch10" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1751.31, -1057.66 )
-lit = false
-
-[node name="Torch11" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2011.96, -1060.68 )
-lit = false
-
-[node name="Torch3" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1762.13, -1522 )
-lit = false
-
-[node name="Torch4" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1884.43, -1804.84 )
-lit = false
-
-[node name="Torch6" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -794.789, -1077.37 )
-lit = false
-
-[node name="Torch5" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2140.38, -1676.02 )
-lit = false
-
-[node name="Torch7" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2562.22, -1530.04 )
-lit = false
-
-[node name="Torch8" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2926.89, -1625.4 )
-lit = false
-
-[node name="Torch9" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2925.14, -2030.86 )
-lit = false
-
-[node name="Torch12" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2010.1, -1302.77 )
-lit = false
-
-[node name="Torch13" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1759.73, -1304.28 )
-lit = false
-
-[node name="Torch14" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2370.21, -2333.66 )
-lit = false
-
-[node name="Torch16" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -1957.96, -2381.1 )
-lit = false
-
-[node name="Torch15" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2753.11, -2384.18 )
-lit = false
-
-[node name="Player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 480, 500 )
-collision_layer = 7
-collision_mask = 7
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-volume_db = -20.0
-
-[node name="NextArea" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1051.16, 482.991 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
-position = Vector2( -3423.27, -3919.38 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="NextArea"]
-position = Vector2( -1641.69, -1799.97 )
-shape = SubResource( 7 )
-
-[node name="FireEvent" parent="." instance=ExtResource( 12 )]
-position = Vector2( 495.95, -320.7 )
-
-[node name="Fire" type="Node2D" parent="."]
-editor/display_folded = true
-
-[node name="Fire2" parent="Fire" instance=ExtResource( 13 )]
-position = Vector2( 223, -28 )
-
-[node name="Fire3" parent="Fire" instance=ExtResource( 13 )]
-position = Vector2( 223, 40 )
-
-[node name="Fire4" parent="Fire" instance=ExtResource( 13 )]
-position = Vector2( 223, 111 )
-is_blue = true
-
-[node name="Fire5" parent="Fire" instance=ExtResource( 13 )]
-position = Vector2( 223, 183 )
-
-[node name="Fire6" parent="Fire" instance=ExtResource( 13 )]
-position = Vector2( 223, 254 )
-
-[node name="Fire8" parent="Fire" instance=ExtResource( 12 )]
-position = Vector2( -2347.06, -1638.2 )
-is_blue = true
-
-[node name="DoorEvent" type="Node2D" parent="."]
-editor/display_folded = true
-script = ExtResource( 14 )
-
-[node name="Door" type="StaticBody2D" parent="DoorEvent"]
-editor/display_folded = true
-position = Vector2( -112.728, -111.621 )
-
-[node name="icon" type="Sprite" parent="DoorEvent/Door"]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEvent/Door"]
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="TorchC" parent="DoorEvent" instance=ExtResource( 9 )]
-position = Vector2( -4.2, -15.4 )
-lit = false
-
-[node name="TorchD" parent="DoorEvent" instance=ExtResource( 9 )]
-position = Vector2( -210, -15.4 )
-lit = false
-
-[node name="DoorEvent2" type="Node2D" parent="."]
-editor/display_folded = true
-script = ExtResource( 14 )
-
-[node name="Door" type="StaticBody2D" parent="DoorEvent2"]
-position = Vector2( -592.678, -1166.93 )
-
-[node name="icon" type="Sprite" parent="DoorEvent2/Door"]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEvent2/Door"]
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BigTorch" parent="DoorEvent2" instance=ExtResource( 16 )]
-position = Vector2( -592.031, -747.908 )
-
-[node name="Tree" type="Node" parent="."]
-editor/display_folded = true
-
-[node name="Tree7" type="Sprite" parent="Tree"]
-position = Vector2( -2354.94, -2361.86 )
-scale = Vector2( 0.594415, 0.575103 )
-texture = ExtResource( 17 )
-
-[node name="Interface" type="CanvasLayer" parent="."]
-editor/display_folded = true
-
-[node name="GUI" parent="Interface" instance=ExtResource( 18 )]
-
-[node name="WrapAroundR" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( -1116.18, -1953.05 )
-script = ExtResource( 19 )
-warp_to = -3550
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WrapAroundR"]
-shape = SubResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="WrapAroundL" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( -3641.76, -1961.66 )
-script = ExtResource( 19 )
-warp_to = -1200
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WrapAroundL"]
-shape = SubResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="SnowWall" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( -2368.04, -2554.59 )
-collision_layer = 4
-collision_mask = 4
-
-[node name="icon" type="Sprite" parent="SnowWall"]
-modulate = Color( 1, 1, 1, 0.423529 )
-scale = Vector2( 1.89086, 1.89086 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall"]
-shape = SubResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Camera Triggers" type="Node2D" parent="."]
-editor/display_folded = true
-position = Vector2( -1789.95, -1243.86 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="SmoothOff" type="Area2D" parent="Camera Triggers"]
-position = Vector2( -92.3154, -165.746 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff"]
-shape = SubResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
-position = Vector2( -100.315, 123.742 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
-shape = SubResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="fundo_trial1" type="Sprite" parent="."]
-position = Vector2( -1705.44, -1537.17 )
-z_index = -4
-texture = ExtResource( 20 )
-
-[node name="path4164" type="Sprite" parent="fundo_trial1"]
-modulate = Color( 0.501961, 0.596078, 0.960784, 1 )
-position = Vector2( -1536.79, -787.119 )
-scale = Vector2( 0.0643301, 0.0643301 )
-texture = ExtResource( 21 )
-[connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
-[connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
-[connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
-[connection signal="body_entered" from="WrapAroundR" to="WrapAroundR" method="_on_WrapAroundR_body_entered"]
-[connection signal="body_entered" from="WrapAroundL" to="WrapAroundL" method="_on_WrapAroundR_body_entered"]
-[connection signal="body_entered" from="Camera Triggers/SmoothOff" to="." method="_on_SmoothOff_body_entered"]
-[connection signal="body_entered" from="Camera Triggers/SmoothOn" to="." method="_on_SmoothOn_body_entered"]
