@@ -1,5 +1,7 @@
 extends Node2D
 #onready var Level2 = preload("res://scenes/Level 2.tscn")
+signal kill_fires
+
 
 func _ready():
 	$Player/Camera2D.drag_margin_h_enabled=false
@@ -12,6 +14,7 @@ func _ready():
 
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
+		emit_signal("kill_fires")
 		if has_node("/root/SceneChanger"):
 			get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
 	pass # Replace with function body.

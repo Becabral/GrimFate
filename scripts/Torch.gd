@@ -15,13 +15,17 @@ var fmodevent
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if (has_node("/root/Level 1")):
+		get_node("/root/Level 1").connect("kill_fires", self, "delete")
 	if lit:
 		if big:
 			add_child(bigfire.instance())
 		else:
 			add_child(fire.instance())
+			#$Fire/StaticBody2D/CollisionShape2D.disabled=true
 		$Fire.stop_sound()
 		$Fire.play_sound(self)
+		
 
 	pass # Replace with function body.
 
@@ -33,6 +37,7 @@ func _process(delta):
 				add_child(bigfire.instance())
 			else:
 				add_child(fire.instance())
+				#$Fire/StaticBody2D/CollisionShape2D.disabled=true
 			$Fire.stop_sound()
 			$Fire.play_sound(self)
 			#if has_node("/root/FMOD/FMOD_start"):
@@ -56,3 +61,6 @@ func _on_Torch_body_entered(body):
 			if body.blue:
 				blue=true
 			lit=true
+
+func delete():
+	lit=false

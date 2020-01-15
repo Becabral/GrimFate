@@ -48,3 +48,6 @@ func stop_event(event):
 func set_listener(listener):
 	Fmod.system_add_listener(listener)
 	#has_listener=true
+
+func shutdown():
+	Fmod.system_shutdown()

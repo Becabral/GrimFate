@@ -15,7 +15,10 @@ func _ready():
 #	pass
 
 func reset_fmod():
-	$FMOD_start.queue_free()
-	if type_exists("Fmod"):
-		var FMOD = load("res://scenes/FMOD_Start.tscn")
-		add_child(FMOD.instance())
+	if(has_node("FMOD_start")):
+		$FMOD_start.shutdown()
+		#$FMOD_start.queue_free()
+		print("shutdown")
+#	if type_exists("Fmod"):
+#		var FMOD = load("res://scenes/FMOD_Start.tscn")
+#		add_child(FMOD.instance())

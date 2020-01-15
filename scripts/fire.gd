@@ -6,6 +6,9 @@ export var is_blue = false
 var fmodevent
 
 func _ready():
+	if (has_node("/root/Level 1")):
+		get_node("/root/Level 1").connect("kill_fires", self, "delete")
+	
 	if is_blue:
 		$AnimatedSprite.play("fire_blue")
 	else:
