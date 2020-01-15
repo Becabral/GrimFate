@@ -9,14 +9,14 @@
 [ext_resource path="res://assets/img/fire/fire_blue-17.png" type="Texture" id=7]
 [ext_resource path="res://assets/img/fire/fire_blue-18.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/fire/fire_blue-19.png" type="Texture" id=9]
-[ext_resource path="res://assets/img/fire/fire-11.png" type="Texture" id=10]
-[ext_resource path="res://assets/img/fire/fire-09.png" type="Texture" id=11]
-[ext_resource path="res://assets/img/fire/fire-10.png" type="Texture" id=12]
-[ext_resource path="res://assets/img/fire/fire-04.png" type="Texture" id=13]
-[ext_resource path="res://assets/img/fire/fire-07.png" type="Texture" id=14]
-[ext_resource path="res://assets/img/fire/fire-05.png" type="Texture" id=15]
-[ext_resource path="res://assets/img/fire/fire-06.png" type="Texture" id=16]
-[ext_resource path="res://assets/img/fire/fire-08.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/fire/fire-04.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/fire/fire-05.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/fire/fire-06.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/fire/fire-07.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/fire/fire-08.png" type="Texture" id=14]
+[ext_resource path="res://assets/img/fire/fire-09.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/fire/fire-10.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/fire/fire-11.png" type="Texture" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,19 +25,19 @@ animations = [ {
 "name": "fire_blue",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "fire2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "fire1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "default",
 "speed": 5.0
 } ]
 
@@ -57,7 +57,7 @@ __meta__ = {
 position = Vector2( -0.451599, 0.282372 )
 scale = Vector2( 0.250847, 0.250847 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
