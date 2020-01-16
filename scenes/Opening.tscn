@@ -233,7 +233,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 1
+frame = 20
 speed_scale = 3.0
 playing = true
 
@@ -244,7 +244,6 @@ anims/FadePlayer = SubResource( 7 )
 anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -279,7 +278,6 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -323,46 +321,54 @@ position = Vector2( -421.174, -116.325 )
 rotation = -0.436332
 text = "humans…"
 wait = 6.0
+autostart = false
 
 [node name="Intro_Narrative2" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -399.359, -12.1457 )
 rotation = 0.436332
 text = "they spend the whole life "
 wait = 7.0
+autostart = false
 
 [node name="Intro_Narrative3" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -415.163, 21.6097 )
 rotation = 0.436332
 text = "chasing futil things in a desperate way to forget"
 wait = 8.0
+autostart = false
 
 [node name="Intro_Narrative4" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -432.547, 53.7449 )
 rotation = 0.436332
 text = "that someday will face me. "
 wait = 9.0
+autostart = false
 
 [node name="Intro_Narrative5" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -466.153, 332.086 )
 rotation = -0.0349066
 text = "Some try control their existence"
 wait = 10.0
+autostart = false
 
 [node name="Intro_Narrative6" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -466.153, 374.655 )
 rotation = -0.0349066
 text = "but fail to understand how life gets in their way."
 wait = 11.0
+autostart = false
 
 [node name="Intro_Narrative7" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -196.499, 502.386 )
 text = "In the end all they have is the calm whisper that"
 wait = 12.0
+autostart = false
 
 [node name="Intro_Narrative8" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -196.499, 545.976 )
 text = "that gently speaks to them."
 wait = 13.0
+autostart = false
 
 [node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
 layer = 1
@@ -391,11 +397,11 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative3" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
