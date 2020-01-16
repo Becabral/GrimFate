@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/River1.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/img/environment/RiverBG.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/Stoke-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/RiverBeginning.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/img/environment/Beginning/fundo.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/environment/Beginning/Layer4.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/environment/Beginning/Layer3.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/img/environment/RiverBG.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Stoke-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/RiverBeginning.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.9204, 241.674 )
@@ -13,7 +16,7 @@ extents = Vector2( 33.9204, 241.674 )
 [sub_resource type="DynamicFont" id=2]
 size = 68
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 7 )
 
 [node name="River1" type="Node2D"]
 position = Vector2( 1.73633, 0 )
@@ -22,13 +25,26 @@ __meta__ = {
 "_edit_vertical_guides_": [ 578.916, 120.717, 1174.05 ]
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="fundo" type="Sprite" parent="."]
+position = Vector2( 2316.85, 65.5186 )
+texture = ExtResource( 2 )
+
+[node name="Layer4" type="Sprite" parent="."]
+position = Vector2( 1702.07, 279.796 )
+texture = ExtResource( 3 )
+
+[node name="Layer3" type="Sprite" parent="."]
+position = Vector2( 1944.36, 151.079 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 60.538, 560.261 )
 
 [node name="RiverBG" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2012.96, 371.826 )
 scale = Vector2( 0.419263, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="NextArea" type="Area2D" parent="."]
 position = Vector2( 4012.37, 263.827 )
@@ -46,13 +62,13 @@ margin_bottom = 470.0
 custom_fonts/font = SubResource( 2 )
 text = "Interesting species… they take their life for granted… they think they own the world"
 
-[node name="River4" parent="." instance=ExtResource( 5 )]
+[node name="River4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2724.68, 674.001 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 3
+frame = 0
 offset = Vector2( -212.821, -2.5654 )
 
-[node name="Barco" parent="." instance=ExtResource( 6 )]
+[node name="Barco" parent="." instance=ExtResource( 9 )]
 position = Vector2( 38.074, 587.388 )
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
