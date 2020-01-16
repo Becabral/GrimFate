@@ -66,6 +66,6 @@ offset = Vector2( -212.821, -2.5654 )
 position = Vector2( 38.074, 587.388 )
 
 [node name="Narratrive" parent="." instance=ExtResource( 10 )]
-position = Vector2( 191.168, 508.919 )
+position = Vector2( 871.18, 415.585 )
 text = "To understand the creation it’s important to understand how to use fire..."
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
