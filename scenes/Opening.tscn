@@ -233,7 +233,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 55
+frame = 1
 speed_scale = 3.0
 playing = true
 
@@ -391,11 +391,11 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative3" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative8" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative4" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative6" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]

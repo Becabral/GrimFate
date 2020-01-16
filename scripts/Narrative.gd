@@ -18,7 +18,7 @@ func _ready():
 
 func play_text():
 	yield(get_tree().create_timer(wait), "timeout")
-	$FadeIn.play("FadeIn", -1, 1)
+	$FadeIn.play("FadeIn", -1, 0.7)
 #
 #func _on_timer_timeout():
 #	$FadeIn.play("FadeIn", -1, 1)

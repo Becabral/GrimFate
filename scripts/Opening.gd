@@ -24,7 +24,7 @@ func _process(_delta):
 func playOpening():
 	emit_signal("play_narrative")
 	#$Beginning/Player/Camera2D.current=false
-	$AnimationPlayer.play("OrbMoveDown", -1, 0.3)
+	$AnimationPlayer.play("OrbMoveDown", -1, 0.25)
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("CameraMoveRight")
 	$Orb/AnimationPlayer.play("Fade_Player")
