@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/img/environment/Beginning/fundo.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/environment/Beginning/Layer4.png" type="Texture" id=3]
 [ext_resource path="res://assets/img/environment/Beginning/Layer3.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/environment/Beginning/Layer2.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/environment/River1_foreground.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/img/environment/RiverBG.png" type="Texture" id=7]
 [ext_resource path="res://assets/fonts/Stoke-Regular.ttf" type="DynamicFontData" id=8]
@@ -31,15 +31,15 @@ position = Vector2( 2316.85, 65.5186 )
 texture = ExtResource( 2 )
 
 [node name="Layer4" type="Sprite" parent="."]
-position = Vector2( 1752.07, 236.796 )
+position = Vector2( 1761.4, 279.694 )
 texture = ExtResource( 3 )
 
 [node name="Layer3" type="Sprite" parent="."]
-position = Vector2( 2073.37, 71.8084 )
+position = Vector2( 2019.3, 112.808 )
 texture = ExtResource( 4 )
 
-[node name="Layer2" type="Sprite" parent="."]
-position = Vector2( 2312.76, 30.8253 )
+[node name="River1_foreground" type="Sprite" parent="."]
+position = Vector2( 2315.47, 24.9297 )
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
