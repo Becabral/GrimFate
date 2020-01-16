@@ -175,6 +175,7 @@ shape = SubResource( 4 )
 [node name="PausedGUI" parent="." instance=ExtResource( 17 )]
 
 [node name="Interface" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="GUI" parent="Interface" instance=ExtResource( 18 )]
 margin_left = -0.72522
