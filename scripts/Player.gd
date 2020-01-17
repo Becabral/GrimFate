@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var SPEED = 200
 export var pushSPEED = 120
+export var is_main_character = true
 #var cameraY = -300
 var is_moving_left = false
 var is_moving_right=false
@@ -10,6 +11,7 @@ var can_dash = true
 var is_flammable = true
 var on_fire = false
 var blue = false
+
 
 
 #items
@@ -29,6 +31,10 @@ var movedir = Vector2(0,0)
 func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 			get_node("/root/FMOD/FMOD_start").set_listener(self)
+			
+	if is_main_character == false:
+		$Camera2D.queue_free()
+		$RotPos/AnimatedSprite.play("Player_cinza_costas")
 
 func _physics_process(_delta):
 	if barco != true:
@@ -53,17 +59,26 @@ func _physics_process(_delta):
 				if has_hood == true:
 					$RotPos/AnimatedSprite.play("Player_cloak_costas")
 				else:
-					$RotPos/AnimatedSprite.play("Player_costas")
+					if is_main_character == true:
+						$RotPos/AnimatedSprite.play("Player_costas")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_costas")
 			elif spritedir == "down":
 				if has_hood == true:
 					$RotPos/AnimatedSprite.play("Player_cloak_frente")
 				else:
-					$RotPos/AnimatedSprite.play("Player_frente")
+					if is_main_character == true:
+						$RotPos/AnimatedSprite.play("Player_frente")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_frente")
 			elif spritedir == "left" or spritedir == "right":
 				if has_hood == true:
 					$RotPos/AnimatedSprite.play("Player_cloak_lateral")
 				else:
-					$RotPos/AnimatedSprite.play("Player_lateral")
+					if is_main_character == true:
+						$RotPos/AnimatedSprite.play("Player_lateral")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_lateral")
 		
 		
 		

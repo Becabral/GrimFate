@@ -6,3 +6,5 @@ func _on_CutsceneTrigger_body_entered(body):
 		$Player.anim_switch("idle")
 		$Player/Camera2D/AnimPlayerCamera.play("CameraPan")
 	pass # Replace with function body.
+
+		

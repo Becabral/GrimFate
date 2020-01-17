@@ -16,4 +16,5 @@ animations = [ {
 [node name="Node2D" type="AnimatedSprite"]
 position = Vector2( 679.067, 559.232 )
 frames = SubResource( 1 )
+frame = 3
 playing = true

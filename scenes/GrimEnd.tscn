@@ -64,4 +64,28 @@ shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 206.09, 466.869 )
+is_main_character = false
+
+[node name="Player3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 768.066, 453.712 )
+is_main_character = false
+
+[node name="Player4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 855.464, 289.254 )
+is_main_character = false
+
+[node name="Player5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 387.463, 261.061 )
+is_main_character = false
+
+[node name="Player6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 223.005, 69.3503 )
+is_main_character = false
+
+[node name="Player7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 746.451, 59.9527 )
+is_main_character = false
 [connection signal="body_entered" from="CutsceneTrigger" to="." method="_on_CutsceneTrigger_body_entered"]
