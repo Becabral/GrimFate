@@ -11,7 +11,7 @@ func _ready():
 	$Player/Camera2D.limit_right=515
 	$Player/Camera2D.limit_top=60
 	
-	$Barco.SPEED = 2
+	$Barco.SPEED = 1.8
 
 func _process(_delta):
 	if $Barco.position.x >= 400:
