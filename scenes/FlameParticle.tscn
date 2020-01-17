@@ -2,12 +2,12 @@
 
 [ext_resource path="res://FlameParticle.tres" type="Material" id=1]
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.271795, 0.692308 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.627451, 0.513726, 0.054902, 0.698039, 1, 0, 0, 0.729412 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0.00811249, 0.8916 ), 0.0, -0.067562, 0, 0, Vector2( 0.596539, 0.2844 ), -0.806004, -0.806004, 0, 0, Vector2( 1, 0.1524 ), -0.27395, 0.0, 0, 0 ]
@@ -15,7 +15,7 @@ _data = [ Vector2( 0.00811249, 0.8916 ), 0.0, -0.067562, 0, 0, Vector2( 0.596539
 [sub_resource type="CurveTexture" id=4]
 curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 30, 1 )
 flag_disable_z = true
@@ -27,9 +27,9 @@ orbit_velocity_random = 0.0
 linear_accel = 13.68
 linear_accel_random = 0.05
 angle = 45.0
-scale = 25.0
+scale = 15.0
 scale_curve = SubResource( 4 )
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 2 )
 
 [node name="FlameParticle" type="Sprite"]
 
@@ -39,6 +39,7 @@ position = Vector2( -0.102936, -0.20644 )
 rotation = -1.5708
 amount = 120
 lifetime = 2.0
+local_coords = false
 process_material = ExtResource( 1 )
 
 [node name="FireRed" type="Particles2D" parent="."]
@@ -47,4 +48,5 @@ position = Vector2( 0.0687103, -0.255814 )
 rotation = -1.5708
 amount = 120
 lifetime = 2.0
-process_material = SubResource( 7 )
+local_coords = false
+process_material = SubResource( 5 )
