@@ -4,7 +4,7 @@ func _ready():
 	$Player.STATE = "sideView"
 	$Player.spritedir = "right"
 	$Player/Camera2D.set_offset(Vector2(600,-170))
-	$Barco.SPEED = 2.5
+	$Barco.SPEED = 1.8
 	if has_node("/root/FMOD/FMOD_start"):
 		#get_node("/root/FMOD/FMOD_start").play_one("event:/Fire", $SoundTest)
 		pass

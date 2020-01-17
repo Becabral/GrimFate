@@ -62,6 +62,7 @@
 [ext_resource path="res://assets/img/Player_Cinza/Lateral/lateral_cinza direita0058.png" type="Texture" id=60]
 [ext_resource path="res://assets/img/Player_Cinza/Lateral/lateral_cinza direita0059.png" type="Texture" id=61]
 [ext_resource path="res://assets/img/Player_Cinza/Lateral/lateral_cinza direita0060.png" type="Texture" id=62]
+
 [ext_resource path="res://assets/img/Player_Lateral_lanterna/lateral-direita-lanterna0001.png" type="Texture" id=63]
 [ext_resource path="res://assets/img/Player_Lateral_lanterna/lateral-direita-lanterna0002.png" type="Texture" id=64]
 [ext_resource path="res://assets/img/Player_Lateral_lanterna/lateral-direita-lanterna0003.png" type="Texture" id=65]
@@ -603,6 +604,7 @@
 [ext_resource path="res://assets/img/Player_Cinza/Costas/costas0059.png" type="Texture" id=601]
 [ext_resource path="res://assets/img/Player_Cinza/Costas/costas0060.png" type="Texture" id=602]
 
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 106.815
 
@@ -720,6 +722,8 @@ animations = [ {
 "loop": true,
 "name": "Player_cinza_lateral",
 "speed": 20.0
+
+
 }, {
 "frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ) ],
 "loop": true,
@@ -799,7 +803,8 @@ position = Vector2( 4.34905, -41.8693 )
 shape = SubResource( 2 )
 
 [node name="LuzLamp" parent="." instance=ExtResource( 2 )]
-visible = false
+position = Vector2( 47.1954, -40.7356 )
+scale = Vector2( 0.0840568, 0.0840568 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
@@ -827,6 +832,7 @@ playing = true
 offset = Vector2( -1.37053, 0.369652 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -175 )
 current = true
 limit_smoothed = true
 drag_margin_v_enabled = false
@@ -835,3 +841,9 @@ offset_v = -1.0
 
 [node name="AnimPlayerCamera" type="AnimationPlayer" parent="Camera2D"]
 anims/CameraPan = SubResource( 15 )
+
+[node name="PosLampRight" type="Position2D" parent="."]
+position = Vector2( 39.0141, -49.5804 )
+
+[node name="PosLampLeft" type="Position2D" parent="."]
+position = Vector2( -26.0094, -52.0188 )

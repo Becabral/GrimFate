@@ -3,7 +3,7 @@ extends CanvasLayer
 #levels with fades between them.
 #Also preloads them so they don't take as much time.
 
-onready var Trial1 = preload("res://scenes/Beginning.tscn")
+onready var Beginning = preload("res://scenes/Beginning.tscn")
 #onready var Trial1 = preload("res://scenes/Trial1.tscn")
 #onready var Trial2 = preload("res://scenes/Trial2.tscn")
 #onready var Trial1E = preload("res://scenes/Trial1Entrance.tscn")

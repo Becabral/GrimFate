@@ -43,13 +43,13 @@ func _physics_process(_delta):
 		spritedir_loop()
 	
 	if lamp == false:
-		#$LuzLamp.visible = false
+		$LuzLamp.visible = false
 		$CollisionShape2D.disabled = false
 		$ColisorLuz.disabled = true
 	else:
 		$ColisorLuz.disabled = false
 		$CollisionShape2D.disabled = true
-		#$LuzLamp.visible = true
+		$LuzLamp.visible = true
 		$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
@@ -75,24 +75,23 @@ func _physics_process(_delta):
 				if has_hood == true:
 					$RotPos/AnimatedSprite.play("Player_cloak_lateral")
 				else:
-					if is_main_character == true:
-						$RotPos/AnimatedSprite.play("Player_lateral")
-					else:
-						$RotPos/AnimatedSprite.play("Player_cinza_lateral")
-		
-		
-		
+					$RotPos/AnimatedSprite.play("Player_lateral")
+
 		if spritedir == "left" && !is_moving_left:
 			$Anim.play("moveleft")
 			is_moving_left = true
 			is_moving_right = false
 			is_moving_vertically=false
+			if lamp == true:
+				$LuzLamp.set_position(get_node("PosLampLeft").position)
 			
 		elif spritedir == "right" && !is_moving_right:
 			$Anim.play("moveright")
 			is_moving_left = false
 			is_moving_right = true
 			is_moving_vertically=false
+			if lamp == true:
+				$LuzLamp.set_position(get_node("PosLampRight").position)
 			
 		if (spritedir == "up" or spritedir == "down") and !is_moving_vertically:
 			is_moving_vertically=true
