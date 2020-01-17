@@ -282,7 +282,6 @@ custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 
 [node name="Torches" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="torchA" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 315.827, -735.674 )
@@ -356,7 +355,7 @@ position = Vector2( -1759.73, -1304.28 )
 lit = false
 
 [node name="Torch14" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2363.76, -2328.28 )
+position = Vector2( -2363.76, -2351.28 )
 lit = false
 
 [node name="Torch16" parent="Torches" instance=ExtResource( 9 )]
@@ -371,6 +370,7 @@ lit = false
 
 [node name="Torch17" parent="Torches" instance=ExtResource( 10 )]
 position = Vector2( -2347.98, -3300.03 )
+lit = false
 blue = true
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
@@ -475,7 +475,7 @@ position = Vector2( -601.462, -731.618 )
 [node name="Tree" type="Node" parent="."]
 
 [node name="Tree7" type="Sprite" parent="Tree"]
-position = Vector2( -2354.94, -2361.86 )
+position = Vector2( -2354.94, -2384.86 )
 scale = Vector2( 0.594415, 0.575103 )
 texture = ExtResource( 17 )
 
@@ -542,6 +542,7 @@ __meta__ = {
 }
 
 [node name="SmoothOff" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
 position = Vector2( -96.3966, -248.729 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff"]
@@ -550,10 +551,35 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SmoothOff2" type="Area2D" parent="Camera Triggers"]
+position = Vector2( -558.785, -1207.71 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff2"]
+shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Torch" parent="Camera Triggers/SmoothOff2" instance=ExtResource( 9 )]
+position = Vector2( 1.91577, -503.398 )
+scale = Vector2( 1, 1 )
+lit = false
+
 [node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
 position = Vector2( -89.0295, -84.4192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
+shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SmoothOn2" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
+position = Vector2( -558.843, -1314.59 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn2"]
 shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
@@ -838,4 +864,6 @@ anims/FadeCanvasOut = SubResource( 14 )
 [connection signal="body_entered" from="WrapAroundL" to="WrapAroundL" method="_on_WrapAroundR_body_entered"]
 [connection signal="body_entered" from="SnowWall/SnowWallArea" to="." method="_on_SnowWallArea_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOff" to="." method="_on_SmoothOff_body_entered"]
+[connection signal="body_entered" from="Camera Triggers/SmoothOff2" to="." method="_on_SmoothOff_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOn" to="." method="_on_SmoothOn_body_entered"]
+[connection signal="body_entered" from="Camera Triggers/SmoothOn2" to="." method="_on_SmoothOn_body_entered"]

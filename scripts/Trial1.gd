@@ -2,6 +2,7 @@ extends Node2D
 #onready var Level2 = preload("res://scenes/Level 2.tscn")
 signal kill_fires
 var outside=false
+var melted = false
 
 func _ready():
 	$Player/Camera2D.drag_margin_h_enabled=false
@@ -54,6 +55,7 @@ func _on_SmoothOn_body_entered(body):
 
 func _on_SnowWallArea_body_entered(body):
 	if body.get_name()=="Player":
-		if body.on_fire:
+		if body.on_fire && !melted:
 			$SnowWall/AnimSnowWall.play("Melt")
+			melted=true
 	pass # Replace with function body.
