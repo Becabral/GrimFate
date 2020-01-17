@@ -26,7 +26,8 @@ func _process(_delta):
 		get_tree().paused = true
 		$PauseButton.isPaused = false
 		
-	if $Player.position.x <= -1780:
+	print ($Player.position.x)
+	if $Player.position.x <= -1780 or $Player.position.x >= 1795:
 		$Player/Camera2D.current = false
 	else:
 		$Player/Camera2D.current = true
@@ -35,7 +36,7 @@ func _process(_delta):
 		$Player.barco = true
 		$Player.SPEED = 0 
 		$Player.position.x = $Barco.position.x - 17
-		$Player.position.y = $Barco.position.y - 30
+		$Player.position.y = $Barco.position.y - 30 + ($Barco/Sprite.position.y/4)
 	
 	if $Player.lamp == false: # verificador para evitar erro ao testar a lampada já excluída
 		if lampada.touch == true and Input.is_action_just_pressed("use"):
