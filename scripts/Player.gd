@@ -116,14 +116,17 @@ func _physics_process(_delta):
 			else:
 				$Anim.play_backwards("moveright")
 		
-	
 	if on_fire:
 		if blue:
-			$RotPos/AnimatedSprite.modulate=Color(0,0,1)
+			$FlameParticle/FireBlue.visible = true
+			$FlameParticle/FireRed.visible = false
+			$FlameParticle.visible = true			
 		else:
-			$RotPos/AnimatedSprite.modulate=Color(1,0,0)
+			$FlameParticle/FireRed.visible = true
+			$FlameParticle/FireBlue.visible = false
+			$FlameParticle.visible = true			
 	else:
-		$RotPos/AnimatedSprite.modulate=Color(1,1,1)
+		$FlameParticle.visible = false
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -187,7 +190,7 @@ func dash():
 		set_collision_layer_bit( 2, false)
 		yield(get_tree().create_timer(0.2), "timeout")
 		if blue:
-			yield(get_tree().create_timer(0.2), "timeout")
+			yield(get_tree().create_timer(0.3), "timeout")
 	SPEED=200
 	is_flammable=false
 	on_fire=false

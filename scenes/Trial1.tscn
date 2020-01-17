@@ -137,10 +137,10 @@ extents = Vector2( 28.8051, 575.784 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64.155, 89.6995 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 64.6135, 103.07 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=12]
 resource_name = "Melt"
 tracks/0/type = "value"
 tracks/0/path = NodePath("icon:scale")
@@ -179,10 +179,10 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 123.117, 28.803 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=14]
 resource_local_to_scene = true
 emission_shape = 2
 emission_box_extents = Vector3( 2000, 600, 1 )
@@ -190,13 +190,13 @@ flag_disable_z = true
 spread = 8.28
 initial_velocity = -1000.0
 initial_velocity_random = 0.2
+angular_velocity = 0.0
 orbit_velocity = 0.02
 orbit_velocity_random = 0.8
 scale = 5.0
 scale_random = 1.0
 
-[sub_resource type="Animation" id=13]
-resource_name = "FadeCanvasIn"
+[sub_resource type="Animation" id=15]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/CanvasModulate:color")
@@ -211,8 +211,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.701961, 0.701961, 0.701961, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "FadeCanvasOut"
+[sub_resource type="Animation" id=16]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/CanvasModulate:color")
@@ -356,7 +355,7 @@ position = Vector2( -1759.73, -1304.28 )
 lit = false
 
 [node name="Torch14" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2363.76, -2328.28 )
+position = Vector2( -2363.76, -2351.28 )
 lit = false
 
 [node name="Torch16" parent="Torches" instance=ExtResource( 9 )]
@@ -371,6 +370,7 @@ lit = false
 
 [node name="Torch17" parent="Torches" instance=ExtResource( 10 )]
 position = Vector2( -2347.98, -3300.03 )
+lit = false
 blue = true
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
@@ -397,7 +397,6 @@ shape = SubResource( 7 )
 position = Vector2( 481.71, -380.11 )
 
 [node name="Fire" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Fire2" parent="Fire" instance=ExtResource( 14 )]
 position = Vector2( 223, -28 )
@@ -475,7 +474,7 @@ position = Vector2( -601.462, -731.618 )
 [node name="Tree" type="Node" parent="."]
 
 [node name="Tree7" type="Sprite" parent="Tree"]
-position = Vector2( -2354.94, -2361.86 )
+position = Vector2( -2354.94, -2384.86 )
 scale = Vector2( 0.594415, 0.575103 )
 texture = ExtResource( 17 )
 
@@ -530,10 +529,10 @@ __meta__ = {
 [node name="SnowWallArea" type="Area2D" parent="SnowWall"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall/SnowWallArea"]
-shape = SubResource( 15 )
+shape = SubResource( 11 )
 
 [node name="AnimSnowWall" type="AnimationPlayer" parent="SnowWall"]
-anims/Melt = SubResource( 16 )
+anims/Melt = SubResource( 12 )
 
 [node name="Camera Triggers" type="Node2D" parent="."]
 position = Vector2( -1789.95, -1243.86 )
@@ -542,19 +541,45 @@ __meta__ = {
 }
 
 [node name="SmoothOff" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
 position = Vector2( -96.3966, -248.729 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff"]
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SmoothOff2" type="Area2D" parent="Camera Triggers"]
+position = Vector2( -558.785, -1207.71 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOff2"]
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Torch" parent="Camera Triggers/SmoothOff2" instance=ExtResource( 9 )]
+position = Vector2( 1.91577, -503.398 )
+scale = Vector2( 1, 1 )
+lit = false
+
 [node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
 position = Vector2( -89.0295, -84.4192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
-shape = SubResource( 11 )
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SmoothOn2" type="Area2D" parent="Camera Triggers"]
+editor/display_folded = true
+position = Vector2( -558.843, -1314.59 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn2"]
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -820,7 +845,7 @@ texture = ExtResource( 35 )
 [node name="Snow" parent="." instance=ExtResource( 36 )]
 position = Vector2( -2359.51, -2004.23 )
 visibility_rect = Rect2( -1800, -800, 3550, 1500 )
-process_material = SubResource( 12 )
+process_material = SubResource( 14 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -829,8 +854,8 @@ margin_bottom = 40.0
 [node name="CanvasModulate" type="CanvasModulate" parent="Control"]
 
 [node name="AnimCanvas" type="AnimationPlayer" parent="."]
-anims/FadeCanvasIn = SubResource( 13 )
-anims/FadeCanvasOut = SubResource( 14 )
+anims/FadeCanvasIn = SubResource( 15 )
+anims/FadeCanvasOut = SubResource( 16 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
@@ -838,4 +863,6 @@ anims/FadeCanvasOut = SubResource( 14 )
 [connection signal="body_entered" from="WrapAroundL" to="WrapAroundL" method="_on_WrapAroundR_body_entered"]
 [connection signal="body_entered" from="SnowWall/SnowWallArea" to="." method="_on_SnowWallArea_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOff" to="." method="_on_SmoothOff_body_entered"]
+[connection signal="body_entered" from="Camera Triggers/SmoothOff2" to="." method="_on_SmoothOff_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOn" to="." method="_on_SmoothOn_body_entered"]
+[connection signal="body_entered" from="Camera Triggers/SmoothOn2" to="." method="_on_SmoothOn_body_entered"]
