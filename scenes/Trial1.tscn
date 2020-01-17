@@ -501,7 +501,7 @@ __meta__ = {
 }
 
 [node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
-position = Vector2( -94.8735, -156.496 )
+position = Vector2( -89.0295, -84.4192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
 shape = SubResource( 11 )
@@ -769,6 +769,7 @@ texture = ExtResource( 35 )
 
 [node name="Snow" parent="." instance=ExtResource( 36 )]
 position = Vector2( -2359.51, -2004.23 )
+visibility_rect = Rect2( -1800, -800, 3550, 1500 )
 process_material = SubResource( 12 )
 
 [node name="Control" type="Control" parent="."]
