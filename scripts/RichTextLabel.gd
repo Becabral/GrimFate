@@ -2,15 +2,25 @@ extends RichTextLabel
 
 var dialog
 var i = 0
+onready var global = get_node("/root/SceneChanger")
 
 var live = ["Death: Greetings ungrateful mortal! I brought you here to show you how life is selfish and you weren't capable to pay attention. I could have put you in eternal peace but now I only want to extinguish you.", "choice" , "Death: I already made up my mind. I will not kill you. You can go back to life. Ask her to help you when you get too old and debilitated to amuse her"]
 var choice_live = ["Why am i here ?","Can i explain myself ?"]
+
+var die
+var i_death
 
 var page = 0
 var is_choice = false
 
 func _ready():
-	dialog = live
+	if global.lamp and global.alternative_path:
+		dialog = live
+	elif global.lamp or global.alternative_path:
+		dialog = die
+	else:
+		dialog = i_death
+		
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
 	set_process_input(true)
