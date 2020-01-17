@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/environment/arvoreLamp.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/environment/arvoreLamp2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/img/Ellipse 3.png" type="Texture" id=4]
 [ext_resource path="res://addons/RigidBodyParticles2D/RigidBodyParticles2D.tscn" type="PackedScene" id=5]
@@ -40,23 +40,24 @@ __meta__ = {
 }
 
 [node name="Arvore" type="Sprite" parent="."]
-light_mask = 0
+modulate = Color( 0.85098, 0.843137, 0.843137, 1 )
+light_mask = 3
 position = Vector2( -1434.5, 451.206 )
 rotation = 0.0588164
 scale = Vector2( 0.923442, 0.923442 )
-z_index = 1
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
 position = Vector2( -400, 592.579 )
-z_index = 2
 
 [node name="Light2D" type="Light2D" parent="Player"]
+visible = false
+light_mask = 3
 enabled = false
 texture = ExtResource( 4 )
 texture_scale = 2.0
-color = Color( 1, 0.552941, 0.258824, 1 )
+color = Color( 0.878431, 0.905882, 0.0470588, 1 )
 energy = 4.0
 range_item_cull_mask = 2
 
@@ -94,6 +95,7 @@ z_as_relative = false
 position = Vector2( 2163.22, 560.258 )
 
 [node name="NextArea" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2163.03, 422.275 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
@@ -105,17 +107,20 @@ position = Vector2( 1346.38, 616.861 )
 z_index = 3
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground"]
+editor/display_folded = true
 z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="ParallaxForeground/Layer 2"]
-position = Vector2( 298.415, 104.237 )
+position = Vector2( 298.415, 98.0853 )
 scale = Vector2( 1.00655, 1.00655 )
 texture = ExtResource( 10 )
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
+editor/display_folded = true
 motion_scale = Vector2( 1.8, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxForeground/Foreground"]
@@ -125,15 +130,13 @@ texture = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = -10
 motion_scale = Vector2( 0.1, 1 )
 
 [node name="grims fate intro" type="Sprite" parent="ParallaxBackground/Background"]
-position = Vector2( 303.809, 138.073 )
+light_mask = 3
+position = Vector2( 378.809, 104.073 )
+scale = Vector2( 1.08191, 1.08191 )
 texture = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Layer 4" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true
@@ -155,19 +158,21 @@ __meta__ = {
 }
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Layer 2"]
-position = Vector2( -322.099, 547.63 )
+position = Vector2( -322.099, 553.782 )
 texture = ExtResource( 15 )
 
 [node name="River" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1916.65, 693.619 )
 scale = Vector2( 1.13842, 1.13842 )
 z_index = 3
-frame = 2
+frame = 1
 
 [node name="Parede" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
 position = Vector2( -1872.69, 426.731 )
