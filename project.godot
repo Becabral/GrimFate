@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://scenes/SceneChanger.tscn"
 FMOD="*res://scenes/FMOD.tscn"
+PauseInterfaceGeral="*res://scenes/PauseInterfaceGeral.tscn"
 
 [display]
 

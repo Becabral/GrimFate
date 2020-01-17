@@ -17,16 +17,6 @@ func _ready():
 		get_node("/root/FMOD/FMOD_start").play_one("event:/BeginningAmbiance", $FmodSource)
 	
 func _process(_delta):
-	if $PauseButton.isPaused == false:
-		$PausedGUI/Container.hide()
-		$PausedGUI/Fundo.hide()
-	else:
-		$PausedGUI/Container.show()
-		$PausedGUI/Fundo.show()
-		get_tree().paused = true
-		$PauseButton.isPaused = false
-		
-	print ($Player.position.x)
 	if $Player.position.x <= -1780 or $Player.position.x >= 1795:
 		$Player/Camera2D.current = false
 	else:
