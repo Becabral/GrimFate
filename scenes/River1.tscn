@@ -25,14 +25,16 @@ __meta__ = {
 layer = 0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]
-editor/display_folded = true
+light_mask = 0
 scale = Vector2( 0.973024, 1.07373 )
 
 [node name="River1_foreground" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
+light_mask = 0
 position = Vector2( 2317.21, 24.9297 )
 texture = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -79,7 +81,6 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 698.001 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 1
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]

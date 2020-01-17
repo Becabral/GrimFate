@@ -10,6 +10,8 @@ func _ready():
 		pass
 
 func _process(_delta):
+	if get_node("/root/SceneChanger").lamp == true:
+		$Player.lamp = true
 	if $Barco.position.x >= 2937:
 		$Player/Camera2D.current = false
 	if $Barco.state == true:
