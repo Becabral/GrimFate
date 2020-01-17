@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -23,6 +23,16 @@
 [ext_resource path="res://assets/img/trial 1/fundo_trial 1 (1).png" type="Texture" id=21]
 [ext_resource path="res://assets/img/trial 1/marcador_fogueira@2x.png" type="Texture" id=22]
 [ext_resource path="res://assets/img/trial 1/marcador_fogueira.png" type="Texture" id=23]
+[ext_resource path="res://assets/img/trial 1/pedra 1.png" type="Texture" id=24]
+[ext_resource path="res://assets/img/trial 1/pedra 1@2x.png" type="Texture" id=25]
+[ext_resource path="res://assets/img/trial 1/pedra 2.png" type="Texture" id=26]
+[ext_resource path="res://assets/img/trial 1/pedra 2@2x.png" type="Texture" id=27]
+[ext_resource path="res://assets/img/trial 1/pedra 3.png" type="Texture" id=28]
+[ext_resource path="res://assets/img/trial 1/pedra 3@2x.png" type="Texture" id=29]
+[ext_resource path="res://assets/img/trial 1/pedra.png" type="Texture" id=30]
+[ext_resource path="res://assets/img/trial 1/pedra@2x.png" type="Texture" id=31]
+[ext_resource path="res://assets/img/trial 1/grama.png" type="Texture" id=32]
+[ext_resource path="res://assets/img/trial 1/grama@2x.png" type="Texture" id=33]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -122,7 +132,7 @@ extents = Vector2( 48.5681, 47.5991 )
 extents = Vector2( 28.8051, 575.784 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 64.155, 60.887 )
+extents = Vector2( 64.155, 89.6995 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 123.117, 28.803 )
@@ -182,7 +192,6 @@ custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 
 [node name="Torches" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="torchA" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 315.827, -735.674 )
@@ -245,7 +254,7 @@ position = Vector2( -1759.73, -1304.28 )
 lit = false
 
 [node name="Torch14" parent="Torches" instance=ExtResource( 9 )]
-position = Vector2( -2370.21, -2333.66 )
+position = Vector2( -2363.76, -2328.28 )
 lit = false
 
 [node name="Torch16" parent="Torches" instance=ExtResource( 9 )]
@@ -304,7 +313,6 @@ position = Vector2( -2347.06, -1638.2 )
 is_blue = true
 
 [node name="DoorEvent" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 14 )
 
 [node name="Door" type="StaticBody2D" parent="DoorEvent"]
@@ -324,11 +332,13 @@ __meta__ = {
 }
 
 [node name="TorchC" parent="DoorEvent" instance=ExtResource( 9 )]
-position = Vector2( -4.2, -15.4 )
+position = Vector2( -3.75988, -20.6815 )
+scale = Vector2( 0.7, 0.7 )
 lit = false
 
 [node name="TorchD" parent="DoorEvent" instance=ExtResource( 9 )]
-position = Vector2( -210, -15.4 )
+position = Vector2( -208.68, -22.8822 )
+scale = Vector2( 0.7, 0.7 )
 lit = false
 
 [node name="DoorEvent2" type="Node2D" parent="."]
@@ -391,18 +401,19 @@ __meta__ = {
 }
 
 [node name="SnowWall" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( -2350, -2583.5 )
+position = Vector2( -2349, -2584 )
 collision_layer = 4
 collision_mask = 4
 
 [node name="icon" type="Sprite" parent="SnowWall"]
+z_index = -1
 texture = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall"]
+position = Vector2( 0, -10 )
 shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
@@ -478,6 +489,180 @@ texture = ExtResource( 23 )
 position = Vector2( -2343.89, -1586.87 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 22 )
+
+[node name="marcador_fogueira7" type="Sprite" parent="FireMarkers"]
+position = Vector2( -209.195, 36.2917 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira8" type="Sprite" parent="FireMarkers"]
+position = Vector2( -4.66386, 37.8393 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira9" type="Sprite" parent="FireMarkers"]
+position = Vector2( 316.784, -654.512 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira10" type="Sprite" parent="FireMarkers"]
+position = Vector2( 673.423, -651.099 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira11" type="Sprite" parent="FireMarkers"]
+position = Vector2( -793.669, -1027.11 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira12" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1083.76, -1016.31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira13" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1429.76, -1013.31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira14" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1749.76, -1006.31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira15" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2011.76, -1011.31 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira16" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1758.46, -1251.69 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira17" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2009.18, -1251.69 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira18" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1760.23, -1472.07 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira19" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1884.02, -1755.03 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira20" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2139.77, -1624.43 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira21" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2563.34, -1478.22 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira22" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2926.61, -1573.18 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira23" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2924.56, -1981.24 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira24" type="Sprite" parent="FireMarkers"]
+position = Vector2( -2752.94, -2333.03 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="marcador_fogueira25" type="Sprite" parent="FireMarkers"]
+position = Vector2( -1957.93, -2331.03 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="Decoration" type="Node2D" parent="."]
+z_index = -1
+
+[node name="pedra 1" type="Sprite" parent="Decoration"]
+position = Vector2( -2939.26, -2227.65 )
+texture = ExtResource( 24 )
+
+[node name="pedra 2" type="Sprite" parent="Decoration"]
+position = Vector2( -2460.93, -2016.18 )
+texture = ExtResource( 24 )
+
+[node name="pedra 12x" type="Sprite" parent="Decoration"]
+position = Vector2( -1825.27, -2149.18 )
+texture = ExtResource( 25 )
+
+[node name="pedra 12x2" type="Sprite" parent="Decoration"]
+position = Vector2( -3053.83, -1542.46 )
+texture = ExtResource( 25 )
+
+[node name="pedra 3" type="Sprite" parent="Decoration"]
+position = Vector2( -1707.4, -1843.79 )
+texture = ExtResource( 26 )
+
+[node name="pedra 22x" type="Sprite" parent="Decoration"]
+position = Vector2( -2988.38, -1854.63 )
+texture = ExtResource( 27 )
+
+[node name="pedra 4" type="Sprite" parent="Decoration"]
+position = Vector2( -2909.12, -2362.49 )
+texture = ExtResource( 28 )
+
+[node name="pedra 32x" type="Sprite" parent="Decoration"]
+position = Vector2( -2349.89, -1963.04 )
+texture = ExtResource( 29 )
+
+[node name="pedra" type="Sprite" parent="Decoration"]
+position = Vector2( -1862.79, -2228.8 )
+texture = ExtResource( 30 )
+
+[node name="pedra2x" type="Sprite" parent="Decoration"]
+position = Vector2( -2657.31, -1823.55 )
+texture = ExtResource( 31 )
+
+[node name="grama" type="Sprite" parent="Decoration"]
+position = Vector2( -2791.17, -1567.7 )
+texture = ExtResource( 32 )
+
+[node name="grama2" type="Sprite" parent="Decoration"]
+position = Vector2( -2641.48, -1639.47 )
+texture = ExtResource( 32 )
+
+[node name="grama3" type="Sprite" parent="Decoration"]
+position = Vector2( -2850, -1915.42 )
+texture = ExtResource( 32 )
+
+[node name="grama4" type="Sprite" parent="Decoration"]
+position = Vector2( -2731.68, -2041.3 )
+texture = ExtResource( 32 )
+
+[node name="grama5" type="Sprite" parent="Decoration"]
+position = Vector2( -2615.87, -2194.87 )
+texture = ExtResource( 32 )
+
+[node name="grama6" type="Sprite" parent="Decoration"]
+position = Vector2( -2172.82, -2135.89 )
+texture = ExtResource( 32 )
+
+[node name="grama7" type="Sprite" parent="Decoration"]
+position = Vector2( -1997.08, -1951.78 )
+texture = ExtResource( 32 )
+
+[node name="grama8" type="Sprite" parent="Decoration"]
+position = Vector2( -1676.29, -2420.42 )
+texture = ExtResource( 32 )
+
+[node name="grama2x" type="Sprite" parent="Decoration"]
+position = Vector2( -2158.42, -2240.32 )
+texture = ExtResource( 33 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
