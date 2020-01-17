@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tombstone2.png-72c654b93c8860d536d0e81337e713e5.stex"
+path="res://.import/pauseGame.png-4893ddfac0dfbf0cfbde3926f8b5de39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/gui/GamePaused/Tombstone2.png"
-dest_files=[ "res://.import/Tombstone2.png-72c654b93c8860d536d0e81337e713e5.stex" ]
+source_file="res://assets/img/gui/pauseGame.png"
+dest_files=[ "res://.import/pauseGame.png-4893ddfac0dfbf0cfbde3926f8b5de39.stex" ]
 
 [params]
 

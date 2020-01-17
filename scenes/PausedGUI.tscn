@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/PausedGUI.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/gui/GamePaused/Tombstone2.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/gui/GamePaused/Tombstone.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Bariol_Bold.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/img/gui/GamePaused/resume2.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/gui/GamePaused/resume.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/Bariol_Regular.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/img/gui/GamePaused/quit2.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/gui/GamePaused/quit.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 19
@@ -28,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -122.362
-margin_top = -99.1706
-margin_right = 121.878
-margin_bottom = 14.4794
+margin_left = -115.0
+margin_top = -44.0
+margin_right = 116.0
+margin_bottom = 47.0
 texture = ExtResource( 2 )
 
 [node name="Container" type="MarginContainer" parent="."]
@@ -40,29 +40,27 @@ anchor_top = 0.453
 anchor_right = 0.434
 anchor_bottom = 0.453
 margin_left = -0.416016
-margin_top = -100.0
+margin_top = 0.199982
 margin_right = 136.584
-margin_bottom = 83.0
+margin_bottom = 59.2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container"]
 margin_right = 137.0
-margin_bottom = 183.0
+margin_bottom = 87.0
 alignment = 1
 
 [node name="LblMain" type="Label" parent="Container/VBoxContainer"]
-margin_top = 48.0
 margin_right = 137.0
-margin_bottom = 68.0
+margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.101961, 0.141176, 0.141176, 1 )
 text = "Game Paused "
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
-margin_top = 72.0
+margin_top = 24.0
 margin_right = 137.0
-margin_bottom = 135.0
+margin_bottom = 87.0
 alignment = 1
 
 [node name="ResumeContainer" type="VBoxContainer" parent="Container/VBoxContainer/HBoxContainer"]
@@ -84,7 +82,7 @@ margin_top = 46.0
 margin_right = 51.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.101961, 0.141176, 0.141176, 1 )
 text = "Resume"
 
 [node name="QuitContainer" type="VBoxContainer" parent="Container/VBoxContainer/HBoxContainer"]
@@ -108,8 +106,7 @@ margin_top = 46.0
 margin_right = 48.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.0941176, 0.137255, 0.137255, 1 )
 text = "Quit"
 align = 1
 [connection signal="pressed" from="Container/VBoxContainer/HBoxContainer/ResumeContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
