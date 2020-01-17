@@ -88,4 +88,7 @@ is_main_character = false
 [node name="Player7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 746.451, 59.9527 )
 is_main_character = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 3
 [connection signal="body_entered" from="CutsceneTrigger" to="." method="_on_CutsceneTrigger_body_entered"]
