@@ -18,7 +18,7 @@ func _process(_delta):
 		$Player.barco = true
 		$Player.SPEED = 0 
 		$Player.position.x = $Barco.position.x - 17
-		$Player.position.y = $Barco.position.y - 30
+		$Player.position.y = $Barco.position.y - 30 + ($Barco/Sprite.position.y/4)
 
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":

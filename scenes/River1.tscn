@@ -60,7 +60,7 @@ scale = Vector2( 1.2061, 1.26369 )
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 60.538, 560.261 )
+position = Vector2( 60.538, 589.261 )
 
 [node name="RiverBG" type="Sprite" parent="."]
 visible = false
@@ -81,10 +81,11 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 698.001 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
+frame = 2
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
-position = Vector2( 38.074, 587.388 )
+position = Vector2( 38.074, 616.388 )
 
 [node name="Narratrive" parent="." instance=ExtResource( 10 )]
 position = Vector2( 899.514, 385.585 )
