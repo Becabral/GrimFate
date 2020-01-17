@@ -896,13 +896,14 @@ position = Vector2( 6.48003, -42.9727 )
 scale = Vector2( 0.711704, 0.711704 )
 frames = SubResource( 14 )
 animation = "Player_lateral"
-frame = 4
+frame = 50
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 editor/display_folded = true
 offset = Vector2( 0, -175 )
+current = true
 limit_smoothed = true
 drag_margin_v_enabled = false
 smoothing_enabled = true

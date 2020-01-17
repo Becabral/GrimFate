@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/River1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/River1_foreground.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://scenes/RiverBeginning.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/PauseButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/PausedGUI.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.9204, 241.674 )
@@ -37,6 +40,7 @@ texture = ExtResource( 2 )
 editor/display_folded = true
 
 [node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
 
 [node name="fundo" type="Sprite" parent="ParallaxBackground/Layer1"]
 position = Vector2( 2318.59, 63.8519 )
@@ -52,6 +56,7 @@ scale = Vector2( 1.4711, 1.4711 )
 texture = ExtResource( 4 )
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Layer3" type="Sprite" parent="ParallaxBackground/Layer3"]
@@ -78,10 +83,9 @@ position = Vector2( -171.359, 133.597 )
 shape = SubResource( 1 )
 
 [node name="River4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2724.68, 698.001 )
+position = Vector2( 2724.68, 689.799 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 2
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
@@ -109,4 +113,13 @@ wait = 11.0
 position = Vector2( 2942.32, 392.251 )
 text = "They need to live every day knowing they will extinguish eventually and blame me for it as if it was all my fault."
 wait = 19.0
+
+[node name="Interface" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="GUI" parent="Interface" instance=ExtResource( 11 )]
+
+[node name="PauseButton" parent="." instance=ExtResource( 12 )]
+
+[node name="PausedGUI" parent="." instance=ExtResource( 13 )]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
