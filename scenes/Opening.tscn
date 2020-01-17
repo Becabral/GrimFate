@@ -63,8 +63,8 @@
 [ext_resource path="res://assets/img/Player_Lateral/lateral direita0059.png" type="Texture" id=61]
 [ext_resource path="res://assets/img/Player_Lateral/lateral direita0060.png" type="Texture" id=62]
 [ext_resource path="res://assets/img/environment/Opening/fundo.png" type="Texture" id=63]
-[ext_resource path="res://assets/img/environment/Opening/Layer2.png" type="Texture" id=64]
-[ext_resource path="res://assets/img/environment/Opening/Layer3.png" type="Texture" id=65]
+[ext_resource path="res://assets/img/environment/Opening/Layer3.png" type="Texture" id=64]
+[ext_resource path="res://assets/img/environment/Opening/Layer2.png" type="Texture" id=65]
 [ext_resource path="res://assets/img/environment/Opening/Layer1.png" type="Texture" id=66]
 [ext_resource path="res://assets/img/environment/Beginning/fundo.png" type="Texture" id=67]
 [ext_resource path="res://assets/img/environment/Beginning/Layer4.png" type="Texture" id=68]
@@ -202,6 +202,7 @@ script = ExtResource( 1 )
 play = true
 
 [node name="Orb" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -360, -750 )
 __meta__ = {
 "_edit_group_": true,
@@ -209,6 +210,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Orb"]
+editor/display_folded = true
 modulate = Color( 0.054902, 0.988235, 0.941176, 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
@@ -233,7 +235,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 12
+frame = 52
 speed_scale = 3.0
 playing = true
 
@@ -245,29 +247,39 @@ anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Backgroun3" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 1, 0.2 )
+motion_offset = Vector2( 0, 550 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Backgroun3"]
 position = Vector2( -379.906, -802.863 )
 scale = Vector2( 1.01594, 1.01594 )
 texture = ExtResource( 63 )
 
 [node name="Background2" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = 1
+editor/display_folded = true
+motion_scale = Vector2( 1, 0.4 )
+motion_offset = Vector2( 0, 450 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Background2"]
-position = Vector2( -356.906, -527.863 )
-scale = Vector2( 1.01594, 1.01594 )
-texture = ExtResource( 64 )
-
-[node name="Background3" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background3"]
 position = Vector2( -270.684, -841.634 )
 scale = Vector2( 1.10654, 1.10654 )
+texture = ExtResource( 64 )
+
+[node name="Background1" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+z_index = 1
+motion_scale = Vector2( 1, 0.6 )
+motion_offset = Vector2( 0, 300 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background1"]
+position = Vector2( -356.906, -527.863 )
+scale = Vector2( 1.01594, 1.01594 )
 texture = ExtResource( 65 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
 position = Vector2( -30, 0 )
@@ -278,6 +290,7 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -344,6 +357,7 @@ wait = 12.0
 autostart = false
 
 [node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground2"]
@@ -370,7 +384,7 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
