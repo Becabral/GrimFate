@@ -9,10 +9,10 @@ func _ready():
 	pass 
 
 func _process(_delta):
-	if $Player.position.x >= 269 and $Player.position.x <= 717 and $Player.position.y <= -360:
-			$Player/Camera2D.current = false
-	else:
-		$Player/Camera2D.current = true
+#	if $Player.position.x >= 269 and $Player.position.x <= 717 and $Player.position.y <= -360:
+#			$Player/Camera2D.current = false
+#	else:
+#		$Player/Camera2D.current = true
 	if Input.is_action_just_pressed("0"):
 		$Player.position=Vector2(480, 500)
 #	if $Player.has_hood == false and Input.is_action_just_pressed("use"):
@@ -34,6 +34,7 @@ func _on_SmoothOff_body_entered(body):
 			$Player/Camera2D.smoothing_enabled=false
 			$Player/Camera2D.limit_top=(-2595)
 			$Player/Camera2D.limit_bottom=(-1400)
+			$AnimCanvas.play("FadeCanvasIn")
 			outside=true
 	pass # Replace with function body.
 
@@ -45,5 +46,7 @@ func _on_SmoothOn_body_entered(body):
 			$Player/Camera2D.smoothing_speed=5
 			$Player/Camera2D.limit_top=-10000000
 			$Player/Camera2D.limit_bottom=10000000
+			$AnimCanvas.play("FadeCanvasOut")
+			
 			outside=false
 	pass # Replace with function body.
