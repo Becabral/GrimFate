@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -136,6 +136,48 @@ extents = Vector2( 28.8051, 575.784 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64.155, 89.6995 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 64.6135, 103.07 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "Melt"
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.01, 1 ), Vector2( 1.01, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("icon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 90.9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 123.117, 28.803 )
@@ -485,6 +527,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SnowWallArea" type="Area2D" parent="SnowWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall/SnowWallArea"]
+shape = SubResource( 15 )
+
+[node name="AnimSnowWall" type="AnimationPlayer" parent="SnowWall"]
+anims/Melt = SubResource( 16 )
+
 [node name="Camera Triggers" type="Node2D" parent="."]
 position = Vector2( -1789.95, -1243.86 )
 __meta__ = {
@@ -786,5 +836,6 @@ anims/FadeCanvasOut = SubResource( 14 )
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
 [connection signal="body_entered" from="WrapAroundR" to="WrapAroundR" method="_on_WrapAroundR_body_entered"]
 [connection signal="body_entered" from="WrapAroundL" to="WrapAroundL" method="_on_WrapAroundR_body_entered"]
+[connection signal="body_entered" from="SnowWall/SnowWallArea" to="." method="_on_SnowWallArea_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOff" to="." method="_on_SmoothOff_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOn" to="." method="_on_SmoothOn_body_entered"]

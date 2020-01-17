@@ -50,3 +50,10 @@ func _on_SmoothOn_body_entered(body):
 			
 			outside=false
 	pass # Replace with function body.
+
+
+func _on_SnowWallArea_body_entered(body):
+	if body.get_name()=="Player":
+		if body.on_fire:
+			$SnowWall/AnimSnowWall.play("Melt")
+	pass # Replace with function body.
