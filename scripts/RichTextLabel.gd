@@ -3,6 +3,7 @@ extends RichTextLabel
 var dialog
 var choice
 var i = -1
+var a = 0 
 onready var global = get_node("/root/SceneChanger")
 
 var live = ["Death: \nGreetings ungrateful mortal! \nI brought you here to show you how life is selfish and you weren't capable to pay attention. \nI could have put you in eternal peace but now I only want to extinguish you.", "choice" , "Death: \nI already made up my mind... I will not kill you... You can go back to life. \nAsk her to help you when you get too old and debilitated to amuse her", "end1"]
@@ -30,11 +31,13 @@ func _ready():
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
 	set_process_input(true)
-	
+	get_parent().get_node("AnimationPlayer").play("blink")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("use"):
 		check()
+		a = a + 1
+		
 	elif Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
 		if get_visible_characters() > get_total_character_count() and dialog[page] == "choice":
 			is_choice = false
@@ -86,8 +89,19 @@ func check():
 				else:
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
+					
+					
+					
 
 
 func _on_Timer_timeout():
-	set_visible_characters(get_visible_characters() + 1)
+	if a % 2 == 0:
+		set_visible_characters(get_visible_characters() + 1)
+		if get_visible_characters() > get_total_character_count():
+			a = a + 1
+	else:
+		set_visible_characters(get_visible_characters() + get_total_character_count())
 
+		
+	
+	
