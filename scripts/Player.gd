@@ -49,6 +49,10 @@ func _physics_process(_delta):
 	else:
 		$ColisorLuz.disabled = false
 		$CollisionShape2D.disabled = true
+		if spritedir == "left":
+			$LuzLamp.set_position(get_node("PosLampLeft").position)
+		else:
+			$LuzLamp.set_position(get_node("PosLampRight").position)
 		$LuzLamp.visible = true
 		$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 
@@ -85,17 +89,13 @@ func _physics_process(_delta):
 			is_moving_left = true
 			is_moving_right = false
 			is_moving_vertically=false
-			if lamp == true:
-				$LuzLamp.set_position(get_node("PosLampLeft").position)
-			
+		
 		elif spritedir == "right" && !is_moving_right:
 			$Anim.play("moveright")
 			is_moving_left = false
 			is_moving_right = true
 			is_moving_vertically=false
-			if lamp == true:
-				$LuzLamp.set_position(get_node("PosLampRight").position)
-			
+		
 		if (spritedir == "up" or spritedir == "down") and !is_moving_vertically:
 			is_moving_vertically=true
 			if is_moving_left:

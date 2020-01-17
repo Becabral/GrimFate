@@ -8,7 +8,13 @@ func _ready():
 	$Player/RotPos/AnimatedSprite.play("Player_costas")
 	pass 
 
-#func _process(_delta):
+func _process(_delta):
+	if $Player.position.x >= 269 and $Player.position.x <= 717 and $Player.position.y <= -360:
+			$Player/Camera2D.current = false
+	else:
+		$Player/Camera2D.current = true
+	if Input.is_action_just_pressed("0"):
+		$Player.position=Vector2(480, 500)
 #	if $Player.has_hood == false and Input.is_action_just_pressed("use"):
 #		$Interface/GUI.adiciona_skill("Dash")
 

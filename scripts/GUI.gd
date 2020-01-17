@@ -4,6 +4,7 @@ var slotSkill = 0
 var countSeed = 0
 var seedDisplay=-1
 var player
+var has_lamp = false
 
 #cor dash - bf3760
 #cor scythe - 4ff057
@@ -51,7 +52,7 @@ func adiciona_interface(item):
 		$MarginContainer/MainContainer/Items/Slot1/Item1/Icon.texture = load("res://assets/img/gui/"+item+".png")
 		$MarginContainer/MainContainer/Items/Slot1/Lbl1.text = item
 		$MarginContainer/MainContainer/Items/Slot1.visible = true
-		if item == "Lamp":
+		if item == "Lamp" and has_lamp == false:
 			$MarginContainer/MainContainer/Items/Slot1/Item1/count.visible = false
 		elif item == "Seed":
 			seedDisplay=1
