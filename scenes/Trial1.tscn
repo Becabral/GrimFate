@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://assets/img/trial 1/grama@2x.png" type="Texture" id=33]
 [ext_resource path="res://assets/img/path4164.png" type="Texture" id=34]
 [ext_resource path="res://assets/img/rect4136.png" type="Texture" id=35]
+[ext_resource path="res://scenes/Snow.tscn" type="PackedScene" id=36]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -136,8 +137,95 @@ extents = Vector2( 28.8051, 575.784 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64.155, 89.6995 )
 
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 64.6135, 103.07 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "Melt"
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.01, 1 ), Vector2( 1.01, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("icon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 90.9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 123.117, 28.803 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+resource_local_to_scene = true
+emission_shape = 2
+emission_box_extents = Vector3( 2000, 600, 1 )
+flag_disable_z = true
+spread = 8.28
+initial_velocity = -1000.0
+initial_velocity_random = 0.2
+orbit_velocity = 0.02
+orbit_velocity_random = 0.8
+scale = 5.0
+scale_random = 1.0
+
+[sub_resource type="Animation" id=13]
+resource_name = "FadeCanvasIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.701961, 0.701961, 0.701961, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "FadeCanvasOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.701961, 0.701961, 0.701961, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource( 1 )
@@ -420,12 +508,12 @@ __meta__ = {
 }
 
 [node name="SnowWall" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -2349, -2584 )
 collision_layer = 4
 collision_mask = 4
 
 [node name="icon" type="Sprite" parent="SnowWall"]
+scale = Vector2( 1.01, 1 )
 z_index = -1
 texture = ExtResource( 20 )
 __meta__ = {
@@ -439,8 +527,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SnowWallArea" type="Area2D" parent="SnowWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall/SnowWallArea"]
+shape = SubResource( 15 )
+
+[node name="AnimSnowWall" type="AnimationPlayer" parent="SnowWall"]
+anims/Melt = SubResource( 16 )
+
 [node name="Camera Triggers" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -1789.95, -1243.86 )
 __meta__ = {
 "_edit_lock_": true
@@ -456,7 +551,7 @@ __meta__ = {
 }
 
 [node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
-position = Vector2( -94.8735, -156.496 )
+position = Vector2( -89.0295, -84.4192 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Triggers/SmoothOn"]
 shape = SubResource( 11 )
@@ -721,10 +816,26 @@ modulate = Color( 0.0117647, 0, 0.145098, 1 )
 position = Vector2( -767.246, -2214.03 )
 scale = Vector2( 0.363472, 4.9562 )
 texture = ExtResource( 35 )
+
+[node name="Snow" parent="." instance=ExtResource( 36 )]
+position = Vector2( -2359.51, -2004.23 )
+visibility_rect = Rect2( -1800, -800, 3550, 1500 )
+process_material = SubResource( 12 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Control"]
+
+[node name="AnimCanvas" type="AnimationPlayer" parent="."]
+anims/FadeCanvasIn = SubResource( 13 )
+anims/FadeCanvasOut = SubResource( 14 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
 [connection signal="body_entered" from="WrapAroundR" to="WrapAroundR" method="_on_WrapAroundR_body_entered"]
 [connection signal="body_entered" from="WrapAroundL" to="WrapAroundL" method="_on_WrapAroundR_body_entered"]
+[connection signal="body_entered" from="SnowWall/SnowWallArea" to="." method="_on_SnowWallArea_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOff" to="." method="_on_SmoothOff_body_entered"]
 [connection signal="body_entered" from="Camera Triggers/SmoothOn" to="." method="_on_SmoothOn_body_entered"]

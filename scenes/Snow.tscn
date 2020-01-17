@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+resource_local_to_scene = true
+emission_shape = 2
+emission_box_extents = Vector3( 2000, 600, 1 )
+flag_disable_z = true
+spread = 8.28
+initial_velocity = -1000.0
+initial_velocity_random = 0.2
+orbit_velocity = 0.02
+orbit_velocity_random = 0.8
+scale = 5.0
+scale_random = 1.0
+
+[node name="Snow" type="Particles2D"]
+amount = 2000
+visibility_rect = Rect2( -100, -100, 2000, 500 )
+process_material = SubResource( 1 )
