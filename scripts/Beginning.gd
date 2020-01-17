@@ -44,15 +44,13 @@ func _process(_delta):
 			$Fog2.lamp = true
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.hide()
-	else: #If player has lamp, turn the light on
-		$Player/Light2D.enabled=true
 
 func create_lamp():
 	lampada = lamp.instance()
 	lampada.position.x = -1345
 	lampada.position.y = 529
-	lampada.scale.x = 0.2
-	lampada.scale.y = 0.2
+	lampada.scale.x = 0.15
+	lampada.scale.y = 0.15
 	add_child(lampada)
  
 func _on_NextArea_body_entered(body):
