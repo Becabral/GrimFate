@@ -116,14 +116,17 @@ func _physics_process(_delta):
 			else:
 				$Anim.play_backwards("moveright")
 		
-	
 	if on_fire:
 		if blue:
-			$RotPos/AnimatedSprite.modulate=Color(0,0,1)
+			$FlameParticle/FireBlue.visible = true
+			$FlameParticle/FireRed.visible = false
+			$FlameParticle.visible = true			
 		else:
-			$RotPos/AnimatedSprite.modulate=Color(1,0,0)
+			$FlameParticle/FireRed.visible = true
+			$FlameParticle/FireBlue.visible = false
+			$FlameParticle.visible = true			
 	else:
-		$RotPos/AnimatedSprite.modulate=Color(1,1,1)
+		$FlameParticle.visible = false
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
