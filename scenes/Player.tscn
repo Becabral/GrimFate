@@ -1,4 +1,4 @@
-[gd_scene load_steps=618 format=2]
+[gd_scene load_steps=678 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/LuzLamp.tscn" type="PackedScene" id=2]
@@ -602,6 +602,66 @@
 [ext_resource path="res://assets/img/Player_Cinza/Costas/costas0058.png" type="Texture" id=600]
 [ext_resource path="res://assets/img/Player_Cinza/Costas/costas0059.png" type="Texture" id=601]
 [ext_resource path="res://assets/img/Player_Cinza/Costas/costas0060.png" type="Texture" id=602]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0001.png" type="Texture" id=603]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0002.png" type="Texture" id=604]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0003.png" type="Texture" id=605]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0004.png" type="Texture" id=606]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0005.png" type="Texture" id=607]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0006.png" type="Texture" id=608]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0007.png" type="Texture" id=609]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0008.png" type="Texture" id=610]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0009.png" type="Texture" id=611]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0010.png" type="Texture" id=612]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0011.png" type="Texture" id=613]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0012.png" type="Texture" id=614]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0013.png" type="Texture" id=615]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0014.png" type="Texture" id=616]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0015.png" type="Texture" id=617]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0016.png" type="Texture" id=618]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0017.png" type="Texture" id=619]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0018.png" type="Texture" id=620]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0019.png" type="Texture" id=621]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0020.png" type="Texture" id=622]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0021.png" type="Texture" id=623]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0022.png" type="Texture" id=624]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0023.png" type="Texture" id=625]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0024.png" type="Texture" id=626]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0025.png" type="Texture" id=627]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0026.png" type="Texture" id=628]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0027.png" type="Texture" id=629]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0028.png" type="Texture" id=630]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0029.png" type="Texture" id=631]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0030.png" type="Texture" id=632]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0031.png" type="Texture" id=633]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0032.png" type="Texture" id=634]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0033.png" type="Texture" id=635]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0034.png" type="Texture" id=636]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0035.png" type="Texture" id=637]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0036.png" type="Texture" id=638]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0037.png" type="Texture" id=639]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0038.png" type="Texture" id=640]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0039.png" type="Texture" id=641]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0040.png" type="Texture" id=642]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0041.png" type="Texture" id=643]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0042.png" type="Texture" id=644]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0043.png" type="Texture" id=645]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0044.png" type="Texture" id=646]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0045.png" type="Texture" id=647]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0046.png" type="Texture" id=648]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0047.png" type="Texture" id=649]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0048.png" type="Texture" id=650]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0049.png" type="Texture" id=651]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0050.png" type="Texture" id=652]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0051.png" type="Texture" id=653]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0052.png" type="Texture" id=654]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0053.png" type="Texture" id=655]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0054.png" type="Texture" id=656]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0055.png" type="Texture" id=657]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0056.png" type="Texture" id=658]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0057.png" type="Texture" id=659]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0058.png" type="Texture" id=660]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0059.png" type="Texture" id=661]
+[ext_resource path="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0060.png" type="Texture" id=662]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 106.815
@@ -765,6 +825,11 @@ animations = [ {
 "loop": true,
 "name": "Player_cinza_costas",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 603 ), ExtResource( 604 ), ExtResource( 605 ), ExtResource( 606 ), ExtResource( 607 ), ExtResource( 608 ), ExtResource( 609 ), ExtResource( 610 ), ExtResource( 611 ), ExtResource( 612 ), ExtResource( 613 ), ExtResource( 614 ), ExtResource( 615 ), ExtResource( 616 ), ExtResource( 617 ), ExtResource( 618 ), ExtResource( 619 ), ExtResource( 620 ), ExtResource( 621 ), ExtResource( 622 ), ExtResource( 623 ), ExtResource( 624 ), ExtResource( 625 ), ExtResource( 626 ), ExtResource( 627 ), ExtResource( 628 ), ExtResource( 629 ), ExtResource( 630 ), ExtResource( 631 ), ExtResource( 632 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 635 ), ExtResource( 636 ), ExtResource( 637 ), ExtResource( 638 ), ExtResource( 639 ), ExtResource( 640 ), ExtResource( 641 ), ExtResource( 642 ), ExtResource( 643 ), ExtResource( 644 ), ExtResource( 645 ), ExtResource( 646 ), ExtResource( 647 ), ExtResource( 648 ), ExtResource( 649 ), ExtResource( 650 ), ExtResource( 651 ), ExtResource( 652 ), ExtResource( 653 ), ExtResource( 654 ), ExtResource( 655 ), ExtResource( 656 ), ExtResource( 657 ), ExtResource( 658 ), ExtResource( 659 ), ExtResource( 660 ), ExtResource( 661 ), ExtResource( 662 ) ],
+"loop": true,
+"name": "Player_cinza_cloak_lateral",
+"speed": 20.0
 } ]
 
 [sub_resource type="Animation" id=15]
@@ -799,6 +864,7 @@ position = Vector2( 4.34905, -41.8693 )
 shape = SubResource( 2 )
 
 [node name="LuzLamp" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 47.1954, -40.7356 )
 scale = Vector2( 0.0840568, 0.0840568 )
 
@@ -819,11 +885,11 @@ anims/walkup = SubResource( 13 )
 [node name="RotPos" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RotPos"]
-position = Vector2( 6.84952, -42.9727 )
+position = Vector2( 6.48003, -42.9727 )
 scale = Vector2( 0.711704, 0.711704 )
 frames = SubResource( 14 )
 animation = "Player_lateral"
-frame = 43
+frame = 48
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 

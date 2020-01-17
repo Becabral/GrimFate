@@ -1,10 +1,16 @@
 extends RichTextLabel
 
-var dialog = ["Então Alfredo! Como vai o dia?" , "Cá vamos andando"]
+var dialog
+
+var die = ["Então Alfredo! Como vai o dia?" , "Cá vamos andando"]
+var live = ["Então Alfredo! Como vai o dia?" , "Cá vamos andando"]
+var death_bestie = ["Então Alfredo! Como vai o dia?" , "Cá vamos andando"]
+
 var page = 0
 
 
 func _ready():
+	dialog = live
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
 	set_process_input(true)
