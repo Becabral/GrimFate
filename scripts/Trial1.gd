@@ -3,6 +3,7 @@ extends Node2D
 signal kill_fires
 var outside=false
 var melted = false
+onready var global = get_node("/root/SceneChanger")
 
 func _ready():
 	$Player/Camera2D.drag_margin_h_enabled=false
@@ -22,6 +23,7 @@ func _process(_delta):
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
 		emit_signal("kill_fires")
+		global.alternative_path = true
 		if has_node("/root/SceneChanger"):
 			get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
 	pass # Replace with function body.

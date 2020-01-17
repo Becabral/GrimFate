@@ -190,7 +190,6 @@ flag_disable_z = true
 spread = 8.28
 initial_velocity = -1000.0
 initial_velocity_random = 0.2
-angular_velocity = 0.0
 orbit_velocity = 0.02
 orbit_velocity_random = 0.8
 scale = 5.0
@@ -281,7 +280,6 @@ custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 
 [node name="Torches" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="torchA" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 315.827, -735.674 )
