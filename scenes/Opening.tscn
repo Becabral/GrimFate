@@ -189,8 +189,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -750, -0.25, 0, 2.55, 17.8583, 500, -2.69, -11.9055, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( -750, -0.25, 0, 0.123798, 577.147, 378.026, -0.718029, 2.48001, 0.66851, -12.0352, 287.916, -0.181747, 0, 0.323106, 6.19174, 495, -0.958369, 17.0102, 0.102184, -182.742 ),
+"times": PoolRealArray( 0, 2.99592, 3.91643, 5 )
 }
 
 [sub_resource type="DynamicFont" id=9]
@@ -203,7 +203,7 @@ play = true
 
 [node name="Orb" type="Node2D" parent="."]
 editor/display_folded = true
-position = Vector2( -360, -750 )
+position = Vector2( -360, 65.0133 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -235,7 +235,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 52
+frame = 53
 speed_scale = 3.0
 playing = true
 
@@ -246,6 +246,7 @@ anims/FadePlayer = SubResource( 7 )
 anims/OrbMoveDown = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Backgroun3" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true
@@ -290,7 +291,6 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -323,6 +323,7 @@ __meta__ = {
 }
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxBackground2"]
+editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/Layer 2"]
@@ -333,27 +334,27 @@ texture = ExtResource( 70 )
 position = Vector2( -421.174, -116.325 )
 rotation = -0.436332
 text = "humans…"
-wait = 6.0
+wait = 2.5
 autostart = false
 
 [node name="Intro_Narrative2" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -399.359, -12.1457 )
 rotation = 0.436332
 text = "they spend the whole life chasing futil things in a desperate way to forget that someday will face me. "
-wait = 7.0
+wait = 4.0
 autostart = false
 
 [node name="Intro_Narrative5" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
-position = Vector2( -462.814, 361.023 )
-rotation = -0.0349066
+position = Vector2( -489.984, 306.683 )
+rotation = -0.0436332
 text = "Some try control their existence but fail to understand how life gets in their way."
-wait = 10.0
+wait = 9.0
 autostart = false
 
 [node name="Intro_Narrative7" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
-position = Vector2( -196.499, 502.386 )
+position = Vector2( -230.351, 437.178 )
 text = "In the end all they have is the calm whisper that"
-wait = 12.0
+wait = 13.0
 autostart = false
 
 [node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
@@ -361,6 +362,7 @@ editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground2"]
+editor/display_folded = true
 scale = Vector2( 1.1, 1 )
 z_as_relative = false
 
