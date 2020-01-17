@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GUI_Lamp.png-3526dc74f930eb87fe17ad6ea216e5db.stex"
+path="res://.import/resume2.png-b347f6393c6118afc85833163ee45e22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/gui/GUI_Lamp.png"
-dest_files=[ "res://.import/GUI_Lamp.png-3526dc74f930eb87fe17ad6ea216e5db.stex" ]
+source_file="res://assets/img/gui/GamePaused/resume2.png"
+dest_files=[ "res://.import/resume2.png-b347f6393c6118afc85833163ee45e22.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

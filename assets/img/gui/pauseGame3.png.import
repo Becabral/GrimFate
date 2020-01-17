@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quit.png-28e655fdf15297cad80912db7e7f9e5a.stex"
+path="res://.import/pauseGame3.png-e4c9e9adf1ad9e3465d8778b6fd9a812.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/gui/GamePaused/quit.png"
-dest_files=[ "res://.import/quit.png-28e655fdf15297cad80912db7e7f9e5a.stex" ]
+source_file="res://assets/img/gui/pauseGame3.png"
+dest_files=[ "res://.import/pauseGame3.png-e4c9e9adf1ad9e3465d8778b6fd9a812.stex" ]
 
 [params]
 
