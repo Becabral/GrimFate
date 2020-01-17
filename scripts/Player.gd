@@ -75,7 +75,10 @@ func _physics_process(_delta):
 				if has_hood == true:
 					$RotPos/AnimatedSprite.play("Player_cloak_lateral")
 				else:
-					$RotPos/AnimatedSprite.play("Player_lateral")
+					if is_main_character == true:
+						$RotPos/AnimatedSprite.play("Player_lateral")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_lateral")
 
 		if spritedir == "left" && !is_moving_left:
 			$Anim.play("moveleft")
