@@ -285,7 +285,7 @@ process_material = SubResource( 8 )
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 position = Vector2( 401.856, -2287.47 )
 frames = SubResource( 9 )
-frame = 30
+frame = 62
 playing = true
 
 [node name="Death2" type="AnimatedSprite" parent="Death"]
@@ -295,7 +295,7 @@ material = SubResource( 10 )
 position = Vector2( -22.1521, 5.14917 )
 scale = Vector2( 1.2, 1 )
 frames = SubResource( 9 )
-frame = 29
+frame = 61
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Death/Death2"]

@@ -232,7 +232,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 2
+frame = 7
 speed_scale = 3.0
 playing = true
 
@@ -288,7 +288,6 @@ scale = Vector2( 1.00953, 1.00953 )
 texture = ExtResource( 66 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground2"]
 editor/display_folded = true
@@ -358,6 +357,7 @@ autostart = false
 color = Color( 0.47451, 0.47451, 0.47451, 1 )
 
 [node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground2"]
@@ -370,6 +370,7 @@ scale = Vector2( 1.00655, 1.00655 )
 texture = ExtResource( 72 )
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground2"]
+editor/display_folded = true
 motion_scale = Vector2( 1.8, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxForeground2/Foreground"]
@@ -384,7 +385,7 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]

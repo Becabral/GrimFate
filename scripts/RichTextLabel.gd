@@ -47,8 +47,14 @@ func _process(_delta):
 		choice_made = true
 		if final_reached == true:
 			count_end += 1
-			if count_end == 2:
-				print("EBDED")	
+			if count_end == 3:
+				if global.lamp and global.alternative_path:
+					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
+				elif global.lamp or global.alternative_path:
+					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
+				else:
+					get_node("/root/SceneChanger").change_scene_slow("res://scenes/i_death.tscn")
+					
 			
 		
 	elif Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
@@ -128,6 +134,7 @@ func _on_Timer_timeout():
 		set_visible_characters(get_visible_characters() + 1)
 		if get_visible_characters() > get_total_character_count():
 			a = a + 1
+			count_end += 1
 	else:
 		set_visible_characters(get_visible_characters() + get_total_character_count())
 		
