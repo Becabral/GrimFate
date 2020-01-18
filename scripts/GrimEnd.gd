@@ -8,6 +8,10 @@ func _ready():
 	$Player.has_hood=true
 	$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
 
+func _process(_delta):
+	$Player/Camera2D.position.x=0
+	
+
 func _on_CutsceneTrigger_body_entered(body):
 	if body.get_name()=="Player":
 		$Player.barco=true

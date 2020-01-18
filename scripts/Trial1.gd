@@ -8,6 +8,7 @@ var secret = false
 onready var global = get_node("/root/SceneChanger")
 
 func _ready():
+	$Player/FlameParticle.show()
 	$Player/Camera2D.drag_margin_h_enabled=false
 	if global.lamp == true:
 		$Player/RotPos/AnimatedSprite.play("Player_costas")
