@@ -56,3 +56,7 @@ func _on_NextArea_body_entered(body):
 		if has_node("/root/SceneChanger"):
 			get_node("/root/SceneChanger").change_scene("res://scenes/River1.tscn")
 	pass # Replace with function body.
+
+
+func _on_Fog_entered_fog():
+	pass

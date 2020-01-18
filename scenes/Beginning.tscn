@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/arvoreLamp2.png" type="Texture" id=2]
@@ -26,6 +26,22 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 523, 13.0677 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "going_dark"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Player:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 0.192157, 0.192157, 1 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 46.4074, 254.352 )
 
@@ -49,6 +65,7 @@ texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
+modulate = Color( 0.152941, 0.152941, 0.152941, 1 )
 position = Vector2( -400, 592.579 )
 is_beggining = true
 
@@ -63,6 +80,7 @@ energy = 4.0
 range_item_cull_mask = 2
 
 [node name="Fog2" parent="." instance=ExtResource( 5 )]
+visible = false
 modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
 z_index = 1
 amount = 60
@@ -90,9 +108,11 @@ scale = Vector2( 16.3039, 0.52769 )
 texture = ExtResource( 7 )
 
 [node name="Fog" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( 961.21, 297.928 )
 z_as_relative = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fog"]
+anims/going_dark = SubResource( 5 )
 
 [node name="FmodSource" type="Node2D" parent="."]
 position = Vector2( 2163.22, 560.258 )
@@ -206,4 +226,5 @@ position = Vector2( -1109.28, 387.825 )
 text = "hmmm....interesting"
 wait = 0.5
 autostart = false
+[connection signal="entered_fog" from="Fog" to="." method="_on_Fog_entered_fog"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
