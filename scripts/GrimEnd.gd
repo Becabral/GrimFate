@@ -3,6 +3,9 @@ extends Node2D
 var scene = load("res://scenes/Grims_End_Dialog.tscn")
 var scene_instance = scene.instance()
 
+func _ready():
+	$brilho/AnimationPlayer.play("Rotate")
+
 func _on_CutsceneTrigger_body_entered(body):
 	if body.get_name()=="Player":
 		$Player.set_physics_process(false)
