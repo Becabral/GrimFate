@@ -22,15 +22,17 @@ var final_reached = false
 var count_end = 0
 
 func _ready():
-	"""if global.lamp and global.alternative_path:
+	if global.lamp and global.alternative_path:
 		dialog = live
+		choice = choice_live
 	elif global.lamp or global.alternative_path:
 		dialog = die
+		choice = choice_die
 	else:
-		dialog = i_death"""
+		dialog = i_death
+		choice = choice_i_death
 		
-	dialog = die
-	choice = choice_die
+
 		
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
