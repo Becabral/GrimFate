@@ -1,19 +1,15 @@
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_EndFireSpawner_body_entered(body):
 	if body.get_name()=="Player":
+		get_parent().gray_count += 1 
 		$Torch.lit=true
 		$Torch2.lit=true
+		if get_parent().gray_count == 1:
+			get_parent().get_node("Player4").SPEED = 80
+			get_parent().get_node("Player5").SPEED = 80
+		elif get_parent().gray_count == 2:
+			get_parent().get_node("Player6").SPEED = 50
+			get_parent().get_node("Player7").SPEED = 50

@@ -1118,7 +1118,7 @@ position = Vector2( 6.48003, -42.9727 )
 scale = Vector2( 0.711704, 0.711704 )
 frames = SubResource( 14 )
 animation = "Player_lateral"
-frame = 59
+frame = 12
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 
@@ -1126,7 +1126,7 @@ offset = Vector2( -1.37053, 0.369652 )
 modulate = Color( 1, 1, 1, 0 )
 frames = SubResource( 14 )
 animation = "Player_cinza_lateral"
-frame = 7
+frame = 20
 playing = true
 offset = Vector2( -1.37053, 0.369652 )
 

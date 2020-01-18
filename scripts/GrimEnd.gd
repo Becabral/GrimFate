@@ -2,6 +2,8 @@ extends Node2D
 
 var scene = load("res://scenes/Grims_End_Dialog.tscn")
 var scene_instance = scene.instance()
+var gray_count = 0
+
 
 func _ready():
 	$brilho/AnimationPlayer.play("Rotate")
@@ -22,6 +24,7 @@ func _on_CutsceneTrigger_body_entered(body):
 		yield($Player/Camera2D/AnimPlayerCamera, "animation_finished")
 		scene_instance.set_name("scene")
 		$ParallaxBackground.add_child(scene_instance)
+			
 	pass # Replace with function body.
 
 		
