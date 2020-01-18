@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://scripts/GrimEnd.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/EndBG.png" type="Texture" id=2]
@@ -162,6 +162,36 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="Curve" id=12]
+min_value = -1.0
+_data = [ Vector2( 0.25528, 0.0109999 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 15.0
+tangential_accel = 80.46
+scale = 4.0
+scale_random = 1.0
+scale_curve = SubResource( 11 )
+hue_variation = -0.12
+hue_variation_random = 1.0
+hue_variation_curve = SubResource( 13 )
+
 [sub_resource type="Animation" id=3]
 resource_name = "Rotate"
 length = 20.0
@@ -205,6 +235,7 @@ script = ExtResource( 1 )
 modulate = Color( 0.0470588, 0.384314, 0.458824, 1 )
 position = Vector2( 722.097, -1013.78 )
 scale = Vector2( 0.3, 0.3 )
+z_index = -1
 texture = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -219,6 +250,13 @@ tile_data = PoolIntArray( -4456424, 0, 0, -4194301, 0, 0, -4194300, 0, 0, -41942
 [node name="fundo (1)" type="Sprite" parent="."]
 position = Vector2( 517.563, -2294.75 )
 texture = ExtResource( 4 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 511.356, -2256.96 )
+amount = 1500
+lifetime = 8.0
+visibility_rect = Rect2( -509.05, -356.56, 1000, 3000 )
+process_material = SubResource( 9 )
 
 [node name="brilho" type="Sprite" parent="."]
 editor/display_folded = true
@@ -236,17 +274,17 @@ texture = ExtResource( 6 )
 [node name="Death" type="AnimatedSprite" parent="."]
 position = Vector2( 401.856, -2287.47 )
 frames = SubResource( 4 )
-frame = 33
+frame = 35
 playing = true
 
-[node name="Death2" type="AnimatedSprite" parent="."]
+[node name="Death2" type="AnimatedSprite" parent="Death"]
 modulate = Color( 1, 1, 1, 0.733333 )
 show_behind_parent = true
 material = SubResource( 5 )
-position = Vector2( 389.351, -2284.01 )
+position = Vector2( -12.5052, 3.45532 )
 scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 4 )
-frame = 32
+frame = 34
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
@@ -258,6 +296,9 @@ position = Vector2( 509.886, -2198.3 )
 texture = ExtResource( 127 )
 texture_scale = 10.28
 range_layer_max = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.45098, 0.45098, 0.45098, 1 )
@@ -316,9 +357,6 @@ collision_mask = 0
 SPEED = 100
 is_main_character = false
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 3
-
 [node name="Cutscene" type="AnimationPlayer" parent="."]
 anims/MoveUp = SubResource( 7 )
 
@@ -336,6 +374,7 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1058.37, -382.88 )
 scale = Vector2( 3.95109, 1 )
+z_index = -1
 texture = ExtResource( 129 )
 
 [node name="Fire" parent="." instance=ExtResource( 130 )]
@@ -343,4 +382,7 @@ position = Vector2( 629.034, 244.592 )
 
 [node name="Fire2" parent="." instance=ExtResource( 130 )]
 position = Vector2( 394.65, 244.592 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
 [connection signal="body_entered" from="CutsceneTrigger" to="." method="_on_CutsceneTrigger_body_entered"]
