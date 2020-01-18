@@ -18,7 +18,7 @@ extents = Vector2( 41.4322, 190.848 )
 resource_name = "Player entering"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:position")
+tracks/0/path = NodePath("CanvasLayer2/Player:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ Vector2( 410, 540 ), Vector2( 820, 420 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:scale")
+tracks/1/path = NodePath("CanvasLayer2/Player:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -74,9 +74,6 @@ color = Color( 0.411765, 0.411765, 0.411765, 1 )
 range_layer_min = -1
 range_layer_max = 1
 
-[node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 58, 576 )
-
 [node name="NextArea" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 785.107, 453.991 )
@@ -87,19 +84,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Barco" parent="." instance=ExtResource( 7 )]
-position = Vector2( 26.1741, 572.78 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Player entering" = SubResource( 2 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
-editor/display_folded = true
 offset = Vector2( 0, -60 )
 transform = Transform2D( 1, 0, 0, 1, 0, -60 )
 
+[node name="Player" parent="CanvasLayer2" instance=ExtResource( 6 )]
+position = Vector2( 58, 576 )
+
+[node name="Barco" parent="CanvasLayer2" instance=ExtResource( 7 )]
+position = Vector2( 26.1741, 572.78 )
+
 [node name="River" parent="CanvasLayer2" instance=ExtResource( 8 )]
 position = Vector2( 509.468, 633.535 )
+frame = 1
 
 [node name="pedra do rio" type="Sprite" parent="CanvasLayer2"]
 modulate = Color( 0.964706, 0.439216, 0.772549, 1 )
