@@ -163,7 +163,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 length = 20.0
 loop = true
 tracks/0/type = "value"
@@ -179,20 +179,20 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=4]
 min_value = -1.0
 _data = [ Vector2( 0.25528, 0.0109999 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=8]
 emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
@@ -205,10 +205,10 @@ radial_accel = 15.0
 tangential_accel = 80.46
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 6 )
+scale_curve = SubResource( 7 )
 hue_variation = -0.12
 hue_variation_random = 1.0
-hue_variation_curve = SubResource( 4 )
+hue_variation_curve = SubResource( 5 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
@@ -221,7 +221,7 @@ animations = [ {
 [sub_resource type="CanvasItemMaterial" id=10]
 light_mode = 1
 
-[sub_resource type="Environment" id=14]
+[sub_resource type="Environment" id=11]
 background_mode = 4
 glow_enabled = true
 glow_intensity = 2.65
@@ -232,7 +232,7 @@ extents = Vector2( 3.03314, 27.8214 )
 
 [sub_resource type="Animation" id=13]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 55.4969, 39.5212 )
 
 [node name="GrimEnd" type="Node2D"]
@@ -268,7 +268,7 @@ rotation = -2.82867
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="brilho"]
-anims/Rotate = SubResource( 8 )
+anims/Rotate = SubResource( 3 )
 
 [node name="camara morte_layer 1" type="Sprite" parent="."]
 position = Vector2( 510.958, -1713.9 )
@@ -279,13 +279,13 @@ position = Vector2( 511.356, -2256.96 )
 amount = 1500
 lifetime = 8.0
 visibility_rect = Rect2( -509.05, -356.56, 1000, 3000 )
-process_material = SubResource( 7 )
+process_material = SubResource( 8 )
 
 [node name="Death" type="AnimatedSprite" parent="."]
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 position = Vector2( 401.856, -2287.47 )
 frames = SubResource( 9 )
-frame = 35
+frame = 51
 playing = true
 
 [node name="Death2" type="AnimatedSprite" parent="Death"]
@@ -295,11 +295,11 @@ material = SubResource( 10 )
 position = Vector2( -22.1521, 5.14917 )
 scale = Vector2( 1.2, 1 )
 frames = SubResource( 9 )
-frame = 34
+frame = 50
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Death/Death2"]
-environment = SubResource( 14 )
+environment = SubResource( 11 )
 
 [node name="Light2D" type="Light2D" parent="Death"]
 position = Vector2( 112.891, -36.1514 )
@@ -398,7 +398,6 @@ texture = ExtResource( 129 )
 layer = 1
 
 [node name="EndFireSpawner" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 516.325, 72.7433 )
 script = ExtResource( 130 )
 
@@ -413,15 +412,14 @@ scale = Vector2( 1, 1 )
 lit = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndFireSpawner"]
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="EndFireSpawner2" type="Area2D" parent="."]
 editor/display_folded = true
-visible = false
-position = Vector2( 513.461, 60 )
+position = Vector2( 513.461, -800 )
 script = ExtResource( 130 )
 
 [node name="Torch" parent="EndFireSpawner2" instance=ExtResource( 131 )]
@@ -435,7 +433,7 @@ scale = Vector2( 1, 1 )
 lit = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndFireSpawner2"]
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -456,7 +454,7 @@ scale = Vector2( 1, 1 )
 lit = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndFireSpawner3"]
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }

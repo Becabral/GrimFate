@@ -15,7 +15,7 @@ func _on_CutsceneTrigger_body_entered(body):
 		$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
 		$Player/Anim.play("idleup")
 		$Player/Camera2D/AnimPlayerCamera.play("CameraPan")
-		yield(get_tree().create_timer(1), "timeout")
+		yield($Player/Camera2D/AnimPlayerCamera, "animation_finished")
 		scene_instance.set_name("scene")
 		$ParallaxBackground.add_child(scene_instance)
 	pass # Replace with function body.
