@@ -37,7 +37,7 @@ func _on_SmoothOff_body_entered(body):
 			$Player/Camera2D.smoothing_enabled=false
 			$Player/Camera2D.limit_top=(-2595)
 			$Player/Camera2D.limit_bottom=(-1400)
-			$AnimCanvas.play("FadeCanvasIn")
+			#$AnimCanvas.play("FadeCanvasIn")
 			outside=true
 	pass # Replace with function body.
 
@@ -49,7 +49,7 @@ func _on_SmoothOn_body_entered(body):
 			$Player/Camera2D.smoothing_speed=5
 			$Player/Camera2D.limit_top=-10000000
 			$Player/Camera2D.limit_bottom=10000000
-			$AnimCanvas.play("FadeCanvasOut")
+			#$AnimCanvas.play("FadeCanvasOut")
 			
 			outside=false
 	pass # Replace with function body.

@@ -64,6 +64,9 @@ position = Vector2( 1802.39, 67.9109 )
 scale = Vector2( 1.2061, 1.26369 )
 texture = ExtResource( 5 )
 
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+color = Color( 0.47451, 0.47451, 0.47451, 1 )
+
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 60.538, 589.261 )
 
