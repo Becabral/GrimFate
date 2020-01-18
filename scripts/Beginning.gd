@@ -3,6 +3,7 @@ onready var lamp = preload("res://scenes/Lamp.tscn")
 onready var global = get_node("/root/SceneChanger")
 #onready var Level1 = preload("res://scenes/Level 1.tscn")
 var lampada
+var gray=false
 	
 func _ready():
 	global.lamp = true
@@ -64,6 +65,7 @@ func _on_NextArea_body_entered(body):
 
 
 func _on_Fog_entered_fog():
-	if !$Player.lamp:
+	if !$Player.lamp && !gray:
+		gray=true
 		$Player/RotPos/AnimationPlayer.play("Fade_Gray",-1,(0.2/3))
 	pass

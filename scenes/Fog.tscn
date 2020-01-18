@@ -1,19 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Fog.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 170.654, 306.137 )
 
-[sub_resource type="Curve" id=2]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 0 ), 0.0, 3.44087, 0, 0, Vector2( 1, 0 ), -4.43466, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=3]
-curve = SubResource( 2 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
-emission_box_extents = Vector3( 250, 300, 1 )
+emission_box_extents = Vector3( 450, 300, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 9.8, 0 )
 initial_velocity = -200.0
@@ -27,27 +32,66 @@ radial_accel_random = 1.0
 tangential_accel = 24.14
 tangential_accel_random = 1.0
 damping = 76.01
-scale = 56.78
+scale = 25.0
 scale_random = 1.0
-scale_curve = SubResource( 3 )
-color = Color( 0.0666667, 0.0313726, 0.0313726, 0.231373 )
+scale_curve = SubResource( 5 )
+color = Color( 0.0705882, 0, 0, 0.572549 )
+hue_variation = -0.1
+hue_variation_random = 0.55
 
 [node name="Fog" type="Node2D"]
+material = SubResource( 1 )
 position = Vector2( 512, 300 )
 script = ExtResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="Area2D" type="Area2D" parent="ParallaxBackground"]
+position = Vector2( 512, 300 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Area2D"]
 position = Vector2( 76.2238, 6.26498 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer"]
 light_mask = 2
-amount = 2000
+position = Vector2( 600, 300 )
+amount = 4000
 speed_scale = 0.2
 randomness = 1.0
-visibility_rect = Rect2( -450, -375, 900, 750 )
+visibility_rect = Rect2( -600, -375, 1200, 750 )
 draw_order = 1
-process_material = SubResource( 4 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+process_material = SubResource( 6 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.2, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer2"]
+light_mask = 2
+position = Vector2( 600, 300 )
+amount = 4000
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -600, -375, 1200, 750 )
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.3, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer3"]
+light_mask = 2
+position = Vector2( 600, 300 )
+amount = 4000
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -600, -375, 1200, 750 )
+draw_order = 1
+process_material = SubResource( 6 )
+[connection signal="body_entered" from="ParallaxBackground/Area2D" to="." method="_on_Area2D_body_entered"]
