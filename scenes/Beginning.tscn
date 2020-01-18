@@ -26,10 +26,10 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 523, 13.0677 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 46.4074, 254.352 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 124.899, 345.354 )
 
 [node name="Beginning" type="Node2D"]
@@ -104,7 +104,7 @@ position = Vector2( 2163.03, 422.275 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( 293.407, 24.1108 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1346.38, 616.861 )
@@ -186,7 +186,7 @@ editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
 position = Vector2( -1872.69, 426.731 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="PausedGUI" parent="." instance=ExtResource( 17 )]
 

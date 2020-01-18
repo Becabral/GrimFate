@@ -10,7 +10,7 @@ func _ready():
 
 func _on_CutsceneTrigger_body_entered(body):
 	if body.get_name()=="Player":
-		$Player.set_physics_process(false)
+		$Player.barco=true
 		$Player.anim_switch("idle")
 		$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
 		$Player/Anim.play("idleup")
