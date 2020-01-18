@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Barco.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/barco.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/environment/barco com apoio.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/items/lampiao.png" type="Texture" id=3]
+[ext_resource path="res://scenes/LuzLamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/img/Ellipse 3.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/environment/barco com apoio.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 279.439, 140.648 )
@@ -65,13 +68,36 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 30 )
 scale = Vector2( 4.23852, 4.23852 )
 texture = ExtResource( 2 )
 
+[node name="lampiao" type="Sprite" parent="Sprite"]
+visible = false
+self_modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
+position = Vector2( 139.553, -57.6969 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="LuzLamp" parent="Sprite/lampiao" instance=ExtResource( 4 )]
+position = Vector2( -0.585693, -0.552734 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+color = Color( 0.996078, 0.937255, 0.305882, 1 )
+range_layer_min = -1
+range_layer_max = 1
+
+[node name="Light2D" type="Light2D" parent="Sprite/lampiao"]
+texture = ExtResource( 5 )
+color = Color( 0.996078, 0.937255, 0.305882, 1 )
+range_layer_min = -1
+range_layer_max = 1
+
 [node name="barco com apoio" type="Sprite" parent="Sprite"]
+modulate = Color( 0.615686, 0.615686, 0.615686, 1 )
 position = Vector2( 16.6914, -19.9284 )
 scale = Vector2( 1.00011, 1.00011 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/position = SubResource( 2 )
