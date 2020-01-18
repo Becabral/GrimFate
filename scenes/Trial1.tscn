@@ -191,15 +191,16 @@ flag_disable_z = true
 spread = 8.28
 initial_velocity = -1000.0
 initial_velocity_random = 0.2
+angular_velocity = 0.0
 orbit_velocity = 0.02
 orbit_velocity_random = 0.8
 scale = 5.0
 scale_random = 1.0
 
-[sub_resource type="OccluderPolygon2D" id=17]
+[sub_resource type="OccluderPolygon2D" id=15]
 polygon = PoolVector2Array( -7000, -5000, -7000, 100, 2000, 2000, 4000, -5000 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/CanvasModulate:color")
@@ -214,7 +215,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.282353, 0.282353, 0.282353, 1 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/CanvasModulate:color")
@@ -458,7 +459,6 @@ scale = Vector2( 0.9, 0.9 )
 lit = false
 
 [node name="DoorEvent2" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="Door" type="StaticBody2D" parent="DoorEvent2"]
@@ -865,11 +865,11 @@ color = Color( 0.282353, 0.282353, 0.282353, 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 visible = false
-occluder = SubResource( 17 )
+occluder = SubResource( 15 )
 
 [node name="AnimCanvas" type="AnimationPlayer" parent="."]
-anims/FadeCanvasIn = SubResource( 15 )
-anims/FadeCanvasOut = SubResource( 16 )
+anims/FadeCanvasIn = SubResource( 16 )
+anims/FadeCanvasOut = SubResource( 17 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
