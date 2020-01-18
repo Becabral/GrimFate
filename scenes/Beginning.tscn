@@ -179,7 +179,6 @@ color = Color( 0.47451, 0.47451, 0.47451, 1 )
 position = Vector2( 1916.65, 693.619 )
 scale = Vector2( 1.13842, 1.13842 )
 z_index = 3
-frame = 1
 
 [node name="Parede" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -203,4 +202,6 @@ pause_mode = 2
 [node name="narrative" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1211.32, 450.213 )
 text = "hmmm....interesting"
+wait = 0.5
+autostart = false
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

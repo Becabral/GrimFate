@@ -35,6 +35,7 @@ func _process(_delta):
 			$Fog2.lamp = true
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.hide()
+			get_node("narrative").play_text()
 
 func create_lamp():
 	lampada = lamp.instance()
