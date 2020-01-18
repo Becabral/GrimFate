@@ -31,6 +31,9 @@ var movedir = Vector2(0,0)
 func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 			get_node("/root/FMOD/FMOD_start").set_listener(self)
+	
+	if !is_beggining:
+		$RotPos/AnimatedSprite/AnimatedSprite2.queue_free()
 			
 	if is_main_character == false:
 		$Camera2D.queue_free()

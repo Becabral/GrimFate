@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Barco.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/barco.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/environment/barco com apoio.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 279.439, 140.648 )
@@ -63,9 +64,14 @@ position = Vector2( 288.581, -14.9427 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 29.1049 )
+self_modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 4.23852, 4.23852 )
 texture = ExtResource( 2 )
+
+[node name="barco com apoio" type="Sprite" parent="Sprite"]
+position = Vector2( 16.6914, -19.9284 )
+scale = Vector2( 1.00011, 1.00011 )
+texture = ExtResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/position = SubResource( 2 )
