@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -230,6 +230,9 @@ tracks/0/keys = {
 "values": [ Color( 0.282353, 0.282353, 0.282353, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=18]
+resource_name = "ShowSecret"
+
 [node name="Level 1" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -371,10 +374,15 @@ position = Vector2( -2753.11, -2384.18 )
 scale = Vector2( 0.9, 0.9 )
 lit = false
 
-[node name="Torch17" parent="Torches" instance=ExtResource( 10 )]
+[node name="SnowmanTorch" parent="Torches" instance=ExtResource( 10 )]
 position = Vector2( -2347.98, -3300.03 )
 lit = false
 blue = true
+
+[node name="SecretTorch" parent="Torches" instance=ExtResource( 9 )]
+position = Vector2( -2346.82, -2954.97 )
+scale = Vector2( 1, 1 )
+lit = false
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
 position = Vector2( 480, 500 )
@@ -398,6 +406,7 @@ position = Vector2( 1051.16, 482.991 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( -3398.4, -3917.17 )
 shape = SubResource( 6 )
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NextArea"]
 position = Vector2( -1641.69, -1799.97 )
@@ -567,11 +576,6 @@ shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Torch" parent="Camera Triggers/SmoothOff2" instance=ExtResource( 9 )]
-position = Vector2( 1.91577, -503.398 )
-scale = Vector2( 1, 1 )
-lit = false
 
 [node name="SmoothOn" type="Area2D" parent="Camera Triggers"]
 editor/display_folded = true
@@ -870,6 +874,9 @@ occluder = SubResource( 15 )
 [node name="AnimCanvas" type="AnimationPlayer" parent="."]
 anims/FadeCanvasIn = SubResource( 16 )
 anims/FadeCanvasOut = SubResource( 17 )
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+anims/ShowSecret = SubResource( 18 )
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
