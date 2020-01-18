@@ -10,6 +10,10 @@ func _ready():
 	$Player/Camera2D.limit_left=0
 	$Player/Camera2D.limit_right=515
 	$Player/Camera2D.limit_top=60
+	if get_node("/root/SceneChanger").lamp == true:
+		$Player/RotPos/AnimatedSprite.play("Player_lateral")
+	else:
+		$Player/RotPos/AnimatedSprite.play("Player_cinza_lateral")
 	
 	$Barco.SPEED = 1.8
 

@@ -5,6 +5,10 @@ func _ready():
 	$Player.spritedir = "right"
 	$Player/Camera2D.set_offset(Vector2(600,-170))
 	$Barco.SPEED = 1.8
+	if get_node("/root/SceneChanger").lamp == true:
+		$Player/RotPos/AnimatedSprite.play("Player_lateral")
+	else:
+		$Player/RotPos/AnimatedSprite.play("Player_cinza_lateral")
 	if has_node("/root/FMOD/FMOD_start"):
 		#get_node("/root/FMOD/FMOD_start").play_one("event:/Fire", $SoundTest)
 		pass

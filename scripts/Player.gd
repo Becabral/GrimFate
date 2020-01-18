@@ -4,7 +4,6 @@ export var SPEED = 200
 export var pushSPEED = 120
 export var is_main_character = true
 export var is_beggining = false
-#var cameraY = -300
 var is_moving_left = false
 var is_moving_right=false
 var is_moving_vertically=false
@@ -36,6 +35,7 @@ func _ready():
 	if is_main_character == false:
 		$Camera2D.queue_free()
 		$RotPos/AnimatedSprite.play("Player_cinza_costas")
+	
 
 func _physics_process(_delta):
 	if barco != true:
