@@ -200,7 +200,7 @@ margin_right = -0.72522
 pause_mode = 2
 
 [node name="narrative" parent="." instance=ExtResource( 20 )]
-position = Vector2( -1211.32, 450.213 )
+position = Vector2( -1109.28, 387.825 )
 text = "hmmm....interesting"
 wait = 0.5
 autostart = false
