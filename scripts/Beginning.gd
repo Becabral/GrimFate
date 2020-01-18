@@ -12,6 +12,7 @@ func _ready():
 	#inicializa a posição da camera em relação ao personagem
 	#$Player/Camera2D.offset_v = 0
 	$Player/Camera2D.set_offset(Vector2(300,-100))
+	
 	create_lamp()
 	
 	if has_node("/root/FMOD/FMOD_start"):
@@ -42,6 +43,7 @@ func _process(_delta):
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.hide()
 			get_node("narrative").play_text()
+			$Player/RotPos/AnimationPlayer.play_backwards("Fade_Gray")
 
 func create_lamp():
 	lampada = lamp.instance()
@@ -59,4 +61,6 @@ func _on_NextArea_body_entered(body):
 
 
 func _on_Fog_entered_fog():
+	if !$Player.lamp:
+		$Player/RotPos/AnimationPlayer.play("Fade_Gray",-1,(0.2/3))
 	pass
