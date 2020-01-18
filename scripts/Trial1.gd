@@ -35,7 +35,7 @@ func _process(_delta):
 		#emit_signal("kill_fires")
 		if(bypassTrial2):
 			global.change_scene_slow("res://scenes/GrimEnd.tscn")
-		global.change_scene_slow("res://scenes/River2.tscn")
+		else: global.change_scene_slow("res://scenes/River2.tscn")
 		
 		
 	if secret:
@@ -49,7 +49,8 @@ func _on_NextArea_body_entered(body):
 		if has_node("/root/SceneChanger"):
 			if bypassTrial2:
 				get_node("/root/SceneChanger").change_scene("res://scenes/GrimEnd.tscn")
-			get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
+			else:
+				get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
 	pass # Replace with function body.
 
 
