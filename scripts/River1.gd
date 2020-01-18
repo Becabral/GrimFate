@@ -12,7 +12,7 @@ func _ready():
 func _process(_delta):
 
 	if get_node("/root/SceneChanger").lamp == true:
-		$Player.lamp = true
+		get_node("/root/SceneChanger").lamp = true
 		$Interface/GUI/MarginContainer/MainContainer/Items/ItemLbl.visible = true
 		$Interface/GUI/MarginContainer/MainContainer/Items/Slot0.visible = true
 		$Interface/GUI/MarginContainer/MainContainer/Items/Slot0/Item0/count.visible = false

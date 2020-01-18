@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var SPEED = 200
 export var pushSPEED = 120
 export var is_main_character = true
+export var is_beggining = false
 #var cameraY = -300
 var is_moving_left = false
 var is_moving_right=false
@@ -11,7 +12,7 @@ var can_dash = true
 var is_flammable = true
 var on_fire = false
 var blue = false
-
+onready var global = get_node("/root/SceneChanger")
 
 
 #items
@@ -54,35 +55,62 @@ func _physics_process(_delta):
 		else:
 			$LuzLamp.set_position(get_node("PosLampRight").position)
 		$LuzLamp.visible = true
-		$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
+		
+	
+	if is_beggining == true:
+		if lamp == true:
+			$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
 
 	# se o personagem não esta parado, então usa o tipo de movimento "walk". Senão, usa o tipo "idle"
 	if movedir != Vector2(0,0) and barco == false:
-		if lamp == false:
-			if spritedir == "up":
-				if has_hood == true:
-					$RotPos/AnimatedSprite.play("Player_cloak_costas")
+		#if lamp == false:
+		if spritedir == "up":
+			if is_main_character == true:
+				if has_hood:
+					if global.lamp == true:
+						$RotPos/AnimatedSprite.play("Player_cloak_costas")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_cloak_costas")
 				else:
-					if is_main_character == true:
+					if global.lamp == true:
 						$RotPos/AnimatedSprite.play("Player_costas")
 					else:
 						$RotPos/AnimatedSprite.play("Player_cinza_costas")
-			elif spritedir == "down":
-				if has_hood == true:
-					$RotPos/AnimatedSprite.play("Player_cloak_frente")
+			else:
+				$RotPos/AnimatedSprite.play("Player_cinza_costas")
+		elif spritedir == "down":
+			if is_main_character == true:
+				if has_hood:
+					if global.lamp == true:
+						$RotPos/AnimatedSprite.play("Player_cloak_frente")
+					else:
+						$RotPos/AnimatedSprite.play("Player_cinza_cloak_frente")
 				else:
-					if is_main_character == true:
+					if global.lamp == true:
 						$RotPos/AnimatedSprite.play("Player_frente")
 					else:
 						$RotPos/AnimatedSprite.play("Player_cinza_frente")
-			elif spritedir == "left" or spritedir == "right":
-				if has_hood == true:
-					$RotPos/AnimatedSprite.play("Player_cloak_lateral")
-				else:
-					if is_main_character == true:
-						$RotPos/AnimatedSprite.play("Player_lateral")
+			else:
+				$RotPos/AnimatedSprite.play("Player_cinza_frente")
+		elif spritedir == "left" or spritedir == "right":
+			
+			if lamp == true:
+				$RotPos/AnimatedSprite.play("Player_lateral_lanterna")
+			else:
+				if is_main_character == true:
+					if has_hood:
+						if global.lamp == true:
+							$RotPos/AnimatedSprite.play("Player_cloak_lateral")
+						else:
+							$RotPos/AnimatedSprite.play("Player_cinza_cloak_lateral")
 					else:
-						$RotPos/AnimatedSprite.play("Player_cinza_lateral")
+						if global.lamp == true:
+							$RotPos/AnimatedSprite.play("Player_lateral")
+						else:
+							$RotPos/AnimatedSprite.play("Player_cinza_lateral")
+				else:
+					$RotPos/AnimatedSprite.play("Player_cinza_lateral")
+					
 
 		if spritedir == "left" && !is_moving_left:
 			$Anim.play("moveleft")
@@ -202,6 +230,4 @@ func dash():
 	set_collision_layer_bit( 2, true)
 	can_dash=true
 	is_flammable=true
-	
-	
 	

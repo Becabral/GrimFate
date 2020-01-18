@@ -2,7 +2,7 @@ extends CanvasLayer
 #This scene is in charge of changing scenes like
 #levels with fades between them.
 #Also preloads them so they don't take as much time.
-var lamp = false
+var lamp
 var alternative_path = false
 onready var Beginning = preload("res://scenes/Beginning.tscn")
 #onready var Trial1 = preload("res://scenes/Trial1.tscn")

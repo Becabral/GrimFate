@@ -89,7 +89,7 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 689.799 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 1
+frame = 2
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]

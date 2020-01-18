@@ -8,7 +8,11 @@ onready var global = get_node("/root/SceneChanger")
 
 func _ready():
 	$Player/Camera2D.drag_margin_h_enabled=false
-	$Player/RotPos/AnimatedSprite.play("Player_costas")
+	if global.lamp == true:
+		$Player/RotPos/AnimatedSprite.play("Player_costas")
+	else:
+		$Player/RotPos/AnimatedSprite.play("Player_cinza_costas")
+	
 	pass 
 
 func _process(_delta):
@@ -25,7 +29,10 @@ func _process(_delta):
 		$Player.SPEED=0
 		$Player.barco = true
 		global.alternative_path = true
-		$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
+		if global.lamp == true:
+			$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
+		else:
+			$Player/RotPos/AnimatedSprite.play("Player_cinza_cloak_costas")
 		$Player/Camera2D/AnimPlayerCamera.play("CameraPanHigher")
 		yield($Player/Camera2D/AnimPlayerCamera, "animation_finished")
 		yield(get_tree().create_timer(1), "timeout")
@@ -38,7 +45,10 @@ func _process(_delta):
 	if secret:
 		$Player.SPEED=0
 		$Player.barco = true
-		$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
+		if global.lamp == true:
+			$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
+		else:
+			$Player/RotPos/AnimatedSprite.play("Player_cinza_cloak_costas")
 
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":

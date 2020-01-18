@@ -24,11 +24,21 @@ func _process(delta):
 
 func changePlayer(player):
 	if player.spritedir=="up":
-		player.get_node("RotPos/AnimatedSprite").play("Player_cloak_costas")
+		if get_node("/root/SceneChanger").lamp == true:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cloak_costas")
+		else:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cinza_cloak_costas")
+		
 	elif player.spritedir=="down":
-		player.get_node("RotPos/AnimatedSprite").play("Player_cloak_frente")
+		if get_node("/root/SceneChanger").lamp == true:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cloak_frente")
+		else:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cinza_cloak_frente")
 	else:
-		player.get_node("RotPos/AnimatedSprite").play("Player_cloak_lateral")
+		if get_node("/root/SceneChanger").lamp == true:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cloak_lateral")
+		else:
+			player.get_node("RotPos/AnimatedSprite").play("Player_cinza_cloak_lateral")
 
 func _on_Hood_body_entered(body):
 	if body.get_name()=="Player":
