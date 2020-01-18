@@ -32,6 +32,9 @@ func _process(_delta):
 		$Player.position.y = $Barco.position.y - 30 + ($Barco/Sprite.position.y/4)
 		if $Player.lamp == true:
 			global.lamp = true
+			$Barco/Sprite/lampiao.show()
+			$Player/RotPos/AnimatedSprite.play("Player_lateral")
+			$Player/LuzLamp.hide()
 		else:
 			global.lamp = false
 	
