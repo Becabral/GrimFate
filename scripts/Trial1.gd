@@ -1,6 +1,7 @@
 extends Node2D
 #onready var Level2 = preload("res://scenes/Level 2.tscn")
 signal kill_fires
+export var bypassTrial2 = false
 var outside= false
 var melted = false
 var secret = false
@@ -27,7 +28,7 @@ func _process(_delta):
 	if $Torches/SecretTorch.lit && !secret :
 		secret=true
 		$Player.SPEED=0
-		$Player.barco = true
+		$Player.set_physics_process(false)
 		global.alternative_path = true
 		if global.lamp == true:
 			$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
@@ -39,7 +40,9 @@ func _process(_delta):
 		$Torches/SnowmanTorch.lit=true
 		yield(get_tree().create_timer(2), "timeout")
 		#emit_signal("kill_fires")
-		global.change_scene_slow("res://scenes/River2.tscn")
+		if(bypassTrial2):
+			global.change_scene_slow("res://scenes/GrimEnd.tscn")
+		else: global.change_scene_slow("res://scenes/River2.tscn")
 		
 		
 	if secret:
@@ -54,7 +57,10 @@ func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
 		emit_signal("kill_fires")
 		if has_node("/root/SceneChanger"):
-			get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
+			if bypassTrial2:
+				get_node("/root/SceneChanger").change_scene("res://scenes/GrimEnd.tscn")
+			else:
+				get_node("/root/SceneChanger").change_scene("res://scenes/River2.tscn")
 	pass # Replace with function body.
 
 

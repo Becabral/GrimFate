@@ -202,7 +202,6 @@ script = ExtResource( 1 )
 play = true
 
 [node name="Orb" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -360, -750 )
 __meta__ = {
 "_edit_group_": true,
@@ -210,7 +209,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Orb"]
-editor/display_folded = true
 modulate = Color( 0.054902, 0.988235, 0.941176, 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
@@ -218,7 +216,6 @@ texture = ExtResource( 2 )
 [node name="Particles2D" type="Particles2D" parent="Orb/Sprite"]
 scale = Vector2( 5.89349, 5.89349 )
 amount = 13
-lifetime = 1.5
 local_coords = false
 process_material = SubResource( 1 )
 
@@ -235,7 +232,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 42
+frame = 2
 speed_scale = 3.0
 playing = true
 
@@ -387,7 +384,7 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
