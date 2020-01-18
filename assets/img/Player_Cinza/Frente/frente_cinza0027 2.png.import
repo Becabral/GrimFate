@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frente_cinza0027 2.png-774cb04fae1dfcae76a8d02d0307d73e.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/img/Player_Cinza/Frente/frente_cinza0027 2.png"
-dest_files=[ "res://.import/frente_cinza0027 2.png-774cb04fae1dfcae76a8d02d0307d73e.stex" ]
-
 [params]
 
 compress/mode=0
