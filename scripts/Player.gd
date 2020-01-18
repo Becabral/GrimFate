@@ -146,15 +146,16 @@ func _physics_process(_delta):
 		
 	if on_fire:
 		if blue:
-			$FlameParticle/FireBlue.visible = true
-			$FlameParticle/FireRed.visible = false
-			$FlameParticle.visible = true			
+			$FlameParticle/FireBlue.emitting = true
+			$FlameParticle/FireRed.emitting = false
+			#$FlameParticle.visible = true			
 		else:
-			$FlameParticle/FireRed.visible = true
-			$FlameParticle/FireBlue.visible = false
-			$FlameParticle.visible = true			
+			$FlameParticle/FireRed.emitting = true
+			$FlameParticle/FireBlue.emitting = false
+			#$FlameParticle.visible = true			
 	else:
-		$FlameParticle.visible = false
+		$FlameParticle/FireRed.emitting = false
+		$FlameParticle/FireBlue.emitting = false
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
