@@ -192,7 +192,6 @@ flag_disable_z = true
 spread = 8.28
 initial_velocity = -1000.0
 initial_velocity_random = 0.2
-angular_velocity = 0.0
 orbit_velocity = 0.02
 orbit_velocity_random = 0.8
 scale = 5.0
@@ -459,23 +458,23 @@ position = Vector2( 481.71, -380.11 )
 [node name="Fire" type="Node2D" parent="."]
 
 [node name="Fire2" parent="Fire" instance=ExtResource( 16 )]
-position = Vector2( 223, -28 )
+position = Vector2( 224, -32 )
 
 [node name="Fire3" parent="Fire" instance=ExtResource( 16 )]
-position = Vector2( 223, 40 )
+position = Vector2( 224, 36 )
 
 [node name="Fire4" parent="Fire" instance=ExtResource( 16 )]
-position = Vector2( 223, 111 )
+position = Vector2( 224, 107 )
 is_blue = true
 
 [node name="Fire5" parent="Fire" instance=ExtResource( 16 )]
-position = Vector2( 223, 183 )
+position = Vector2( 224, 179 )
 
 [node name="Fire6" parent="Fire" instance=ExtResource( 16 )]
-position = Vector2( 223, 254 )
+position = Vector2( 224, 250 )
 
 [node name="Fire8" parent="Fire" instance=ExtResource( 15 )]
-position = Vector2( -2347.06, -1638.2 )
+position = Vector2( -2346.06, -1642.2 )
 is_blue = true
 
 [node name="DoorEvent" type="Node2D" parent="."]
