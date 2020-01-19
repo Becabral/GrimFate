@@ -9,7 +9,8 @@ func _ready():
 	$brilho/AnimationPlayer.play("Rotate")
 	$Player.has_hood=true
 	$Player/RotPos/AnimatedSprite.play("Player_cloak_costas")
-
+	$Interface/GUI.adiciona_skill("Dash")
+	
 func _process(_delta):
 	$Player/Camera2D.position.x=0
 	
