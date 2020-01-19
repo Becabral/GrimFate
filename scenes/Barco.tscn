@@ -90,8 +90,8 @@ range_layer_max = 1
 [node name="Light2D" type="Light2D" parent="Sprite/lampiao"]
 texture = ExtResource( 5 )
 color = Color( 0.996078, 0.937255, 0.305882, 1 )
-range_layer_min = -1
-range_layer_max = 1
+range_layer_min = -10
+range_layer_max = 10
 
 [node name="barco com apoio" type="Sprite" parent="Sprite"]
 modulate = Color( 0.615686, 0.615686, 0.615686, 1 )
