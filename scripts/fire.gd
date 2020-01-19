@@ -8,6 +8,8 @@ var fmodevent
 func _ready():
 	if (has_node("/root/Level 1")):
 		get_node("/root/Level 1").connect("kill_fires", self, "delete")
+	if (has_node("/root/GrimEnd")):
+		get_node("/root/GrimEnd").connect("kill_fires", self, "delete")
 	
 	$AnimatedSprite/AnimationPlayer.play("SpeedModifier")
 	$AnimatedSprite/AnimationPlayer.seek(rand_range(1,4))

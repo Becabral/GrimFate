@@ -29,8 +29,7 @@ var spritedir = "down"
 var movedir = Vector2(0,0)
 
 func _ready():
-	if has_node("/root/FMOD/FMOD_start"):
-			get_node("/root/FMOD/FMOD_start").set_listener(self)
+
 	
 	if !is_beggining:
 		$RotPos/AnimatedSprite/AnimatedSprite2.queue_free()
@@ -38,6 +37,10 @@ func _ready():
 	if is_main_character == false:
 		$Camera2D.queue_free()
 		$RotPos/AnimatedSprite.play("Player_cinza_costas")
+	else:
+		if has_node("/root/FMOD/FMOD_start"):
+			get_node("/root/FMOD/FMOD_start").set_listener(self)
+			pass
 	
 
 func _physics_process(_delta):
@@ -235,3 +238,7 @@ func dash():
 	can_dash=true
 	is_flammable=true
 	
+
+func _on_GrimEnd_kill_players():
+	queue_free()
+	pass # Replace with function body.

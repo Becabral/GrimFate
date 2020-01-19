@@ -17,6 +17,8 @@ var fmodevent
 func _ready():
 	if (has_node("/root/Level 1")):
 		get_node("/root/Level 1").connect("kill_fires", self, "delete")
+	if (has_node("/root/GrimEnd")):
+		get_node("/root/GrimEnd").connect("kill_fires", self, "delete")
 	if lit:
 		if big:
 			add_child(bigfire.instance())
@@ -65,3 +67,6 @@ func _on_Torch_body_entered(body):
 
 func delete():
 	lit=false
+
+func _on_GrimEnd_kill_fires():
+	pass # Replace with function body.
