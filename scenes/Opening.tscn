@@ -171,7 +171,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 
 [sub_resource type="Animation" id=8]
-length = 5.0
+length = 5.5
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Orb:position:x")
 tracks/0/interp = 1
@@ -189,8 +189,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -750, -0.25, 0, 0.123798, 577.147, 378.026, -0.718029, 2.48001, 0.66851, -12.0352, 287.916, -0.181747, 0, 0.323106, 6.19174, 495, -0.958369, 17.0102, 0.102184, -182.742 ),
-"times": PoolRealArray( 0, 2.99592, 3.91643, 5 )
+"points": PoolRealArray( -750, -0.25, 0, 0.74, -0.375671, 378.026, -0.718029, 2.48001, 0.66851, -12.0352, 287.916, -0.181747, 0, 0.323106, 6.19174, 495, -0.958369, 17.0102, 0.102184, -182.742 ),
+"times": PoolRealArray( 0, 3.5, 4.4, 5.5 )
 }
 
 [sub_resource type="DynamicFont" id=9]
@@ -385,7 +385,7 @@ margin_right = -218.567
 margin_bottom = -875.186
 custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]

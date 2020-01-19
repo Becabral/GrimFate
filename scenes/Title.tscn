@@ -74,7 +74,6 @@ anims/Blink = SubResource( 1 )
 anims/Fade = SubResource( 3 )
 
 [node name="Placeholder" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 516.633, 59.8666 )
 z_index = 1
 texture = ExtResource( 4 )
