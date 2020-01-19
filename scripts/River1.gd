@@ -17,9 +17,9 @@ func _process(_delta):
 
 	if get_node("/root/SceneChanger").lamp == true:
 		get_node("/root/SceneChanger").lamp = true
-		$Interface/GUI/MarginContainer/MainContainer/Items/ItemLbl.visible = true
-		$Interface/GUI/MarginContainer/MainContainer/Items/Slot0.visible = true
-		$Interface/GUI/MarginContainer/MainContainer/Items/Slot0/Item0/count.visible = false
+		#$Interface/GUI/MarginContainer/MainContainer/Items/ItemLbl.visible = true
+		#$Interface/GUI/MarginContainer/MainContainer/Items/Slot0.visible = true
+		#$Interface/GUI/MarginContainer/MainContainer/Items/Slot0/Item0/count.visible = false
 	if $Barco.position.x >= 2937:
 		$Player/Camera2D.current = false
 	if $Barco.state == true:

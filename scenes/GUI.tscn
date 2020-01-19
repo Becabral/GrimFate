@@ -1,31 +1,45 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/Quicksand-Bold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/img/gui/New/cloaks@2x.png" type="Texture" id=2]
 [ext_resource path="res://scenes/GUI/Dash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/Quicksand-Regular.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/GUI/Scythe.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/GUI/Lamp.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/GUI/Seed.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/img/gui/New/foice.png" type="Texture" id=5]
+[ext_resource path="res://scenes/GUI/Scythe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/Quicksand-Bold.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/GUI/Lamp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/GUI/Seed.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/Bariol_Bold.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/fonts/Bariol_Regular.otf"
+
+[sub_resource type="DynamicFont" id=10]
+font_data = SubResource( 9 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 18
-font_data = ExtResource( 2 )
+size = 14
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 14
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 14
-font_data = ExtResource( 4 )
+size = 18
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 18
-font_data = ExtResource( 2 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 14
+size = 12
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -47,102 +61,183 @@ margin_bottom = 40.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 custom_constants/margin_left = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MainContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 221.0
-margin_bottom = 137.0
+margin_right = 70.0
+margin_bottom = 89.0
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Skills" type="HBoxContainer" parent="MarginContainer/MainContainer"]
-editor/display_folded = true
-margin_right = 221.0
-margin_bottom = 77.0
+[node name="Skills" type="VBoxContainer" parent="MarginContainer/MainContainer"]
+margin_right = 70.0
+margin_bottom = 89.0
 
-[node name="SkillLbl" type="Label" parent="MarginContainer/MainContainer/Skills"]
-margin_top = 15.0
-margin_right = 53.0
-margin_bottom = 62.0
-custom_fonts/font = SubResource( 1 )
-text = "Skills: 
-"
+[node name="Slot0" type="HBoxContainer" parent="MarginContainer/MainContainer/Skills"]
+margin_right = 70.0
+margin_bottom = 50.0
+custom_constants/separation = 10
 
-[node name="Slot0" type="VBoxContainer" parent="MarginContainer/MainContainer/Skills"]
-margin_left = 57.0
-margin_right = 137.0
-margin_bottom = 77.0
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MainContainer/Skills/Slot0"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainContainer/Skills/Slot0"]
+margin_left = 60.0
+margin_right = 70.0
+margin_bottom = 50.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/MainContainer/Skills/Slot0/VBoxContainer"]
+margin_top = 21.0
+margin_right = 10.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 8 )
+text = "Cloak Dash"
+
+[node name="Label2" type="Label" parent="MarginContainer/MainContainer/Skills/Slot0/VBoxContainer"]
+margin_top = 27.0
+margin_right = 10.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 10 )
+text = "Tab"
 
 [node name="Skill0" parent="MarginContainer/MainContainer/Skills/Slot0" instance=ExtResource( 3 )]
-margin_right = 80.0
+visible = false
+margin_left = 40.0
+margin_right = 120.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Lbl0" type="Label" parent="MarginContainer/MainContainer/Skills/Slot0"]
-margin_top = 38.0
-margin_right = 80.0
-margin_bottom = 77.0
-custom_fonts/font = SubResource( 2 )
+visible = false
+margin_left = 40.0
+margin_right = 75.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 1 )
 text = "Dash
 "
 align = 1
+valign = 1
 
-[node name="Slot1" type="VBoxContainer" parent="MarginContainer/MainContainer/Skills"]
-margin_left = 141.0
-margin_right = 221.0
-margin_bottom = 77.0
+[node name="Slot1" type="HBoxContainer" parent="MarginContainer/MainContainer/Skills"]
+margin_top = 54.0
+margin_right = 70.0
+margin_bottom = 89.0
 
-[node name="Skill1" parent="MarginContainer/MainContainer/Skills/Slot1" instance=ExtResource( 5 )]
-margin_right = 80.0
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MainContainer/Skills/Slot1"]
+margin_right = 35.0
+margin_bottom = 35.0
+texture = ExtResource( 5 )
+
+[node name="Skill1" parent="MarginContainer/MainContainer/Skills/Slot1" instance=ExtResource( 6 )]
+visible = false
+margin_left = 39.0
+margin_right = 119.0
+margin_bottom = 35.0
 
 [node name="Lbl1" type="Label" parent="MarginContainer/MainContainer/Skills/Slot1"]
-margin_top = 38.0
-margin_right = 80.0
-margin_bottom = 56.0
-custom_fonts/font = SubResource( 3 )
+visible = false
+margin_left = 39.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
 text = "Scythe"
 align = 1
 
-[node name="Items" type="HBoxContainer" parent="MarginContainer/MainContainer"]
-editor/display_folded = true
-margin_top = 81.0
+[node name="SkillLbl" type="Label" parent="MarginContainer/MainContainer/Skills"]
+visible = false
+margin_top = 82.0
+margin_right = 172.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 3 )
+text = "Skills: 
+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -108.5
+margin_top = -56.0
+margin_right = 108.5
+
+[node name="MainContainer" type="VBoxContainer" parent="MarginContainer2"]
 margin_right = 221.0
-margin_bottom = 137.0
-
-[node name="ItemLbl" type="Label" parent="MarginContainer/MainContainer/Items"]
-margin_top = 17.0
-margin_right = 49.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 4 )
-text = "Item: "
-
-[node name="Slot0" type="VBoxContainer" parent="MarginContainer/MainContainer/Items"]
-margin_left = 53.0
-margin_right = 133.0
 margin_bottom = 56.0
+
+[node name="Items" type="HBoxContainer" parent="MarginContainer2/MainContainer"]
+margin_right = 221.0
+margin_bottom = 34.0
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
-[node name="Item0" parent="MarginContainer/MainContainer/Items/Slot0" instance=ExtResource( 6 )]
-margin_right = 80.0
+[node name="ItemLbl" type="Label" parent="MarginContainer2/MainContainer/Items"]
+margin_top = 6.0
+margin_right = 49.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 4 )
+text = "Item: "
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Lbl0" type="Label" parent="MarginContainer/MainContainer/Items/Slot0"]
-margin_top = 38.0
-margin_right = 80.0
-margin_bottom = 56.0
+[node name="Slot0" type="MarginContainer" parent="MarginContainer2/MainContainer/Items"]
+margin_left = 53.0
+margin_right = 137.0
+margin_bottom = 34.0
+
+[node name="Item0" parent="MarginContainer2/MainContainer/Items/Slot0" instance=ExtResource( 8 )]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/MainContainer/Items/Slot0"]
+margin_left = 17.0
+margin_top = 9.0
+margin_right = 67.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/margin_left = 17
+
+[node name="Lbl0" type="Label" parent="MarginContainer2/MainContainer/Items/Slot0/MarginContainer"]
+margin_left = 17.0
+margin_right = 50.0
+margin_bottom = 15.0
+size_flags_horizontal = 5
 custom_fonts/font = SubResource( 5 )
 text = "Lamp"
 align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Slot1" type="VBoxContainer" parent="MarginContainer/MainContainer/Items"]
-editor/display_folded = true
-margin_left = 137.0
-margin_right = 217.0
-margin_bottom = 56.0
+[node name="Slot1" type="MarginContainer" parent="MarginContainer2/MainContainer/Items"]
+margin_left = 141.0
+margin_right = 221.0
+margin_bottom = 34.0
 
-[node name="Item1" parent="MarginContainer/MainContainer/Items/Slot1" instance=ExtResource( 7 )]
+[node name="Item1" parent="MarginContainer2/MainContainer/Items/Slot1" instance=ExtResource( 9 )]
 margin_right = 80.0
 
-[node name="Lbl1" type="Label" parent="MarginContainer/MainContainer/Items/Slot1"]
-margin_top = 38.0
+[node name="Lbl1" type="Label" parent="MarginContainer2/MainContainer/Items/Slot1"]
+margin_top = 8.0
 margin_right = 80.0
-margin_bottom = 56.0
+margin_bottom = 26.0
 custom_fonts/font = SubResource( 6 )
 text = "Seed"
 align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/MainContainer/Items/Slot1"]
+margin_right = 80.0
+margin_bottom = 34.0

@@ -10,20 +10,20 @@ var has_lamp = false
 #cor scythe - 4ff057
 
 func _ready():
-	$MarginContainer/MainContainer/Items/ItemLbl.visible = false
-	$MarginContainer/MainContainer/Items/Slot0.visible = false
-	$MarginContainer/MainContainer/Items/Slot1.visible = false
+	$MarginContainer2/MainContainer/Items/ItemLbl.visible = false
+	$MarginContainer2/MainContainer/Items/Slot0.visible = false
+	$MarginContainer2/MainContainer/Items/Slot1.visible = false
 	$MarginContainer/MainContainer/Skills/SkillLbl.visible = false
 	$MarginContainer/MainContainer/Skills/Slot0.visible = false
 	$MarginContainer/MainContainer/Skills/Slot1.visible = false
 	player=get_parent().get_parent().get_node("Player")
 
 func _process(_delta):
-	$MarginContainer/MainContainer/Items/ItemLbl.rect_position.y = 0
+	$MarginContainer2/MainContainer/Items/ItemLbl.rect_position.y = 0
 	$MarginContainer/MainContainer/Skills/SkillLbl.rect_position.y = 0
 	
-	$MarginContainer/MainContainer/Items/Slot0.margin_left = 57
-	$MarginContainer/MainContainer/Items/Slot1.margin_left = 141
+	$MarginContainer2/MainContainer/Items/Slot0.margin_left = 57
+	$MarginContainer2/MainContainer/Items/Slot1.margin_left = 141
 
 #------ caso tenha itens e skill junto na msm tela, rever essa regra abaixo
 #	$MarginContainer/MainContainer/Skills.margin_top = 80
@@ -39,28 +39,28 @@ func verifica_incrementa(item):
 		
 func adiciona_interface(item):
 	if slot == 0:
-		$MarginContainer/MainContainer/Items/ItemLbl.visible = true
-		$MarginContainer/MainContainer/Items/Slot0/Item0/Icon.texture = load("res://assets/img/gui/"+item+".png")
-		$MarginContainer/MainContainer/Items/Slot0/Lbl0.text = item
-		$MarginContainer/MainContainer/Items/Slot0.visible = true
+		#$MarginContainer2/MainContainer/Items/ItemLbl.visible = true
+		$MarginContainer2/MainContainer/Items/Slot0/Item0/Icon.texture = load("res://assets/img/gui/New/"+item+".png")
+		$MarginContainer2/MainContainer/Items/Slot0/MarginContainer/Lbl0.text = item
+		$MarginContainer2/MainContainer/Items/Slot0.visible = true
 		if item == "Lamp":
-			$MarginContainer/MainContainer/Items/Slot0/Item0/count.visible = false
+			$MarginContainer2/MainContainer/Items/Slot0/Item0/count.visible = false
 		elif item == "Seed":
 			seedDisplay=0
 		slot += 1
 	else:
-		$MarginContainer/MainContainer/Items/Slot1/Item1/Icon.texture = load("res://assets/img/gui/"+item+".png")
-		$MarginContainer/MainContainer/Items/Slot1/Lbl1.text = item
-		$MarginContainer/MainContainer/Items/Slot1.visible = true
+		$MarginContainer2/MainContainer/Items/Slot1/Item1/Icon.texture = load("res://assets/img/gui/New/"+item+".png")
+		$MarginContainer2/MainContainer/Items/Slot1/Lbl1.text = item
+		$MarginContainer2/MainContainer/Items/Slot1.visible = true
 		if item == "Lamp" and has_lamp == false:
-			$MarginContainer/MainContainer/Items/Slot1/Item1/count.visible = false
+			$MarginContainer2/MainContainer/Items/Slot1/Item1/count.visible = false
 		elif item == "Seed":
 			seedDisplay=1
 			pass
 			
 func adiciona_skill(nome):
 	if slotSkill == 0:
-		$MarginContainer/MainContainer/Skills/SkillLbl.visible = true
+		#$MarginContainer/MainContainer/Skills/SkillLbl.visible = true
 		if nome == "Dash":
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0.texture = load("res://assets/img/gui/GUI_Dash.png")
 			$MarginContainer/MainContainer/Skills/Slot0/Skill0/count.set("custom_colors/font_color",Color(0.75,0.22,0.37,1))
@@ -96,9 +96,9 @@ func _on_BlockBed_used_seed():
 
 func refreshSeeds():
 	if(seedDisplay==0):
-		$MarginContainer/MainContainer/Items/Slot0/Item0/count.set_text(str(countSeed))
+		$MarginContainer2/MainContainer/Items/Slot0/Item0/count.set_text(str(countSeed))
 	elif (seedDisplay==1):
-		$MarginContainer/MainContainer/Items/Slot1/Item1/count.set_text(str(countSeed))
+		$MarginContainer2/MainContainer/Items/Slot1/Item1/count.set_text(str(countSeed))
 
 func _on_T2River_used_seed():
 	countSeed -= 1

@@ -36,6 +36,7 @@ func _process(_delta):
 			$Barco/Sprite/lampiao.show()
 			$Player/RotPos/AnimatedSprite.play("Player_lateral")
 			$Player/LuzLamp.hide()
+			$Interface/GUI/MarginContainer2/MainContainer/Items/Slot0.hide()
 		else:
 			global.lamp = false
 	
