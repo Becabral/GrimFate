@@ -48,8 +48,19 @@ func stop_event(event):
 func set_listener(listener):
 	Fmod.system_add_listener(listener)
 	#has_listener=true
+	
 func set_parameter(id,parameter,value):
 	Fmod.event_set_parameter(id,parameter,value)
+	
+func system_parameter(parameter,value):
+	Fmod.system_set_parameter(parameter,value)
 
 func shutdown():
 	Fmod.system_shutdown()
+	
+func pause():
+	Fmod.pause_all_events()
+	
+func unpause():
+	Fmod.unpause_all_events()
+	

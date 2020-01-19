@@ -3,6 +3,9 @@ extends Node2D
 var movinganimation = false
 
 func _ready():
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").play_one("event:/River1Entrance", $Sound)
+	
 	# inicializa o personagem com o estado e a direção pra onde olha
 	$CanvasLayer2/Player.STATE = "sideView"
 	$CanvasLayer2/Player.spritedir = "right"
@@ -15,7 +18,7 @@ func _ready():
 	else:
 		$CanvasLayer2/Player/RotPos/AnimatedSprite.play("Player_cinza_lateral")
 	
-	$CanvasLayer2/Barco.SPEED = 1.8
+	$CanvasLayer2/Barco.SPEED = 1
 
 func _process(_delta):
 	if $CanvasLayer2/Barco.position.x >= 400:

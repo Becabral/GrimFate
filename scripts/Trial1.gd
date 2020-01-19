@@ -59,6 +59,8 @@ func _process(_delta):
 
 func _on_NextArea_body_entered(body):
 	if body.get_name()=="Player":
+		if has_node("/root/FMOD/FMOD_start"):
+			get_node("/root/FMOD/FMOD_start").stop_event(windsound)
 		emit_signal("kill_fires")
 		if has_node("/root/SceneChanger"):
 			if bypassTrial2:

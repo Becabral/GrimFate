@@ -19,6 +19,7 @@ func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 		get_node("/root/FMOD/FMOD_start").play_one("event:/Music", $FmodSource)
 		get_node("/root/FMOD/FMOD_start").play_one("event:/BeginningAmbiance", $FmodSource)
+		get_node("/root/FMOD/FMOD_start").play_one("event:/River", $FmodSource)
 	
 func _process(_delta):
 	if $Player.position.x <= -1780 or $Player.position.x >= 1795:

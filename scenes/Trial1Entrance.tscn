@@ -99,7 +99,7 @@ position = Vector2( 26.1741, 572.78 )
 
 [node name="River" parent="CanvasLayer2" instance=ExtResource( 8 )]
 position = Vector2( 509.468, 633.535 )
-frame = 1
+frame = 0
 
 [node name="pedra do rio" type="Sprite" parent="CanvasLayer2"]
 modulate = Color( 0.964706, 0.439216, 0.772549, 1 )
@@ -109,4 +109,6 @@ texture = ExtResource( 9 )
 [node name="pedra frente" type="Sprite" parent="CanvasLayer2"]
 position = Vector2( 131.176, 617.803 )
 texture = ExtResource( 10 )
+
+[node name="Sound" type="Node2D" parent="."]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

@@ -28,6 +28,8 @@ func _process(_delta):
 
 
 func _on_BtnResume_pressed():
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").unpause()
 	get_tree().paused = false
 
 

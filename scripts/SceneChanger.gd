@@ -30,6 +30,8 @@ func change_scene(path):
 	
 func change_scene_slow(path):
 	set_layer(12)
+	if has_node("/root/FMOD/fmod_start"):
+		get_node("root/FMOD").system_parameter("Fade",0)
 	animation_player.play("Fade",-1,0.5)
 	yield(animation_player, "animation_finished")
 	if has_node("/root/Level 1"):
@@ -39,4 +41,6 @@ func change_scene_slow(path):
 	animation_player.play_backwards("Fade")
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
+	if has_node("/root/FMOD/fmod_start"):
+		get_node("root/FMOD").system_parameter("Fade",1)
 	set_layer(5)
