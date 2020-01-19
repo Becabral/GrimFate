@@ -199,7 +199,7 @@ emission_sphere_radius = 1.0
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-angular_velocity = -6.94167e-039
+angular_velocity = -6.94167e-39
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = 15.0
@@ -287,7 +287,7 @@ editor/display_folded = true
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 position = Vector2( 401.856, -2287.47 )
 frames = SubResource( 9 )
-frame = 76
+frame = 99
 playing = true
 
 [node name="Death2" type="AnimatedSprite" parent="Death"]
@@ -297,7 +297,7 @@ material = SubResource( 10 )
 position = Vector2( -22.1521, 5.14917 )
 scale = Vector2( 1.2, 1 )
 frames = SubResource( 9 )
-frame = 75
+frame = 98
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Death/Death2"]

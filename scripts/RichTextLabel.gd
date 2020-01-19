@@ -17,6 +17,7 @@ var choice_i_death = ["Yes","No"]
 
 var page = 0
 var is_choice = false
+var no_choice = false
 var choice_made = false
 var final_reached = false
 var count_end = 0
@@ -41,10 +42,11 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("use"):
+		if no_choice == false:
+			choice_made = true
 		check()
 		a = a + 1
 		is_choice = false
-		choice_made = true
 		if final_reached == true:
 			count_end += 1
 			if count_end == 3:
@@ -53,13 +55,16 @@ func _process(_delta):
 				elif global.lamp or global.alternative_path:
 					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
 				else:
-					get_node("/root/SceneChanger").change_scene_slow("res://scenes/i_death.tscn")
-					
+					if choice_made == true:
+						get_node("/root/SceneChanger").change_scene_slow("res://scenes/i_death.tscn")
+					else:
+						get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
 			
 		
 	elif Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_up"):
 		if get_visible_characters() > get_total_character_count() and dialog[page] == "choice":
 			is_choice = false
+			no_choice = true
 			i = i + 1
 			if dialog == i_death:
 				set_bbcode("Since you have proven to have the makings, will you take on the mantle of Death?\nHuman: \n")
@@ -144,7 +149,6 @@ func _on_Timer_timeout():
 			a = a + 1
 	else:
 		set_visible_characters(get_visible_characters() + get_total_character_count())
-		
 			
 
 		
