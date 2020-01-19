@@ -45,7 +45,7 @@ func _on_Hood_body_entered(body):
 		$useLbl.show()
 		touch=true
 		player=body
-		if(has_node("root/Level 1")):
+		if(get_tree().get_root().has_node("Level 1")):
 			get_parent().get_node("Narrative_cloak").play_text()
 			get_parent().get_node("Narrative_2").play_text()
 	
