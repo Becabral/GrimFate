@@ -25,8 +25,8 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/btnPause"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 126.0
+margin_bottom = 126.0
 rect_min_size = Vector2( 126, 126 )
 texture = ExtResource( 2 )
 expand = true

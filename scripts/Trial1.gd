@@ -5,6 +5,7 @@ export var bypassTrial2 = false
 var outside= false
 var melted = false
 var secret = false
+var windsound
 onready var global = get_node("/root/SceneChanger")
 
 func _ready():
@@ -15,7 +16,10 @@ func _ready():
 	else:
 		$Player/RotPos/AnimatedSprite.play("Player_cinza_costas")
 	
-	pass 
+	pass
+	
+	if has_node("/root/FMOD/FMOD_start"):
+		windsound=get_node("/root/FMOD/FMOD_start").create_event("event:/Wind", $Snow)
 
 func _process(_delta):
 #	if $Player.position.x >= 269 and $Player.position.x <= 717 and $Player.position.y <= -360:
@@ -67,13 +71,18 @@ func _on_NextArea_body_entered(body):
 func _on_SmoothOff_body_entered(body):
 	if body.get_name()=="Player":
 		if !outside:
+			if has_node("/root/FMOD/FMOD_start"):
+				get_node("/root/FMOD/FMOD_start").set_parameter(windsound,"Inside",0)
 			$Player/Camera2D.smoothing_speed=35
 			yield(get_tree().create_timer(0.3), "timeout")
 			$Player/Camera2D.smoothing_enabled=false
 			$Player/Camera2D.limit_top=(-2595)
 			$Player/Camera2D.limit_bottom=(-1400)
 			#$AnimCanvas.play("FadeCanvasIn")
+			$Hider.hide()
+			#$Snow.show()
 			outside=true
+			
 	pass # Replace with function body.
 
 
@@ -84,8 +93,11 @@ func _on_SmoothOn_body_entered(body):
 			$Player/Camera2D.smoothing_speed=5
 			$Player/Camera2D.limit_top=-10000000
 			$Player/Camera2D.limit_bottom=10000000
+			if has_node("/root/FMOD/FMOD_start"):
+				get_node("/root/FMOD/FMOD_start").set_parameter(windsound,"Inside",1)
 			#$AnimCanvas.play("FadeCanvasOut")
-			
+			$Hider.show()
+			#$Snow.hide()
 			outside=false
 	pass # Replace with function body.
 

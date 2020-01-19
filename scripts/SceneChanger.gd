@@ -19,14 +19,17 @@ onready var animation_player = $AnimationPlayer
 #onready var black = $Control/Black
 
 func change_scene(path):
+	set_layer(12)
 	animation_player.play("Fade")
 	yield(animation_player, "animation_finished")
 	assert(get_tree().change_scene(path)==OK)
 	animation_player.play_backwards("Fade")
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
+	set_layer(5)
 	
 func change_scene_slow(path):
+	set_layer(12)
 	animation_player.play("Fade",-1,0.5)
 	yield(animation_player, "animation_finished")
 	if has_node("/root/Level 1"):
@@ -36,3 +39,4 @@ func change_scene_slow(path):
 	animation_player.play_backwards("Fade")
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
+	set_layer(5)
