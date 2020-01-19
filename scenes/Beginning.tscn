@@ -8,8 +8,8 @@
 [ext_resource path="res://scenes/Fog/Particle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://scenes/Barco.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/img/environment/Beginning/Layer2.png" type="Texture" id=9]
-[ext_resource path="res://assets/img/environment/Beginning/Foreground.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/environment/Beginning/Foreground.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/environment/Beginning/Layer2.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Fog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/img/environment/Beginning/fundo.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/environment/Beginning/Layer4.png" type="Texture" id=13]
@@ -107,6 +107,19 @@ shape = SubResource( 3 )
 position = Vector2( 1346.38, 616.861 )
 z_index = 3
 
+[node name="ParallaxForegroundUp" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+layer = 2
+
+[node name="Foreground" type="ParallaxLayer" parent="ParallaxForegroundUp"]
+z_index = 1
+motion_scale = Vector2( 1.8, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxForegroundUp/Foreground"]
+light_mask = 0
+position = Vector2( -81.8735, 658.389 )
+texture = ExtResource( 9 )
+
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
 layer = 1
 
@@ -116,25 +129,18 @@ layer = 1
 light_mask = 0
 position = Vector2( 298.415, 98.0853 )
 scale = Vector2( 1.00655, 1.00655 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Foreground" type="ParallaxLayer" parent="ParallaxForeground"]
-motion_scale = Vector2( 1.8, 1 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxForeground/Foreground"]
-light_mask = 0
-position = Vector2( -81.8735, 658.389 )
-texture = ExtResource( 10 )
-
 [node name="Fog" parent="." instance=ExtResource( 11 )]
-modulate = Color( 0.0980392, 0.0117647, 0.109804, 1 )
-position = Vector2( 961.21, 297.928 )
+modulate = Color( 0.0588235, 0.00784314, 0.109804, 1 )
+position = Vector2( 961.21, 358.928 )
 z_as_relative = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -2
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 1 )
@@ -181,7 +187,7 @@ color = Color( 0.47451, 0.47451, 0.47451, 1 )
 position = Vector2( 1916.65, 693.619 )
 scale = Vector2( 1.13842, 1.13842 )
 z_index = 3
-frame = 0
+frame = 2
 
 [node name="Parede" type="StaticBody2D" parent="."]
 editor/display_folded = true

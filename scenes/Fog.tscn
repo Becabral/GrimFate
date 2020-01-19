@@ -18,7 +18,7 @@ curve = SubResource( 4 )
 
 [sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
-emission_box_extents = Vector3( 450, 300, 1 )
+emission_box_extents = Vector3( 300, 200, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 9.8, 0 )
 initial_velocity = -200.0
@@ -35,7 +35,7 @@ damping = 76.01
 scale = 25.0
 scale_random = 1.0
 scale_curve = SubResource( 5 )
-color = Color( 0.0705882, 0, 0, 0.572549 )
+color = Color( 0.0588235, 0.00784314, 0.109804, 0.643137 )
 hue_variation = -0.1
 hue_variation_random = 0.55
 
@@ -48,7 +48,6 @@ script = ExtResource( 1 )
 environment = SubResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 1
 
 [node name="Area2D" type="Area2D" parent="ParallaxBackground"]
 position = Vector2( 512, 300 )
@@ -61,8 +60,8 @@ shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer"]
 light_mask = 2
-position = Vector2( 600, 300 )
-amount = 4000
+position = Vector2( 716, 417 )
+amount = 1500
 speed_scale = 0.2
 randomness = 1.0
 visibility_rect = Rect2( -600, -375, 1200, 750 )
@@ -70,12 +69,12 @@ draw_order = 1
 process_material = SubResource( 6 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.2, 1 )
+motion_scale = Vector2( 1.1, 1 )
 
 [node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer2"]
 light_mask = 2
-position = Vector2( 600, 300 )
-amount = 4000
+position = Vector2( 716, 417 )
+amount = 1500
 speed_scale = 0.2
 randomness = 1.0
 visibility_rect = Rect2( -600, -375, 1200, 750 )
@@ -83,12 +82,57 @@ draw_order = 1
 process_material = SubResource( 6 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.3, 1 )
+motion_scale = Vector2( 1.2, 1 )
 
 [node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer3"]
 light_mask = 2
-position = Vector2( 600, 300 )
-amount = 4000
+position = Vector2( 716, 417 )
+amount = 1500
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -600, -375, 1200, 750 )
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 1
+motion_scale = Vector2( 1.3, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground2/ParallaxLayer4"]
+light_mask = 2
+position = Vector2( 716, 417 )
+amount = 1500
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -600, -375, 1200, 750 )
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 1
+motion_scale = Vector2( 1.4, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground2/ParallaxLayer5"]
+light_mask = 2
+position = Vector2( 716, 417 )
+amount = 1500
+speed_scale = 0.2
+randomness = 1.0
+visibility_rect = Rect2( -600, -375, 1200, 750 )
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 1
+motion_scale = Vector2( 1.5, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground2/ParallaxLayer6"]
+light_mask = 2
+position = Vector2( 716, 417 )
+amount = 1500
 speed_scale = 0.2
 randomness = 1.0
 visibility_rect = Rect2( -600, -375, 1200, 750 )
