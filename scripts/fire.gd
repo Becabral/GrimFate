@@ -32,6 +32,7 @@ func turn_blue():
 	is_blue=true
 	$AnimatedSprite.play("fire_blue")
 
+
 func _on_Fire_body_entered(body):
 	if body.get_name()=="Player":
 		if body.can_dash==false && body.is_flammable:

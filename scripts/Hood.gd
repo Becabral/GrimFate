@@ -45,7 +45,8 @@ func _on_Hood_body_entered(body):
 		$useLbl.show()
 		touch=true
 		player=body
-		
+		get_parent().get_node("Narrative_cloak").play_text()
+		get_parent().get_node("Narrative_2").play_text()
 	
 
 

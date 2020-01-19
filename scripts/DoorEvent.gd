@@ -5,6 +5,7 @@ extends Node2D
 # var b = "text"
 var playercamera
 var torchunlit = false
+signal open
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,6 +15,9 @@ func _process(_delta):
 	if has_node("TorchC") and has_node("TorchD"):
 		if $TorchC.lit and $TorchD.lit and has_node("Door"):
 			$Door.queue_free()
+			get_parent().get_node("Narrative_3").play_text()
+			get_parent().get_node("Narrative_2").play_text_backwards()
+			get_parent().get_node("Narrative_cloak").play_text_backwards()
 	
 	if has_node("BigTorch"):
 		if !$BigTorch.lit and !torchunlit :
@@ -27,5 +31,6 @@ func _process(_delta):
 			playercamera.limit_bottom=1000000
 			playercamera.limit_left=-1000000
 		if $BigTorch.blue and $BigTorch.lit and has_node("Door"):
+			emit_signal("open")
 			$Door.queue_free()
 #	pass

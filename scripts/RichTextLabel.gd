@@ -49,7 +49,7 @@ func _process(_delta):
 			count_end += 1
 			if count_end == 3:
 				if global.lamp and global.alternative_path:
-					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
+					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Live.tscn")
 				elif global.lamp or global.alternative_path:
 					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Die.tscn")
 				else:
