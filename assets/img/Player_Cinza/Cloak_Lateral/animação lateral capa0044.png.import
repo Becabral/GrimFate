@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animação lateral capa0044.png-9e1ec6f699f044290f0db955cbbe67ab.stex"
+path="res://.import/animação lateral capa0044.png-052b7240fb97a3f9ca3bdf0f844ddb62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/Player_Cinza/Cloak_lateral/animação lateral capa0044.png"
-dest_files=[ "res://.import/animação lateral capa0044.png-9e1ec6f699f044290f0db955cbbe67ab.stex" ]
+source_file="res://assets/img/Player_Cinza/Cloak_Lateral/animação lateral capa0044.png"
+dest_files=[ "res://.import/animação lateral capa0044.png-052b7240fb97a3f9ca3bdf0f844ddb62.stex" ]
 
 [params]
 
