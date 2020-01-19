@@ -40,7 +40,6 @@ func _process(_delta):
 		yield(get_tree().create_timer(1), "timeout")
 		$Torches/SnowmanTorch.lit=true
 		yield(get_tree().create_timer(2), "timeout")
-		#emit_signal("kill_fires")
 		if(bypassTrial2):
 			global.change_scene_slow("res://scenes/GrimEnd.tscn")
 		else: global.change_scene_slow("res://scenes/River2.tscn")

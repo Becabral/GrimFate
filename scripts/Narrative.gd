@@ -40,3 +40,8 @@ func _on_BigTorch_body_entered(body):
 
 func _on_DoorEvent2_open():
 		play_text_backwards()
+
+
+func _on_BigTorch_went_off():
+	play_text()
+	pass # Replace with function body.

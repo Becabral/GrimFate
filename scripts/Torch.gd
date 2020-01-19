@@ -1,7 +1,7 @@
 extends Node2D
 var fire = load("res://scenes/Fire.tscn")
 var bigfire = load("res://scenes/BigFire.tscn")
-
+signal went_off
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -57,6 +57,7 @@ func _on_Torch_body_entered(body):
 	if body.get_name()=="Player":
 		if !body.can_dash && body.is_flammable && !body.blue && lit && !blue: #if flame is red, dashing through will fade it
 			lit=false
+			emit_signal("went_off")
 		elif body.on_fire:
 			if body.blue:
 				blue=true

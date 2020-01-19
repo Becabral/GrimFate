@@ -4,6 +4,7 @@ extends CanvasLayer
 func _ready():
 	$Container.hide()
 	$Fundo.hide()
+	$BG.hide()
 	$Container/VBoxContainer/HBoxContainer/ResumeContainer.margin_left = 0
 	$Container/VBoxContainer/HBoxContainer/ResumeContainer.margin_top = 0
 	$Container/VBoxContainer/HBoxContainer/QuitContainer.margin_bottom = 0
