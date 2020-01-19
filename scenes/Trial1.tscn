@@ -890,8 +890,8 @@ __meta__ = {
 [node name="Hider" type="Sprite" parent="."]
 visible = false
 modulate = Color( 0.0117647, 0, 0.145098, 1 )
-position = Vector2( -767.246, -2214.03 )
-scale = Vector2( 0.363472, 4.9562 )
+position = Vector2( -886.05, -2214.03 )
+scale = Vector2( 0.704374, 4.9562 )
 texture = ExtResource( 37 )
 
 [node name="Snow" parent="." instance=ExtResource( 38 )]
