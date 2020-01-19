@@ -84,7 +84,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 30.1468, 36.2768 )
+extents = Vector2( 17.2469, 36.2768 )
 
 [node name="Fire" type="Area2D"]
 z_index = -1
@@ -100,7 +100,7 @@ material = SubResource( 1 )
 position = Vector2( -0.451599, 0.282372 )
 scale = Vector2( 0.250847, 0.250847 )
 frames = SubResource( 2 )
-frame = 12
+frame = 21
 speed_scale = 4.0
 playing = true
 
@@ -127,7 +127,7 @@ __meta__ = {
 }
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, 27 )
+position = Vector2( 0, 26.811 )
 scale = Vector2( 1, 0.5 )
 texture = ExtResource( 50 )
 texture_scale = 0.35
