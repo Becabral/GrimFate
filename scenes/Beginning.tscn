@@ -187,7 +187,7 @@ color = Color( 0.47451, 0.47451, 0.47451, 1 )
 position = Vector2( 1916.65, 693.619 )
 scale = Vector2( 1.13842, 1.13842 )
 z_index = 3
-frame = 0
+frame = 2
 
 [node name="Parede" type="StaticBody2D" parent="."]
 editor/display_folded = true
