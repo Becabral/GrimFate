@@ -40,7 +40,6 @@ texture = ExtResource( 2 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 
 [node name="fundo" type="Sprite" parent="ParallaxBackground/Layer1"]
 position = Vector2( 2318.59, 63.8519 )
@@ -98,24 +97,24 @@ position = Vector2( 38.074, 616.388 )
 [node name="Narratrive" parent="." instance=ExtResource( 10 )]
 position = Vector2( 899.514, 385.585 )
 rotation = -0.190241
-text = "To understand how it all started, it’s important to understand how to use fire... how it works."
+text = "It is important to have a balance. Everyone looks for a balance."
 wait = 0.5
 
 [node name="Narratrive2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1529.52, 383.918 )
 rotation = 0.174533
-text = "She doesn't understand. She uses it recklessly without thinking about the consequences."
+text = "So, it is strange to me when someone who seeks so much balance, doesn’t want one when the time comes."
 wait = 6.0
 
 [node name="Narratrive3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2126.2, 387.251 )
 rotation = -0.0872665
-text = "Her last achievement made a species gain consciousness."
+text = "Every ice eventually melts and balance is embracing that you are melting. "
 wait = 11.0
 
 [node name="Narratrive4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2942.32, 392.251 )
-text = "They need to live every day knowing they will extinguish eventually and blame me for it as if it was all my fault."
+position = Vector2( 2942.32, 390.844 )
+text = "You must learn that you need someone to embrace when you start to cease."
 wait = 19.0
 
 [node name="Interface" type="CanvasLayer" parent="."]

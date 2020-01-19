@@ -232,7 +232,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 75 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 7
+frame = 34
 speed_scale = 3.0
 playing = true
 
@@ -336,20 +336,20 @@ autostart = false
 [node name="Intro_Narrative2" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -399.359, -12.1457 )
 rotation = 0.436332
-text = "they spend the whole life chasing futil things in a desperate way to forget that someday will face me. "
+text = "they spend their whole life chasing futile things in a desperate way to forget that someday will face me"
 wait = 4.0
 autostart = false
 
 [node name="Intro_Narrative5" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
-position = Vector2( -489.984, 306.683 )
+position = Vector2( -491.426, 306.683 )
 rotation = -0.0436332
-text = "Some try control their existence but fail to understand how life gets in their way."
+text = "Some try to control their existence but fail to understand the need for equilibrium"
 wait = 9.0
 autostart = false
 
 [node name="Intro_Narrative7" parent="ParallaxBackground2/Layer 2" instance=ExtResource( 71 )]
 position = Vector2( -230.351, 437.178 )
-text = "In the end all they have is the calm whisper that"
+text = "In the end, all they have is the calm whisper that gently speaks to them."
 wait = 13.0
 autostart = false
 
@@ -357,7 +357,6 @@ autostart = false
 color = Color( 0.47451, 0.47451, 0.47451, 1 )
 
 [node name="ParallaxForeground2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground2"]
@@ -387,5 +386,5 @@ custom_fonts/font = SubResource( 9 )
 text = "A Grim's Fate"
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative5" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative2" method="_on_OpeningScene_play_narrative"]
-[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
 [connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative" method="_on_OpeningScene_play_narrative"]
+[connection signal="play_narrative" from="." to="ParallaxBackground2/Layer 2/Intro_Narrative7" method="_on_OpeningScene_play_narrative"]
