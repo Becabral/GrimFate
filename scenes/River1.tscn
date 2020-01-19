@@ -88,7 +88,6 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 689.799 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 0
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
@@ -97,24 +96,24 @@ position = Vector2( 38.074, 616.388 )
 [node name="Narratrive" parent="." instance=ExtResource( 10 )]
 position = Vector2( 899.514, 385.585 )
 rotation = -0.190241
-text = "It is important to have a balance. Everyone looks for a balance."
+text = "It is imperative to have balance. Everyone desires it."
 wait = 0.5
 
 [node name="Narratrive2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1529.52, 383.918 )
 rotation = 0.174533
-text = "So, it is strange to me when someone who seeks so much balance, doesn’t want one when the time comes."
+text = "So, isn't it strange how those who seek it so vehemently, deny it once it arrives?"
 wait = 6.0
 
 [node name="Narratrive3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2126.2, 387.251 )
 rotation = -0.0872665
-text = "Every ice eventually melts and balance is embracing that you are melting. "
+text = "All ice eventually melts. Balance is accepting that you too are melting."
 wait = 11.0
 
 [node name="Narratrive4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2942.32, 390.844 )
-text = "You must learn that you need someone to embrace when you start to cease."
+text = "You must learn that all beings need someone to embrace them when their time is due."
 wait = 19.0
 
 [node name="Interface" type="CanvasLayer" parent="."]

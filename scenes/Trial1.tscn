@@ -287,6 +287,7 @@ custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 
 [node name="Torches" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="torchA" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 315.827, -735.674 )
@@ -384,8 +385,8 @@ scale = Vector2( 1, 1 )
 lit = false
 
 [node name="Narrative_cloak" parent="." instance=ExtResource( 11 )]
-position = Vector2( 288.455, -575.113 )
-text = "You now have the ability to help those who are melting. Embrace that power and learn how to use it"
+position = Vector2( 288.455, -576.035 )
+text = "You have been granted the ability to help those who are melting. "
 wait = 0.5
 autostart = false
 size_x = 435
@@ -393,7 +394,7 @@ font_size = 24
 
 [node name="Narrative_2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 313.702, 162.346 )
-text = "You now have the ability to help those who are melting. Embrace that power and learn how to use it"
+text = "Embrace that power and learn how to wield it."
 wait = 1.0
 autostart = false
 size_x = 400
@@ -401,7 +402,7 @@ font_size = 24
 
 [node name="Narrative_3" parent="." instance=ExtResource( 11 )]
 position = Vector2( -803.856, -521.887 )
-text = "It takes effort to help those who are in need. See around and spread your support"
+text = "You must make an effort to help those who are in need. Look around and reach out to them"
 wait = 1.0
 autostart = false
 size_x = 400
@@ -539,6 +540,8 @@ texture = ExtResource( 19 )
 [node name="Interface" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="Interface" instance=ExtResource( 20 )]
+margin_left = -0.921875
+margin_right = -0.921875
 
 [node name="WrapAroundR" type="Area2D" parent="."]
 editor/display_folded = true
