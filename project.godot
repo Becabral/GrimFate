@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GrimFate"
-run/main_scene="res://scenes/Beginning.tscn"
+run/main_scene="res://scenes/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
