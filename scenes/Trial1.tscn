@@ -410,7 +410,7 @@ font_size = 24
 
 [node name="Narrative_4" parent="." instance=ExtResource( 11 )]
 position = Vector2( -742.622, -1075.54 )
-text = "Behind that door the truth holds"
+text = "Light anew that which you took."
 wait = 1.0
 autostart = false
 size_x = 400
