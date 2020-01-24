@@ -77,7 +77,6 @@ scale = Vector2( 0.419263, 1 )
 texture = ExtResource( 7 )
 
 [node name="NextArea" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 4012.37, 263.827 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
@@ -89,7 +88,7 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 689.799 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
-frame = 2
+frame = 1
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
@@ -105,18 +104,18 @@ wait = 0.5
 position = Vector2( 1529.52, 383.918 )
 rotation = 0.174533
 text = "So, isn't it strange how those who seek it so vehemently, deny it once it arrives?"
-wait = 6.0
+wait = 8.0
 
 [node name="Narratrive3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2126.2, 387.251 )
+position = Vector2( 2498.2, 303.251 )
 rotation = -0.0872665
 text = "All ice eventually melts. Balance is accepting that you too are melting."
-wait = 11.0
+wait = 16.0
 
 [node name="Narratrive4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2942.32, 390.844 )
 text = "You must learn that all beings need someone to embrace them when their time is due."
-wait = 19.0
+wait = 26.0
 
 [node name="Interface" type="CanvasLayer" parent="."]
 

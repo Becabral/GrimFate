@@ -1,5 +1,6 @@
 extends RichTextLabel
 
+var voiceevent
 var dialog
 var choice
 var i = -1
@@ -33,12 +34,17 @@ func _ready():
 		dialog = i_death
 		choice = choice_i_death
 		
-
-		
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
 	set_process_input(true)
 	get_parent().get_node("AnimationPlayer").play("blink")
+	
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 1)
+		get_node("/root/FMOD/FMOD_start").system_parameter("CurrentLine", 7)
+		voiceevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Voice", self)
+		yield(get_tree().create_timer(7.5), "timeout")
+		get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 0)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("use"):
@@ -47,8 +53,43 @@ func _process(_delta):
 		check()
 		a = a + 1
 		is_choice = false
+		if page == 1 && a == 2:
+				play_sound(8,7.5)
+		if page == 2 && a == 4 && dialog==i_death:
+				play_sound(9,7.5)
+		if page == 3 && a == 6 && dialog==i_death:
+				play_sound(10,7.5)
+		if page == 4 && a == 8 && dialog==i_death && count_end!=3:
+				if choice_made:
+					play_sound(11,7.5)
+				else:
+					play_sound(12,7.5)
+					
+		if page == 2 && a == 4 && dialog==live:
+				play_sound(13,7.5)
+		if page == 3 && a == 6 && dialog==live:
+				play_sound(14,7.5)
+		if page == 4 && a == 8 && dialog==live:
+				play_sound(15,7.5)
+		if page == 6 && a == 12 && dialog==live:
+				play_sound(16,7.5)
+		
+		if page == 2 && a == 4 && dialog==die:
+				play_sound(17,7.5)
+		if page == 3 && a == 6 && dialog==die:
+			if global.alternative_path == true:
+				play_sound(18,7.5)
+				yield(get_tree().create_timer(5.5), "timeout")
+				play_sound(20,7.5)
+			elif global.lamp==true:
+				play_sound(19,7.5)
+				yield(get_tree().create_timer(7), "timeout")
+				play_sound(20,7.5)
+		if page == 5 && a == 10 && dialog==die:
+				play_sound(21,7.5)
+				
 		if final_reached == true:
-			count_end += 1
+			count_end += 1	
 			if count_end == 3:
 				if has_node("/root/FMOD/FMOD_start"):
 					get_node("/root/FMOD/FMOD_start").set_parameter(get_node("/root/GrimEnd").musicevent,"EndSection",4)
@@ -127,7 +168,7 @@ func check():
 						final_reached = true	
 				elif dialog[page] == "die":
 					if choice_made or !choice_made:
-						set_bbcode("Farewell ignorant human!")
+						set_bbcode("Farewell ignorant being!")
 						final_reached = true
 				elif dialog[page] == "die_dual":
 					if global.lamp == true:
@@ -146,6 +187,7 @@ func check():
 
 func _on_Timer_timeout():
 	if a % 2 == 0:
+		
 		set_visible_characters(get_visible_characters() + 1)
 		if get_visible_characters() > get_total_character_count():
 			a = a + 1
@@ -153,6 +195,13 @@ func _on_Timer_timeout():
 		set_visible_characters(get_visible_characters() + get_total_character_count())
 			
 
-		
+func play_sound(line, time):
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").stop_event(voiceevent)
+		get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 1)
+		get_node("/root/FMOD/FMOD_start").system_parameter("CurrentLine", line)
+		voiceevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Voice", self)
+		yield(get_tree().create_timer(time), "timeout")
+		get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 0)
 	
 	
