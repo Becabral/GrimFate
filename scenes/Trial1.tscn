@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://scripts/Trial1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/Trial1/fundo.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://assets/img/path4164.png" type="Texture" id=36]
 [ext_resource path="res://assets/img/rect4136.png" type="Texture" id=37]
 [ext_resource path="res://scenes/Snow.tscn" type="PackedScene" id=38]
+[ext_resource path="res://assets/sound/sfx/217506__felix-blume__wind-blowing-in-a-field-in-texas-usa.wav" type="AudioStream" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -919,6 +920,14 @@ anims/FadeCanvasOut = SubResource( 17 )
 
 [node name="Cutscene" type="AnimationPlayer" parent="."]
 anims/ShowSecret = SubResource( 18 )
+
+[node name="BackupWind" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -1893.61, -1621.22 )
+stream = ExtResource( 39 )
+
+[node name="BackupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+volume_db = -8.0
 [connection signal="body_entered" from="Hood" to="Hood" method="_on_Hood_body_entered"]
 [connection signal="body_exited" from="Hood" to="Hood" method="_on_Hood_body_exited"]
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

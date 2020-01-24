@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/Beginning.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/arvoreLamp2.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/PauseButton.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sound/music/Beginning Alpha.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/sound/sfx/420554__marcmatthewsmusic__river-01.wav" type="AudioStream" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -121,6 +123,7 @@ position = Vector2( -81.8735, 658.389 )
 texture = ExtResource( 9 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="Layer 2" type="ParallaxLayer" parent="ParallaxForeground"]
@@ -140,6 +143,7 @@ position = Vector2( 961.21, 358.928 )
 z_as_relative = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -2
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -187,7 +191,7 @@ color = Color( 0.47451, 0.47451, 0.47451, 1 )
 position = Vector2( 1916.65, 693.619 )
 scale = Vector2( 1.13842, 1.13842 )
 z_index = 3
-frame = 2
+frame = 0
 
 [node name="Parede" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -199,6 +203,7 @@ shape = SubResource( 4 )
 [node name="PausedGUI" parent="." instance=ExtResource( 17 )]
 
 [node name="Interface" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 10
 
 [node name="GUI" parent="Interface" instance=ExtResource( 18 )]
@@ -213,5 +218,14 @@ position = Vector2( -1109.28, 387.825 )
 text = "hmmm....interesting"
 wait = 0.5
 autostart = false
+
+[node name="BackupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+
+[node name="BackupRiver" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2341.99, 574.212 )
+stream = ExtResource( 22 )
+volume_db = -5.0
+attenuation = 3.36358
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]
 [connection signal="entered_fog" from="Fog" to="." method="_on_Fog_entered_fog"]

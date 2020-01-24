@@ -11,7 +11,8 @@ func _ready():
 		$Player/RotPos/AnimatedSprite.play("Player_cinza_lateral")
 	if has_node("/root/FMOD/FMOD_start"):
 		get_node("/root/FMOD/FMOD_start").play_one("event:/River1", $River4)
-		pass
+	else:
+		$BackupRiver.play()
 
 func _process(_delta):
 

@@ -18,7 +18,9 @@ func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 		get_node("/root/FMOD/FMOD_start").set_listener(self)
 		musicevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Title", self)
-		
+	else:
+		$BackupMusic.play()
+	
 #Checks to see if Opening can be played
 func _process(_delta):
 	if (play):
@@ -52,6 +54,12 @@ func playOpening():
 		get_node("/root/FMOD/FMOD_start").stop_event(voiceevent)
 		get_node("/root/FMOD/FMOD_start").system_parameter("CurrentLine", 3)
 		voiceevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Voice", $"ParallaxBackground2/Layer 2/Intro_Narrative4")
+	else:
+		yield(get_tree().create_timer(5), "timeout")
+		$Voice1.play()
+		yield(get_tree().create_timer(2.5), "timeout")
+		$Voice2.play()
+	
 	
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("CameraMoveRight")
@@ -60,6 +68,7 @@ func playOpening():
 	#$Beginning/Player/Camera2D.make_current()
 	#get_tree().get_root().add_child(beg)
 	#assert(get_tree().change_scene_to(beg)==OK)
-	get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 0)
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").system_parameter("VoiceFade", 0)
 	get_node("/root/SceneChanger").change_scene_slower("res://scenes/Beginning.tscn")
 	

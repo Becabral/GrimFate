@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/River1.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/River1_foreground2.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/PauseButton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/PausedGUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sound/sfx/420554__marcmatthewsmusic__river-01.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.9204, 241.674 )
@@ -88,6 +89,7 @@ shape = SubResource( 1 )
 position = Vector2( 2724.68, 689.799 )
 scale = Vector2( 3.01718, 1.12431 )
 z_index = 1
+frame = 2
 offset = Vector2( -212.821, -2.5654 )
 
 [node name="Barco" parent="." instance=ExtResource( 9 )]
@@ -123,4 +125,9 @@ wait = 19.0
 [node name="PauseButton" parent="." instance=ExtResource( 12 )]
 
 [node name="PausedGUI" parent="." instance=ExtResource( 13 )]
+
+[node name="BackupRiver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+volume_db = -10.0
+max_distance = 10000.0
 [connection signal="body_entered" from="NextArea" to="." method="_on_NextArea_body_entered"]

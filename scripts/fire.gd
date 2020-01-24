@@ -22,7 +22,8 @@ func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 		fmodevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Fire", self)
 		#get_node("/root/FMOD/FMOD_start").play_one("event:/Fire",self)
-		pass
+	elif has_node("BackupFire"):
+		$BackupFire.play()
 	pass # Replace with function body.
 
 func disableCollision():

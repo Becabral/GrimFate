@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if(Input.is_action_pressed("ui_accept") && !skip):
+	if((Input.is_action_pressed("ui_accept") or Input.is_action_pressed("use"))  && !skip):
 		skip=true
 		$AnimationPlayer.play("FadeEnding")
 		yield($AnimationPlayer, "animation_finished")

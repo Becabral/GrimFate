@@ -56,18 +56,17 @@ margin_bottom = 630.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="final_i_death" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512, 237.608 )
 scale = Vector2( 0.240447, 0.240447 )
 texture = ExtResource( 2 )
 
 [node name="Narrative" parent="." instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 266.314, 430.636 )
 text = "A new Death rises and the cycle continues..."
 font_size = 30
 
 [node name="Credits" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -55 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

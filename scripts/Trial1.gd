@@ -20,6 +20,9 @@ func _ready():
 	
 	if has_node("/root/FMOD/FMOD_start"):
 		windsound=get_node("/root/FMOD/FMOD_start").create_event("event:/Wind", $Snow)
+	else:
+		$BackupMusic.play()
+		$BackupWind.play()
 
 func _process(_delta):
 #	if $Player.position.x >= 269 and $Player.position.x <= 717 and $Player.position.y <= -360:

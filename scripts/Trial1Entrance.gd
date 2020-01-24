@@ -5,6 +5,8 @@ var movinganimation = false
 func _ready():
 	if has_node("/root/FMOD/FMOD_start"):
 		get_node("/root/FMOD/FMOD_start").play_one("event:/River1Entrance", $Sound)
+	else:
+		$BackupRiver.play()
 	
 	# inicializa o personagem com o estado e a direção pra onde olha
 	$CanvasLayer2/Player.STATE = "sideView"
