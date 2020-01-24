@@ -18,7 +18,9 @@ func _ready():
 	Fmod.bank_load("./assets/sound/banks/Desktop/Music.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Beginning.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 	Fmod.bank_load("./assets/sound/banks/Desktop/Trial1.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
+	Fmod.bank_load("./assets/sound/banks/Desktop/Voice.bank", Fmod.FMOD_STUDIO_LOAD_BANK_NORMAL)
 		
+
 	#Fmod.system_add_listener(get_node("/Beginning/Player"))
 	#Fmod.play_one_shot("event:/Music", $FmodSource)
 	

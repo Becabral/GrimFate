@@ -1,8 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Endings.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/Final/final_die.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/Narrative.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Credits.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeEnding"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Narrative:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("final_die:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Credits:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,6 +61,14 @@ scale = Vector2( 0.24, 0.24 )
 texture = ExtResource( 2 )
 
 [node name="Narrative" parent="." instance=ExtResource( 3 )]
+modulate = Color( 1, 1, 1, 1 )
 position = Vector2( 266.434, 406.663 )
 text = "The Mighty Death is still waiting for the next being to replace them. Will anyone ever be up to the task?"
 size_x = 500
+
+[node name="Credits" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -55 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeEnding = SubResource( 1 )

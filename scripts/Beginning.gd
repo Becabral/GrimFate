@@ -49,6 +49,9 @@ func _process(_delta):
 			$Interface/GUI.verifica_incrementa("Lamp")
 			lampada.hide()
 			get_node("narrative").play_text()
+			if has_node("/root/FMOD/FMOD_start"):
+				get_node("/root/FMOD/FMOD_start").system_parameter("CurrentLine",4)
+				get_node("/root/FMOD/FMOD_start").play_one("event:/Voice", $narrative)
 			$Player/RotPos/AnimationPlayer.play_backwards("Fade_Gray")
 
 func create_lamp():

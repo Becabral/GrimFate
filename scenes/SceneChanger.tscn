@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/SceneChanger.gd" type="Script" id=1]
 
@@ -18,6 +18,22 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "FadeBackwards"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
 [node name="SceneChanger" type="CanvasLayer"]
 layer = 5
 script = ExtResource( 1 )
@@ -33,3 +49,4 @@ color = Color( 0, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fade = SubResource( 1 )
+anims/FadeBackwards = SubResource( 2 )

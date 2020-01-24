@@ -4,7 +4,7 @@ extends CanvasLayer
 #Also preloads them so they don't take as much time.
 var lamp
 var alternative_path
-#onready var Beginning = preload("res://scenes/Beginning.tscn")
+onready var Beginning = preload("res://scenes/Beginning.tscn")
 #onready var Trial1 = preload("res://scenes/Trial1.tscn")
 ##onready var Trial2 = preload("res://scenes/Trial2.tscn")
 #onready var Trial1E = preload("res://scenes/Trial1Entrance.tscn")
@@ -38,7 +38,26 @@ func change_scene_slow(path):
 		get_node("/root/Level 1").emit_signal("kill_fires")
 		yield(get_tree().create_timer(0.1), "timeout")
 	assert(get_tree().change_scene(path)==OK)
-	animation_player.play_backwards("Fade")
+	animation_player.play("FadeBackwards",-1,0.5)
+	yield(animation_player, "animation_finished")
+	emit_signal("scene_changed")
+	if has_node("/root/FMOD/fmod_start"):
+		get_node("root/FMOD").system_parameter("Fade",1)
+	set_layer(5)
+	
+func change_scene_slower(path):
+	set_layer(12)
+	if has_node("/root/FMOD/fmod_start"):
+		get_node("root/FMOD").system_parameter("Fade",0)
+	animation_player.play("Fade",-1,0.35)
+	yield(animation_player, "animation_finished")
+	yield(get_tree().create_timer(3), "timeout")
+	if has_node("/root/FMOD/fmod_start") && has_node("/root/Opening"):
+		get_node("/root/FMOD/fmod_start").stop_event(get_node("/root/Opening").voiceevent)
+		get_node("/root/FMOD/fmod_start").stop_event(get_node("/root/Opening").musicevent)
+		
+	assert(get_tree().change_scene(path)==OK)
+	animation_player.play("FadeBackwards",-1,0.5)
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 	if has_node("/root/FMOD/fmod_start"):

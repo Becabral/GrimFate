@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/img/Final/2020-01-19 23-59-27.00_01_38_17.Still001.bmp" type="Texture" id=1]
+
+[node name="Credits" type="Node2D"]
+
+[node name="2020-01-19 23-59-2700_01_38_17Still001" type="Sprite" parent="."]
+position = Vector2( -33, -6 )
+texture = ExtResource( 1 )
+centered = false
