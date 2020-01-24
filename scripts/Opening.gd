@@ -3,7 +3,7 @@ onready var beg
 
 
 export var play=false #Tells me if the Opening can play
-
+var musicevent
 signal play_narrative
 
 #Sets Opening defaults
@@ -13,18 +13,24 @@ func _ready():
 #	$Beginning/Fog/Particles2D.emitting=false
 	$Orb/AnimationPlayer.play("Float")
 	$Orb/Camera2D.make_current()
+	
+	if has_node("/root/FMOD/FMOD_start"):
+		musicevent=get_node("/root/FMOD/FMOD_start").create_event("event:/Title", self)
 		
 #Checks to see if Opening can be played
 func _process(_delta):
 	if (play):
 		play=false
 		playOpening()
+		
 
 #Brings the level up and changes scene to Beginning
 func playOpening():
+	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").set_parameter(musicevent,"PressStart",1)
 	emit_signal("play_narrative")
 	#$Beginning/Player/Camera2D.current=false
-	$AnimationPlayer.play("OrbMoveDown", -1, 0.25)
+	$AnimationPlayer.play("OrbMoveDown", -1, 0.20)
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("CameraMoveRight")
 	$Orb/AnimationPlayer.play("Fade_Player")
