@@ -19,6 +19,7 @@ func _ready():
 	pass
 	
 	if has_node("/root/FMOD/FMOD_start"):
+		get_node("/root/FMOD/FMOD_start").play_one("event:/Trial1", self)
 		windsound=get_node("/root/FMOD/FMOD_start").create_event("event:/Wind", $Snow)
 	else:
 		$BackupMusic.play()

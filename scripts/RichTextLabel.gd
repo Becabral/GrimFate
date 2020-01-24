@@ -50,6 +50,8 @@ func _process(_delta):
 		if final_reached == true:
 			count_end += 1
 			if count_end == 3:
+				if has_node("/root/FMOD/FMOD_start"):
+					get_node("/root/FMOD/FMOD_start").set_parameter(get_node("/root/GrimEnd").musicevent,"EndSection",4)
 				if global.lamp and global.alternative_path:
 					get_node("/root/SceneChanger").change_scene_slow("res://scenes/Live.tscn")
 				elif global.lamp or global.alternative_path:

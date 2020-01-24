@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://scripts/GrimEnd.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/environment/EndBG.png" type="Texture" id=2]
@@ -132,6 +132,7 @@
 [ext_resource path="res://scripts/EndFireSpawner.gd" type="Script" id=130]
 [ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=131]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=132]
+[ext_resource path="res://assets/sound/music/End.wav" type="AudioStream" id=133]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -199,7 +200,7 @@ emission_sphere_radius = 1.0
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-angular_velocity = -6.94167e-39
+angular_velocity = -6.94167e-039
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = 15.0
@@ -287,7 +288,7 @@ editor/display_folded = true
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 position = Vector2( 401.856, -2287.47 )
 frames = SubResource( 9 )
-frame = 99
+frame = 16
 playing = true
 
 [node name="Death2" type="AnimatedSprite" parent="Death"]
@@ -297,7 +298,7 @@ material = SubResource( 10 )
 position = Vector2( -22.1521, 5.14917 )
 scale = Vector2( 1.2, 1 )
 frames = SubResource( 9 )
-frame = 98
+frame = 15
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Death/Death2"]
@@ -456,9 +457,16 @@ __meta__ = {
 }
 
 [node name="Interface" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="GUI" parent="Interface" instance=ExtResource( 132 )]
+
+[node name="BackupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 133 )
+max_distance = 10000.0
 [connection signal="body_entered" from="CutsceneTrigger" to="." method="_on_CutsceneTrigger_body_entered"]
 [connection signal="body_entered" from="EndFireSpawner" to="EndFireSpawner" method="_on_EndFireSpawner_body_entered"]
+[connection signal="body_entered" from="EndFireSpawner" to="." method="_on_EndFireSpawner_body_entered"]
+[connection signal="body_entered" from="EndFireSpawner2" to="." method="_on_EndFireSpawner2_body_entered"]
 [connection signal="body_entered" from="EndFireSpawner2" to="EndFireSpawner2" method="_on_EndFireSpawner_body_entered"]
 [connection signal="body_entered" from="EndFireSpawner3" to="EndFireSpawner3" method="_on_EndFireSpawner_body_entered"]
