@@ -38,6 +38,7 @@ func _on_CutsceneTrigger_body_entered(body):
 			$Player/Anim.play("idleup")
 			$Player/Camera2D/AnimPlayerCamera.play("CameraPan")
 			yield($Player/Camera2D/AnimPlayerCamera, "animation_finished")
+			yield(get_tree().create_timer(1.5), "timeout")
 			scene_instance.set_name("scene")
 			$ParallaxBackground.add_child(scene_instance)
 			emit_signal("kill_players")
